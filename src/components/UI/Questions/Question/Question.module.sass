@@ -1,0 +1,31 @@
+.wrapper
+	padding: 15px 0
+	border-bottom: 2px solid rgba(42, 42, 42, 0.12)
+	position: relative
+	overflow: hidden
+	@media (max-width: 767px)
+		padding: 8px 0
+.title
+	font-size: 19px
+	line-height: 22px
+	display: flex
+	justify-content: space-between
+	cursor: pointer
+	align-items: center
+	svg
+		margin-right: 15px
+		transform: rotate(270deg)
+	&_active
+		svg
+			transform: rotate(90deg)
+	@media (max-width: 767px)
+		font-size: 18px
+		line-height: 18px
+		svg
+			margin-right: 0px
+.text
+	font-size: 16px
+	line-height: 19px
+	margin-top: 17px
+	@media (max-width: 767px)
+		margin-top: 10px

@@ -1,0 +1,114 @@
+.headerTop
+	background-color: var(--main-color)
+	@media (max-width: 767px)
+		margin-bottom: 61px
+	img
+		max-width: 100%
+.modalWrapper
+	position: fixed
+	width: 100%
+	height: 100%
+	top: 0
+	left: 0
+	z-index: 20
+	color: var(--main-color)
+	background: rgba(0, 0, 0, 0.75)
+	display: flex
+	justify-content: center
+
+.topFlex
+	display: flex
+	justify-content: space-between
+	padding: 22px 0
+	align-items: center
+	column-gap: 15px
+	@media (max-width: 1023px)
+		column-gap: 10px
+	@media (max-width: 767px)
+		position: relative
+.menuBurger
+	overflow: visible
+	z-index: 5
+	@media (min-width: 768px)
+		display: none
+	span,
+	&::after,
+	&::before
+		content: ""
+		width: 30px
+		height: 4px
+		display: block
+		overflow: visible
+		background-color: #fff
+		transition: 0.3s
+	&::before
+		transform: translateY(-100%)
+	&::after
+		transform: translateY(100%)
+	&__active
+		span
+			transform: scale(0)
+			opacity: 0
+			visibility: hidden
+		&::before
+			transform: translateY(100%) rotate(45deg)
+			background-color: var(--color-orange)
+		&::after
+			transform: translateY(-100%) rotate(-45deg)
+			background-color: var(--color-orange)
+
+.logo
+	flex: 0 0 auto
+	@media (max-width: 767px)
+		position: absolute
+		right: 50%
+		transform: translateX(40%)
+		z-index: 1
+		img
+			min-width: 120px
+	img
+		min-width: 150px
+.number
+	font-size: 20px
+	line-height: 23px
+	color: #fff
+	display: flex
+	justify-content: space-between
+	align-items: center
+	column-gap: 9.75px
+	flex: 0 0 auto
+	@media (max-width: 1023px)
+		font-size: 16px
+		column-gap: 5.75px
+	@media (max-width: 767px)
+		position: absolute
+		opacity: 0
+		visibility: hidden
+.icons
+	display: flex
+	justify-content: space-between
+	align-items: center
+	column-gap: 15px
+	flex: 0 0 auto
+.loginIcon
+	background-color: transparent
+.cartIcon
+	cursor: pointer
+	position: relative
+.cartCount
+	position: absolute
+	top: -10px
+	right: -5px
+	min-width: 25px
+	text-align: center
+	justify-content: center
+	align-items: center
+	background-color: var(--color-orange)
+	border-radius: 50%
+	color: #fff
+	font-size: 16px
+	line-height: 19px
+	padding: 3px
+	display: none
+	&_active
+		display: flex

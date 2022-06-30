@@ -1,0 +1,31 @@
+.titles
+	display: flex
+	justify-content: space-between
+	border-bottom: 2px solid rgba(42, 42, 42, 0.12)
+	margin-bottom: 30px
+	@media (max-width: 1023px)
+		margin-bottom: 15px
+	@media (max-width: 767px)
+		flex-direction: column
+		text-align: center
+.title
+	font-size: 22px
+	line-height: 26px
+	padding-bottom: 8px
+	cursor: pointer
+	@media (max-width: 1023px)
+		font-size: 18px
+		line-height: 22px
+		padding-bottom: 6px
+	@media (max-width: 767px)
+		border: 3px solid #99999979
+		margin-bottom: 5px
+		padding: 4px 0px
+	&_active
+		border-bottom: 3px solid var(--main-color)
+		@media (max-width: 767px)
+			border: 3px solid var(--main-color)
+
+.content
+	p
+		margin-bottom: 10px

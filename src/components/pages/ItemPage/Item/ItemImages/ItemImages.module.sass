@@ -1,0 +1,65 @@
+.images
+	display: flex
+	gap: 30px
+	margin-bottom: 60px
+	@media (max-width: 1023px)
+		gap: 15px
+		margin-bottom: 30px
+	@media (max-width: 767px)
+		display: none
+	img
+		background: #FFFFFF
+		border: 1px solid #C4C4C4
+		border-radius: var(--border-radius-main)
+		max-width: 100%
+.left
+	display: flex
+	flex-direction: column
+	gap: 15px
+.miniImg
+	flex: 1 1 85px
+	width: 85px
+	cursor: pointer
+	position: relative
+	img
+		padding: 5px
+		position: absolute
+		width: 100%
+		height: 100%
+		top: 0
+		left: 0
+		object-fit: contain
+.right
+	flex: 1 1 auto
+	position: relative
+	img
+		padding: 10px
+		position: absolute
+		width: 100%
+		height: 100%
+		top: 0
+		left: 0
+		object-fit: contain
+		cursor: zoom-in
+	&_active
+		position: fixed
+		width: 100%
+		height: 100%
+		top: 0
+		left: 0
+		background-color: #00000076
+		z-index: 10
+		img
+			background-color: transparent
+			border: none
+			width: 50%
+			height: 50%
+			cursor: zoom-out
+			transform: translate(50%,50%) scale(1.5)
+			&::before
+				content: 'x'
+				position: absolute
+				top: 0
+				right: 0
+				font-size: 30px
+				z-index: 20

@@ -1,0 +1,81 @@
+.itemInfoCard
+	position: relative
+	padding-top: 31.4%
+	border-radius: var(--border-radius-main)
+	overflow: hidden
+	display: flex
+	min-height: 100%
+	flex: 1 1 calc( 50% - 30px)
+	@media (max-width: 767px)
+		flex: 1 1 auto
+	@media (max-width: 424px)
+		border-radius: 0px
+	&_active
+		&:nth-child(3n+1)
+			flex: 1 1 100%
+		&:nth-child(3n+2)
+			flex: 1 1 calc( 50% - 30px)
+		&:nth-child(3n)
+			flex: 1 1 calc( 50% - 30px)
+	img
+		position: absolute
+		width: 100%
+		height: 100%
+		top: 0
+		left: 0
+		object-fit: cover
+		z-index: -1
+		object-position: top
+	.content
+		background: #2a2a2ab7
+		padding: 22px 40px
+		width: 100%
+		@media (max-width: 767px)
+			padding: 11px 20px
+		@media (max-width: 424px)
+			padding: 5px 10px
+	.title
+		margin-bottom: 9px
+		font-size: 19px
+		line-height: 94.61%
+		color: #F9A43F
+		display: flex
+		justify-content: space-between
+		gap: 5px
+		span
+			&:not(:first-child)
+				color: #fff
+
+		@media (max-width: 1023px)
+			flex-direction: column
+		@media (max-width: 767px)
+			margin-bottom: 5px
+			font-size: 16px
+			line-height: 20px
+
+	.bottomFlex
+		display: flex
+		justify-content: space-between
+		gap: 20px
+		@media (max-width: 1023px)
+			gap: 5px
+
+	.text
+		font-weight: 400
+		font-size: 16px
+		line-height: 94.61%
+		color: #FFFFFF
+		flex: 1 1 auto
+		@media (max-width: 767px)
+			font-size: 14px
+			line-height: 18px
+			padding-right: 0
+
+	.price
+		font-size: 22px
+		line-height: 22px
+		flex-shrink: 0
+		color: #fff
+		@media (max-width: 767px)
+			font-size: 18px
+			line-height: 18px

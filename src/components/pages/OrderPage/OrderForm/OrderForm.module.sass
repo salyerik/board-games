@@ -1,0 +1,134 @@
+.wrapper,
+.addressInputs,
+.shippingMethod,
+.policyCheckboxes
+	margin-bottom: 85px
+	@media (max-width: 767px)
+		margin-bottom: 40px
+
+.wrapper
+	@media (min-width: 769px)
+		max-width: 643px
+
+.formTitle
+	font-size: 22px
+	line-height: 26px
+	margin-bottom: 21px
+	@media (max-width: 767px)
+		font-size: 20px
+		font-weight: 24px
+		margin-bottom: 18px
+.label
+	display: flex
+	gap: 15px
+	margin-bottom: 21px
+	align-items: center
+	@media (max-width: 767px)
+		flex-direction: column
+		gap: 5px
+		align-items: start
+		margin-bottom: 10px
+	span
+		font-size: 16px
+		line-height: 19px
+		flex: 0 0 85px
+		@media (max-width: 878px)
+			flex: 1 1 auto
+
+	input
+		padding: 16px 18px
+		max-width: 540px
+		width: 100%
+		background: #FFFFFF
+		border: 1px solid rgba(217, 217, 217, 0.39)
+		border-radius: var(--border-radius-main)
+		font-weight: 400
+		font-size: 16px
+		line-height: 19px
+		@media (max-width: 767px)
+			padding: 8px 10px
+.warningLabel
+	font-weight: 400
+	font-size: 15px
+	line-height: 17px
+	color: rgba(42, 42, 42, 0.44)
+
+.methodFlex
+	display: flex
+	flex-wrap: wrap
+	gap: 25px
+	@media (min-width: 769px)
+		justify-content: space-between
+	@media (max-width: 767px)
+		flex-direction: column
+		gap: 10px
+.methodLabel
+	flex: 0 0 calc( 50% - 25px )
+	display: flex
+	align-items: center
+	cursor: pointer
+	@media (min-width: 769px)
+		justify-content: space-between
+	svg
+		max-width: 100%
+		flex: 0 0 35px
+		margin-right: 25px
+		@media (max-width: 767px)
+.methodText
+	flex: 1 1 auto
+	padding-right: 5px
+	@media (max-width: 768px)
+		flex: 0 1 63%
+	@media (max-width: 767px)
+		flex: 1 0 auto
+	span
+		display: block
+		font-size: 16px
+		line-height: 22px
+		&:last-child
+			font-weight: 400
+.contactInputs
+	margin-bottom: 22px
+.policyCheckboxes
+	font-weight: 400
+	font-size: 16px
+	line-height: 19px
+	a
+		color: #000
+		text-decoration: underline
+.checkboxLabel
+	display: flex
+	gap: 20px
+	align-items: center
+	cursor: pointer
+	margin-bottom: 13px
+	input
+		flex-shrink: 0
+	@media (max-width: 767px)
+		margin-bottom: 5px
+		gap: 10px
+.policyText
+	color: #000000
+	opacity: 0.6
+	margin-bottom: 21px
+	@media (max-width: 767px)
+		margin-bottom: 5px
+.alreadyLogged
+	a
+		color: var(--color-orange)
+
+.btnContainer
+	text-align: right
+.btn
+	font-size: 19px
+	line-height: 22px
+	padding: 14px 93px
+	color: #FFFFFF
+	background: var(--btn-orange)
+	border-radius: var(--border-radius-main)
+	display: flex
+	margin-left: auto
+	@media (max-width: 767px)
+		padding: 10px
+		width: 100%
+		justify-content: center

@@ -1,0 +1,79 @@
+.wrapper
+	background: #FFFFFF
+	box-shadow: 5px 6px 16px rgba(42, 42, 42, 0.16)
+	border-radius: var(--border-radius-main)
+	padding: 30px
+	@media (max-width: 1439px)
+		padding: 20px
+.top
+	display: flex
+	gap: 9px
+	align-items: flex-end
+	margin-bottom: 6px
+	&_bottom
+		margin-bottom: 18px
+		@media (max-width: 1023px)
+			margin-bottom: 10px
+.labelPrice
+	font-size: 19px
+	line-height: 22px
+	@media (max-width: 1023px)
+		font-size: 16px
+		line-height: 19px
+.price
+	font-size: 33px
+	&_old
+		text-decoration: line-through
+		font-size: 28px
+	@media (max-width: 1023px)
+		font-size: 26px
+		&_old
+			font-size: 20px
+.label
+	font-weight: 400
+	font-size: 16px
+	line-height: 19px
+	margin-bottom: 7px
+.form
+	display: flex
+	align-items: center
+	width: 100%
+	position: relative
+	margin-bottom: 23px
+	@media (max-width: 1023px)
+		margin-bottom: 10px
+.input
+	border: 1px solid rgba(42, 42, 42, 0.25)
+	border-radius: 9px
+	flex: 1 1 auto
+	padding: 8px 10px
+.promoBtn
+	position: absolute
+	top: 0
+	right: 0
+	bottom: 0
+	width: 34px
+	height: 34px
+	display: flex
+	align-items: center
+	justify-content: center
+	background: #CACACA
+	border-radius: var(--border-radius-main)
+	svg
+		width: 12px
+		height: 9px
+.btnTop,
+.btnBottom
+	display: block
+	padding: 11px
+	text-align: center
+	border-radius: 9px
+	font-size: 22px
+	line-height: 26px
+	@media (max-width: 1023px)
+		padding: 6px 11px
+		font-size: 18px
+		line-height: 22px
+.btnTop
+	background: linear-gradient(184.53deg, var(--color-orange) 5.27%, #FB791B 91.78%)
+	color: #fff

@@ -1,0 +1,44 @@
+.content
+	background-color: #fff
+	padding: 40px
+	box-shadow: 5px 6px 16px rgba(42, 42, 42, 0.16)
+	border-radius: var(--border-radius-main)
+	max-width: 427px
+	margin: 10%	15px auto
+	width: 100%
+	@media (max-width: 767px)
+		margin: 20%	15px auto
+		padding: 20px
+	@media (max-width: 424px)
+		padding: 20px 15px
+		margin: 20%	-15px auto
+		border-radius: 0px
+.topLabel
+	font-size: 22px
+	line-height: 26px
+	margin-bottom: 25px
+	text-align: center
+	@media (max-width: 767px)
+		font-size: 20px
+		line-height: 22px
+		margin-bottom: 18px
+.tabs
+	display: flex
+	justify-content: space-between
+	font-size: 19px
+	line-height: 22px
+	margin-bottom: 21px
+	.tab
+		flex: 0 0 50%
+		text-align: center
+		border-bottom: 2px solid rgba(42, 42, 42, 0.12)
+		padding-bottom: 7px
+		cursor: pointer
+		&_active
+			border-bottom: 2px solid var(--main-color)
+	@media (max-width: 767px)
+		font-size: 18px
+		line-height: 20px
+		margin-bottom: 15px
+		.tab
+			padding-bottom: 3px

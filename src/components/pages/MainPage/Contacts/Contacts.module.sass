@@ -1,0 +1,59 @@
+.flex
+	display: flex
+	padding-bottom: 85px
+	@media (max-width: 1023px)
+		padding-bottom: 40px
+	@media (max-width: 767px)
+		flex-direction: column
+		padding-bottom: 30px
+.content
+	padding-right: 50px
+	flex: 0 0 50%
+	@media (max-width: 1439px)
+		padding-right: 20px
+	@media (max-width: 767px)
+		padding-right: 0
+		margin-bottom: 30px
+
+.contact
+	display: flex
+	align-items: start
+	margin-bottom: 19px
+	font-size: 19px
+	line-height: 22px
+	@media (max-width: 1023px)
+		margin-bottom: 10px
+		font-size: 16px
+		line-height: 18px
+	svg
+		max-width: 30px
+		margin-right: 15px
+		@media (max-width: 1023px)
+			margin-right: 5px
+			max-width: 20px
+
+.label
+	margin-right: 5px
+.link
+	font-weight: normal
+	color: var(--main-color )
+.questionTitle
+	font-size: 22px
+	line-height: 26px
+	margin: 20px 0
+	@media (max-width: 1023px)
+		margin: 15px 0
+		font-size: 18px
+		line-height: 20px
+.map
+	flex: 1 1 100%
+	border-radius: var(--border-radius-main)
+	overflow: hidden
+	iframe
+		width: 100%
+		height: 100%
+		min-height: 300px
+	@media (max-width: 767px)
+		max-height: 236px
+		margin: 0 -15px
+		border-radius: 0px

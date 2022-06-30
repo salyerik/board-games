@@ -1,0 +1,39 @@
+.pricesFlex
+	column-gap: 20px
+	margin: 19px 0px 22px
+	@media (max-width: 767px)
+		margin: 10px 0px 11px
+
+.pricesFlex,
+.priceLabel
+	display: flex
+	align-items: center
+	justify-content: space-between
+	font-weight: 400
+	font-size: 16px
+	line-height: 19px
+	@media (max-width: 767px)
+		justify-content: start
+.priceLabel
+	span
+		margin-right: 4px
+	input
+		font-weight: 400
+		font-size: 16px
+		line-height: 19px
+		padding: 4px 9px
+		max-width: 65px
+		border: 1px solid rgba(0, 0, 0, 0.38)
+		border-radius: var(--border-radius-main)
+
+.checkboxLabel
+	cursor: pointer
+	display: flex
+	align-items: center
+	column-gap: 20px
+	font-weight: 400
+	font-size: 16px
+	line-height: 19px
+	margin-top: 20px
+	@media (max-width: 767px)
+		margin-top: 10px

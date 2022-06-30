@@ -1,0 +1,39 @@
+.slider
+	height: 3px
+	background-color: rgba(42, 42, 42, 0.12)
+	border-radius: var(--border-radius-main)
+	position: relative
+.progress
+	position: absolute
+	border-radius: var(--border-radius-main)
+	height: 3px
+	background-color: var(--main-color)
+	left: 0%
+	right: 0%
+.rangeInputs
+	position: relative
+	input
+		position: absolute
+		height: 3px
+		top: 0px
+		width: 100%
+		pointer-events: none
+		appearance: none
+		background: none
+.rangeInputs input[type="range"]::-webkit-slider-thumb
+	appearance: none
+	height: 9px
+	width: 9px
+	border-radius: 50%
+	background-color: var(--main-color)
+	pointer-events: auto
+	cursor: grab
+.rangeInputs input[type="range"]::-moz-range-thumb
+	appearance: none
+	height: 9px
+	width: 9px
+	border-radius: 50%
+	background-color: var(--main-color)
+	pointer-events: auto
+	cursor: grab
+	border: none
