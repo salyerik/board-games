@@ -3,16 +3,15 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 
 import { getProducts } from "./server/getProducts"
 import getData from "./server/getCommonData"
-import { iCommonState } from "./types/commonTypes"
-
-import useTypedSelector from "./hooks/useTypedSelector"
-import useAppDispatch from "./hooks/useAppDispatch"
 import { getItems } from "./redux/slices/productsSlice"
 import { setCartState } from "./redux/slices/cartPageSlice"
 import { toggleLoadingProducts, setTotalItem } from "./redux/slices/filterCategorySlice"
+import useTypedSelector from "./hooks/useTypedSelector"
+import useAppDispatch from "./hooks/useAppDispatch"
+import { iCommonState } from "./types/commonTypes"
 
-import Header from "./components/Header/Header"
-import Footer from "./components/Footer/Footer"
+import Header from "./components/Header"
+import Footer from "./components/Footer"
 import routes from "./components/pages/routes"
 import Preloader from "./components/UI/Preloader"
 
