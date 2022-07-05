@@ -15,11 +15,11 @@ const Question: FC<iQuestion> = ({ title, text, isActive }) => {
 
 	return (
 		<section className={s.wrapper}>
-			<h5 onClick={handleSpoilerClick}
-				className={cn(s.title, { [s.title_active]: isSpoilerActive })}>
+			<div onClick={handleSpoilerClick}
+				className={cn(s.top, { [s.top_active]: isSpoilerActive })}>
 				<span>{title}</span>
 				<IconsSVG id='arrowSpoiler' />
-			</h5>
+			</div>
 			{isSpoilerActive &&
 				<div className={s.text}>{text}</div>}
 		</section>

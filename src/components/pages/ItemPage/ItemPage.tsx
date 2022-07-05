@@ -7,19 +7,21 @@ import Card from '../../UI/Card'
 import s from './ItemPage.module.sass'
 
 const ItemPage: FC = () => {
-	const items = useTypedSelector(({ products }) => products.items)
+	const { mainPageItems } = useTypedSelector(state => state.products)
 
 	return (
 		<section className={'container' + ' ' + s.wrapper}>
 			<Item />
-			<div className={s.subTitle}>Вы недавно смотрели</div>
-			<div className={s.items}>
-				{items.slice(0, 4).map(item => (
-					<div key={item.id} className={s.item}>
-						<Card {...item} />
-					</div>
-				))}
-			</div>
+			{!!mainPageItems.length && <>
+				<div className={s.subTitle}>Вы недавно смотрели</div>
+				<div className={s.items}>
+					{mainPageItems.slice(0, 4).map(item => (
+						<div key={item.id} className={s.item}>
+							<Card {...item} />
+						</div>
+					))}
+				</div>
+			</>}
 		</section>
 	)
 }

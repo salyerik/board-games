@@ -1,8 +1,10 @@
-import { FC, useEffect, useRef, useState } from 'react'
+import { FC, useEffect, useRef } from 'react'
 
+import { getProducts } from '../../../server/getProducts'
 import {
-	setPageLimit, setSortPrice
+	setSortPrice, setTotalItem, toggleLoadingProducts
 } from '../../../redux/slices/filterCategorySlice'
+import { setCatalogItems } from '../../../redux/slices/productsSlice'
 import useAppDispatch from '../../../hooks/useAppDispatch'
 import useTypedSelector from '../../../hooks/useTypedSelector'
 
@@ -17,22 +19,34 @@ import s from './CatalogPage.module.sass'
 import IconsSVG from '../../UI/IconsSVG'
 
 const Catalog: FC = () => {
-	const [topHeight, setTopHeight] = useState(0)
 	const dispatch = useAppDispatch()
 	const topRef = useRef<HTMLDivElement>(null)
 	const links = [
 		{ name: 'Главная', path: '/' },
 		{ name: 'Каталог', path: '/catalog' },
 	]
-	const filterCategory = useTypedSelector(state => state.filterCategory)
+	const {
+		isOnlyStocked, price, selectedAge, players,
+		category, subCategory, sortPrice, page, pageLimit
+	} = useTypedSelector(state => state.filterCategory)
 
 	useEffect(() => {
-		if (topRef.current) {
-			setTopHeight(topRef.current.offsetTop - 30)
-		}
-		dispatch(setPageLimit(6))
-		window.scrollTo(0, topHeight)
-	}, [filterCategory])
+		console.log(category)
+		dispatch(toggleLoadingProducts(true))
+		getProducts({
+			isOnlyStocked, price, selectedAge, players, category, subCategory,
+			sortPrice, page, pageLimit
+		}).then(res => {
+			dispatch(setTotalItem(+res.headers['x-total-count']))
+			dispatch(setCatalogItems(res.data))
+		}).then(() => {
+			dispatch(toggleLoadingProducts(false))
+		}).catch(e => {
+			console.log(e.message)
+			dispatch(toggleLoadingProducts(false))
+		})
+	}, [isOnlyStocked, price, selectedAge, players,
+		category, subCategory, sortPrice, page, pageLimit])
 
 	function handleFilter(e: React.ChangeEvent<HTMLSelectElement>) {
 		dispatch(setSortPrice(e.target.value))
@@ -62,7 +76,7 @@ const Catalog: FC = () => {
 						<Products />
 					</div>
 				</div>
-				<Pagination topHeight={topHeight} />
+				<Pagination topHeight={topRef.current ? topRef.current.offsetTop - 30 : 0} />
 				<div className={s.questionsWrapper}>
 					<Questions />
 				</div>

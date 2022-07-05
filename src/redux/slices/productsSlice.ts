@@ -1,9 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
+
 import { iCardProduct } from "../../types/commonTypes"
 import { iProductsState } from "../../types/productsType"
 
 const initialState: iProductsState = {
-	items: [],
+	catalogItems: [],
+	mainPageItems: [],
 	questions: [
 		{
 			id: 1,
@@ -42,11 +44,14 @@ const productsSlice = createSlice({
 	name: 'products',
 	initialState,
 	reducers: {
-		getItems: (state, action: PayloadAction<iCardProduct[]>) => {
-			state.items = action.payload
+		setCatalogItems: (state, action: PayloadAction<iCardProduct[]>) => {
+			state.catalogItems = action.payload
+		},
+		setMainPageItems: (state, action: PayloadAction<iCardProduct[]>) => {
+			state.mainPageItems = action.payload
 		},
 	}
 })
 
 export default productsSlice.reducer
-export const { getItems } = productsSlice.actions
+export const { setCatalogItems, setMainPageItems } = productsSlice.actions

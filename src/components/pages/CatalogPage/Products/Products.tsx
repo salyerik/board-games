@@ -7,7 +7,7 @@ import Preloader from '../../../UI/Preloader'
 import s from './Products.module.sass'
 
 const Products: FC = () => {
-	const items = useTypedSelector(({ products }) => products.items)
+	const { catalogItems } = useTypedSelector(({ products }) => products)
 	const isLoadingProducts = useTypedSelector(
 		({ filterCategory }) => filterCategory.isLoadingProducts
 	)
@@ -16,7 +16,7 @@ const Products: FC = () => {
 		return <Preloader />
 	}
 
-	if (!items.length) {
+	if (!catalogItems.length) {
 		return (
 			<div className={s.notFoundItem}>
 				<div>
@@ -30,7 +30,7 @@ const Products: FC = () => {
 
 	return (
 		<section className={s.flex}>
-			{items.map(item => (
+			{catalogItems.map(item => (
 				<div key={item.id} className={s.item}>
 					<Card {...item} />
 				</div>

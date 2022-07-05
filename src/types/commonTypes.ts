@@ -1,5 +1,8 @@
-import { iDate } from "./eventsTypes"
+import { iAboutUsState } from "./aboutUsPageTypes"
+import { iBlogsState } from "./blogTypes"
+import { iDate, iEventsPageState } from "./eventsTypes"
 import { iFooterState } from "./footerTypes"
+import { iMainPageState } from "./mainPageTypes"
 
 export interface iSocialNet {
 	img: string,
@@ -50,7 +53,7 @@ type tCatalog = {
 	path: string
 }
 
-export interface iCommonState {
+export interface iCommonData {
 	footer: iFooterState,
 	phoneNumber: iContactLink,
 	mail: iContactLink,
@@ -77,4 +80,12 @@ export interface iItemInfoCardProps {
 	date?: iDate,
 	price?: number,
 	isActivePage?: true
+}
+
+export interface iCommonSliceState {
+	aboutUsPage: iAboutUsState,
+	blogPage: iBlogsState,
+	eventsPage: iEventsPageState,
+	commonData: iCommonData,
+	mainPage: iMainPageState,
 }

@@ -33,8 +33,7 @@ const Search: FC<{ search: string }> = ({ search }) => {
 		} else {
 			dispatch(setSearchedItems([]))
 		}
-
-	}, [inputValue])
+	}, [inputValue.length])
 
 	function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
 		setInputValue(e.target.value)

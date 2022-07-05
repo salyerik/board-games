@@ -60,8 +60,8 @@ const initialState: iFilterCategoryState = {
 	subCategory: '',
 	sortPrice: '',
 	page: 1,
+	pageLimit: 6,
 	totalItem: 0,
-	pageLimit: 22
 }
 
 const filterCategorySlice = createSlice({
@@ -106,9 +106,8 @@ const filterCategorySlice = createSlice({
 			state.isSpoilerActive.playersFilter = false
 			state.isSpoilerActive.priceFilter = false
 		},
-		toggleCategoriesSpoiler: (state) => {
-			state.isSpoilerActive.categoriesFilter =
-				!state.isSpoilerActive.categoriesFilter
+		toggleCategoriesSpoiler: (state, action: PayloadAction<boolean>) => {
+			state.isSpoilerActive.categoriesFilter = action.payload
 		},
 		togglePriceSpoiler: (state) => {
 			state.isSpoilerActive.priceFilter =
@@ -137,11 +136,8 @@ const filterCategorySlice = createSlice({
 		setPage: (state, action: PayloadAction<number>) => {
 			state.page = action.payload
 		},
-		setPageLimit: (state, action: PayloadAction<number>) => {
-			state.pageLimit = action.payload
-		},
-		toggleLoadingProducts: (state) => {
-			state.isLoadingProducts = !state.isLoadingProducts
+		toggleLoadingProducts: (state, action: PayloadAction<boolean>) => {
+			state.isLoadingProducts = action.payload
 		}
 	}
 })
@@ -151,5 +147,5 @@ export const {
 	setFromPrice, setToPrice, toggleOnlyStocked, setFromPlayers, setToPlayers,
 	setAge, resetFilter, toggleCategoriesSpoiler, togglePriceSpoiler,
 	togglePlayesSpoiler, toggleAgeSpoiler, setCategory, setSubCategory,
-	setSortPrice, setTotalItem, setPage, setPageLimit, toggleLoadingProducts
+	setSortPrice, setTotalItem, setPage, toggleLoadingProducts
 } = filterCategorySlice.actions

@@ -32,7 +32,7 @@ export interface iFilterCategoryState {
 	},
 	categories: tCategory[],
 	category: string,
-	subCategory: string,
+	subCategory: string | null,
 	sortPrice: string,
 	page: number,
 	totalItem: number,

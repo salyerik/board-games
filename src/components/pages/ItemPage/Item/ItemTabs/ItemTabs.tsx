@@ -26,10 +26,7 @@ const ItemTabs: FC<{ item: iCardProduct }> = ({ item }) => {
 				))}
 			</div>
 			<div className={s.content}>
-				{activeTab === 0 &&
-					<>
-						<pre>{JSON.stringify(item, null, 2)}</pre>
-					</>}
+				{activeTab === 0 && JSON.stringify(item, null, 2)}
 				{activeTab === 1 &&
 					<>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi voluptate numquam molestiae repellat! Quibusdam corrupti dignissimos illo aperiam officia, modi in perferendis? Cum, incidunt eveniet. Aut similique ex explicabo nemo aspernatur autem ipsam natus, at deleniti, tempore qui error, quis placeat magni neque ea sunt nobis sint? Voluptas amet explicabo ducimus eos officia, dolores quam blanditiis iusto! Molestiae mollitia voluptatibus delectus dolorem ipsam iusto iure aut reiciendis autem. Ipsa modi voluptates rerum, ratione exercitationem voluptate facilis, numquam, dicta non hic deleniti sit nobis dolor saepe distinctio fuga quae et similique quos doloremque aut voluptas dolorem repellat? Ullam, explicabo natus! Quis!

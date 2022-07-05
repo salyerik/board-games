@@ -13,6 +13,7 @@ import useAppDispatch from '../../../../hooks/useAppDispatch'
 
 import s from './CartItem.module.sass'
 import IconsSVG from '../../../UI/IconsSVG'
+import Preloader from '../../../UI/Preloader'
 
 const CartItem: FC<{ id: string }> = ({ id }) => {
 	const dispatch = useAppDispatch()
@@ -63,7 +64,7 @@ const CartItem: FC<{ id: string }> = ({ id }) => {
 	}
 
 	if (!item) {
-		return <h1>Loading...</h1>
+		return <Preloader />
 	}
 
 	return (

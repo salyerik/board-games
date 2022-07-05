@@ -1,29 +1,19 @@
-import { FC, useEffect, useState } from 'react'
+import { FC } from 'react'
 
-import { getData } from '../../../server/getAboutUsPageData'
-import { iAboutUsState } from '../../../types/aboutUsPageTypes'
+import useTypedSelector from '../../../hooks/useTypedSelector'
 import BreadCrumps from '../../UI/BreadCrumps'
-import Preloader from '../../UI/Preloader'
 
 import s from './AboutUsPage.module.sass'
 
 const AboutUsPage: FC = () => {
-	const [data, setData] = useState<iAboutUsState>()
-
-	useEffect(() => {
-		getData().then(data => setData(data))
-	}, [])
-
-	if (!data) {
-		return <Preloader />
-	}
+	const { aboutUsPage } = useTypedSelector(state => state.common)
 
 	return (
 		<section className='container'>
-			<BreadCrumps links={data.links} />
+			<BreadCrumps links={aboutUsPage.links} />
 			<h4 className='title'>О центре</h4>
 			<div>
-				{data.items.map(item => (
+				{aboutUsPage.items.map(item => (
 					<div key={item.id} className={s.flex}>
 						<div className={s.content}>
 							<div className={s.label}>{item.label}</div>

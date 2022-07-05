@@ -13,12 +13,12 @@ import IconsSVG from '../../../../UI/IconsSVG'
 
 const AllCategories: FC = () => {
 	const dispatch = useAppDispatch()
-	const categoriesFilter = useTypedSelector(({ filterCategory }) =>
-		filterCategory.isSpoilerActive.categoriesFilter)
+	const { categoriesFilter } = useTypedSelector(({ filterCategory }) =>
+		filterCategory.isSpoilerActive)
 	const params = useParams()
 
 	useEffect(() => {
-		if (params["*"]) {
+		if (!!params["*"]) {
 			if (params['*'].includes('/')) {
 				dispatch(setCategory(params["*"].split('/')[0]))
 				dispatch(setSubCategory(params["*"].split('/')[1]))
@@ -33,7 +33,7 @@ const AllCategories: FC = () => {
 	}, [params])
 
 	function handleCatalog() {
-		dispatch(toggleCategoriesSpoiler())
+		dispatch(toggleCategoriesSpoiler(!categoriesFilter))
 	}
 
 	return (

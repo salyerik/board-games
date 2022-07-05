@@ -20,7 +20,7 @@ const Pagination: FC<{ topHeight: number }> = ({ topHeight }) => {
 	}, [totalItem, pageLimit])
 
 	function countTotalPage() {
-		let arr = []
+		const arr = []
 		for (let index = 1; index <= Math.ceil(totalItem / pageLimit); index++) {
 			arr.push(index)
 		}

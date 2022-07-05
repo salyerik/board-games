@@ -1,3 +1,5 @@
+import { PayloadAction } from "@reduxjs/toolkit"
+
 export interface iCartPageState {
 	addedItems: Array<{
 		[key: string]: number
@@ -14,4 +16,10 @@ export interface iPayloadAction {
 	newPrice: number,
 	oldPrice: number,
 	itemQuantity?: number
+}
+
+export interface iGetCartTotal {
+	state: iCartPageState,
+	action: PayloadAction<iPayloadAction>,
+	method: 'minus' | 'plus'
 }

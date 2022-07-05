@@ -1,33 +1,23 @@
-import { FC, useEffect, useState } from 'react'
+import { FC, useState } from 'react'
 
-import { getData } from '../../../../server/getEventsPageData'
-import { iEvent } from '../../../../types/eventsTypes'
-import Preloader from '../../../UI/Preloader'
+import useTypedSelector from '../../../../hooks/useTypedSelector'
 import ItemInfoCard from '../../../UI/ItemInfoCard'
 
 import s from './Events.module.sass'
 
 const Events: FC = () => {
 	const [quantityItems, setQuantityItems] = useState(2)
-	const [events, setEvents] = useState<iEvent[]>()
-
-	useEffect(() => {
-		getData().then(data => setEvents(data.items))
-	}, [])
+	const { items } = useTypedSelector(state => state.common.eventsPage)
 
 	function handleQuantityItems() {
 		setQuantityItems(quantityItems + 2)
-	}
-
-	if (!events) {
-		return <Preloader />
 	}
 
 	return (
 		<section className='container'>
 			<h4 className='title'>Ближайшие мероприятия</h4>
 			<div className={s.flex}>
-				{events.slice(0, quantityItems).map(event => (
+				{items.slice(0, quantityItems).map(event => (
 					<ItemInfoCard
 						key={event.id}
 						link={`/event/${event.id}`}
@@ -38,7 +28,7 @@ const Events: FC = () => {
 					/>
 				))}
 			</div>
-			{quantityItems < events.length &&
+			{quantityItems < items.length &&
 				<button onClick={handleQuantityItems} className={s.btn}>
 					Показать еще
 				</button>

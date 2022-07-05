@@ -1,14 +1,13 @@
 import { FC, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
-import { getData } from '../../../server/getEventsPageData'
+import useTypedSelector from '../../../hooks/useTypedSelector'
 import { iEvent } from '../../../types/eventsTypes'
 
 import EventAside from './EventAside'
 import EventContent from './EventContent'
 import EventBottom from './EventBottom'
 import EventModal from './EventModal'
-import Preloader from '../../UI/Preloader'
 import BreadCrumps from '../../UI/BreadCrumps'
 
 import s from './EventPage.module.sass'
@@ -17,17 +16,12 @@ const EventPage: FC = () => {
 	const { eventId } = useParams()
 	const [isModalActive, setModalActive] = useState(false)
 	const [links, setLinks] = useState<Array<{ path: string, name: string }>>([])
-
-	const [events, setEvents] = useState<iEvent[]>()
 	const [event, setEvent] = useState<iEvent>()
+	const { items } = useTypedSelector(state => state.common.eventsPage)
 
 	useEffect(() => {
-		getData().then(data => setEvents(data.items))
-	}, [])
-
-	useEffect(() => {
-		setEvent(events?.find(event => event.id === (!!eventId && +eventId)))
-	}, [events, eventId])
+		setEvent(items?.find(event => event.id === (!!eventId && +eventId)))
+	}, [items, eventId])
 
 	useEffect(() => {
 		window.scroll(0, 0)
@@ -50,10 +44,6 @@ const EventPage: FC = () => {
 		setModalActive(!isModalActive)
 	}
 
-	if (!events) {
-		return <Preloader />
-	}
-
 	return (
 		<section className='container'>
 			{event &&
@@ -73,7 +63,7 @@ const EventPage: FC = () => {
 							handleModalActive={handleModalActive}
 						/>
 					</div>
-					<EventBottom events={events} />
+					<EventBottom events={items.slice(0, 2)} />
 				</>
 			}
 			{isModalActive &&

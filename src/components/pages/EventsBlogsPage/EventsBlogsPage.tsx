@@ -1,8 +1,7 @@
 import { FC, useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 
-import { getData as getBlogsData } from '../../../server/getBlogPageData'
-import { getData as getEventsData } from '../../../server/getEventsPageData'
+import useTypedSelector from '../../../hooks/useTypedSelector'
 import { iBlogsState } from '../../../types/blogTypes'
 import { iEventsPageState } from '../../../types/eventsTypes'
 
@@ -17,6 +16,7 @@ const EventsBlogsPage: FC = () => {
 	const [activeFilter, setFilter] = useState(0)
 	const [data, setData] = useState<iEventsPageState | iBlogsState>()
 	const { pathname } = useLocation()
+	const { blogPage, eventsPage } = useTypedSelector(state => state.common)
 
 	function handleFilter(e: React.ChangeEvent<HTMLSelectElement>) {
 		setFilter(+e.target.value)
@@ -24,10 +24,10 @@ const EventsBlogsPage: FC = () => {
 
 	useEffect(() => {
 		if (pathname.includes('blog')) {
-			getBlogsData().then(data => setData(data))
+			setData(blogPage)
 		}
 		if (pathname.includes('events')) {
-			getEventsData().then(data => setData(data))
+			setData(eventsPage)
 		}
 	}, [pathname])
 

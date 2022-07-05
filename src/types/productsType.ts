@@ -1,21 +1,22 @@
 import { iCardProduct } from "./commonTypes"
 
+type tRange = { to: string, from: string }
+
 export interface getProductsArg {
-	isOnlyStocked: boolean,
-	fromPrice: string,
-	toPrice: string,
-	selectedAge: string,
-	fromPlayers: string,
-	toPlayers: string,
-	category: string,
-	subCategory: string,
-	sortPrice: string,
-	page: number,
-	pageLimit: number
+	isOnlyStocked?: boolean,
+	price?: tRange,
+	selectedAge?: string,
+	players?: tRange,
+	category?: string,
+	subCategory?: string | null,
+	sortPrice?: string,
+	page?: number,
+	pageLimit?: number
 }
 
 export interface iProductsState {
-	items: iCardProduct[],
+	catalogItems: iCardProduct[],
+	mainPageItems: iCardProduct[],
 	questions: iQuestion[]
 }
 

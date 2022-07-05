@@ -13,15 +13,18 @@ import Preloader from '../../../UI/Preloader'
 import s from './Item.module.sass'
 
 const Item: FC = () => {
-	const [item, setItem] = useState<iCardProduct>()
 	const { productId } = useParams()
+	const [item, setItem] = useState<iCardProduct | null | undefined>(undefined)
 	const [links, setLinks] = useState<{
 		name: string, path: string
 	}[]>([])
 
 	useEffect(() => {
 		if (productId) {
-			getProduct(productId).then(data => setItem(data))
+			setItem(undefined)
+			getProduct(productId)
+				.then(data => setItem(data))
+				.catch(() => setItem(null))
 			window.scrollTo(0, 0)
 		}
 	}, [productId])
@@ -37,8 +40,14 @@ const Item: FC = () => {
 		}
 	}, [item])
 
-	if (!item) {
-		return <Preloader />
+	if (item === undefined) return <Preloader />
+
+	if (item === null) {
+		return (
+			<h3 className={s.title + ' ' + s.title_active}>
+				Товар к сожалению не найден
+			</h3>
+		)
 	}
 
 	return (
