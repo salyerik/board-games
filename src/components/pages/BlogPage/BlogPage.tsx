@@ -74,7 +74,7 @@ const BlogPage: FC = () => {
 				{blogPage.learnMore.map(item => (
 					<ItemInfoCard
 						key={item.id}
-						link={`/blog/${item.id}`}
+						link={`/board-games/blog/${item.id}`}
 						img={item.img}
 						title={item.title}
 						text={item.text}
