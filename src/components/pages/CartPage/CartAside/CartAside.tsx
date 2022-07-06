@@ -28,7 +28,7 @@ const CartAside: FC = () => {
 					<IconsSVG id='check' />
 				</button>
 			</div>
-			<Link to={'/order'} className={s.btnTop}>Оформить</Link>
+			<Link to={'/board-games/order'} className={s.btnTop}>Оформить</Link>
 		</section>
 	)
 }

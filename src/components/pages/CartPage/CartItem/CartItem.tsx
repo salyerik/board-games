@@ -69,10 +69,10 @@ const CartItem: FC<{ id: string }> = ({ id }) => {
 
 	return (
 		<section className={s.item}>
-			<Link to={`/product/${item.id}`} className={s.img}>
+			<Link to={`/board-games/product/${item.id}`} className={s.img}>
 				<img src={item.img.compressed} alt={item.img.compressed} />
 			</Link>
-			<Link to={`/product/${item.id}`} className={s.name}>{item.name}</Link>
+			<Link to={`/board-games/product/${item.id}`} className={s.name}>{item.name}</Link>
 			<div className={s.params}>
 				<div className={s.price}>
 					{item.price.old &&

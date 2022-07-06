@@ -1,13 +1,6 @@
-import { iBreadLink } from "./commonTypes";
-
-type tAboutUsItem = {
+export interface iAboutUsItem {
 	id: number,
 	label: string,
 	text: string,
 	images: string[],
-}
-
-export interface iAboutUsState {
-	links: iBreadLink[],
-	items: tAboutUsItem[]
 }

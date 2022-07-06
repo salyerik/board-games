@@ -31,7 +31,7 @@ const TopSlider: FC = () => {
 									<span className={s.subTitle}>{slide.subTitle}</span>
 									<h4 className={s.title}>{slide.title}</h4>
 								</div>
-								<Link to={`/blog/${slide.id}`} className={s.btn}>
+								<Link to={`/board-games/blog/${slide.id}`} className={s.btn}>
 									Подробнее
 								</Link>
 							</div>

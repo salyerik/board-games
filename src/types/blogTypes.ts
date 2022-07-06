@@ -1,5 +1,3 @@
-import { iBreadLink } from "./commonTypes"
-
 export interface iBlog {
 	id: number,
 	img: string,
@@ -29,6 +27,5 @@ export interface iBlogsState {
 		label: string,
 		text: string
 	}>,
-	learnMore: tBlogCommon[],
-	links: iBreadLink[]
+	learnMore: tBlogCommon[]
 }

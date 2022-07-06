@@ -11,11 +11,12 @@ import EventModal from './EventModal'
 import BreadCrumps from '../../UI/BreadCrumps'
 
 import s from './EventPage.module.sass'
+import { iBreadLink } from '../../../types/commonTypes'
 
 const EventPage: FC = () => {
 	const { eventId } = useParams()
 	const [isModalActive, setModalActive] = useState(false)
-	const [links, setLinks] = useState<Array<{ path: string, name: string }>>([])
+	const [links, setLinks] = useState<Array<iBreadLink>>([])
 	const [event, setEvent] = useState<iEvent>()
 	const { items } = useTypedSelector(state => state.common.eventsPage)
 
@@ -26,9 +27,8 @@ const EventPage: FC = () => {
 	useEffect(() => {
 		window.scroll(0, 0)
 		setLinks([
-			{ path: '/', name: 'Главная' },
-			{ path: '/events', name: 'Мероприятия' },
-			{ path: `/events/${eventId}`, name: `${event?.title}` },
+			{ path: '/board-games/events', name: 'Мероприятия' },
+			{ name: `${event?.title}` },
 		])
 	}, [event])
 

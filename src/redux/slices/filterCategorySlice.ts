@@ -34,14 +34,14 @@ const initialState: iFilterCategoryState = {
 	},
 	categories: [
 		{
-			name: 'Настольные игры', path: 'board-games', subCategories: [
-				{ name: 'Детективные', path: 'board-games/detective' },
-				{ name: 'Детские', path: 'board-games/childrens' },
-				{ name: 'Кооперативные', path: 'board-games/cooperative' },
-				{ name: 'Приключенческие', path: 'board-games/adventure' },
-				{ name: 'Стратегические', path: 'board-games/strategic' },
-				{ name: 'Хардкорные', path: 'board-games/hardcore' },
-				{ name: 'Экономические', path: 'board-games/economic' },
+			name: 'Настольные игры', path: 'board', subCategories: [
+				{ name: 'Детективные', path: 'board/detective' },
+				{ name: 'Детские', path: 'board/childrens' },
+				{ name: 'Кооперативные', path: 'board/cooperative' },
+				{ name: 'Приключенческие', path: 'board/adventure' },
+				{ name: 'Стратегические', path: 'board/strategic' },
+				{ name: 'Хардкорные', path: 'board/hardcore' },
+				{ name: 'Экономические', path: 'board/economic' },
 			]
 		},
 		{ name: 'Аксессуaры для игр', path: 'accessories' },

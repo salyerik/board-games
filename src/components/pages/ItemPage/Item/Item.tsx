@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 import { getProduct } from '../../../../server/getProducts'
-import { iCardProduct } from '../../../../types/commonTypes'
+import { iBreadLink, iCardProduct } from '../../../../types/commonTypes'
 
 import ItemImages from './ItemImages'
 import ItemTabs from './ItemTabs'
@@ -15,9 +15,7 @@ import s from './Item.module.sass'
 const Item: FC = () => {
 	const { productId } = useParams()
 	const [item, setItem] = useState<iCardProduct | null | undefined>(undefined)
-	const [links, setLinks] = useState<{
-		name: string, path: string
-	}[]>([])
+	const [links, setLinks] = useState<iBreadLink[]>([])
 
 	useEffect(() => {
 		if (productId) {
@@ -32,10 +30,8 @@ const Item: FC = () => {
 	useEffect(() => {
 		if (item) {
 			setLinks([
-				{ name: 'Главная', path: '/' },
-				{ name: 'Каталог', path: '/catalog' },
-				{ name: 'Настольные игры', path: '/catalog/board-games' },
-				{ name: item.name, path: `/catalog/board-games/${item.id}` }
+				{ name: 'Каталог', path: '/board-games/catalog' },
+				{ name: item.name }
 			])
 		}
 	}, [item])

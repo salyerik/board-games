@@ -2,38 +2,26 @@ import { createSlice } from "@reduxjs/toolkit"
 import { iCommonSliceState } from "../../types/commonTypes"
 
 const initialState: iCommonSliceState = {
-	aboutUsPage: {
-		links: [
-			{
-				path: "/",
-				name: "Главная"
-			},
-			{
-				path: "/about-us",
-				name: "О нас"
-			}
-		],
-		items: [
-			{
-				id: 1,
-				label: "Наша миссия",
-				text: "Разнообразный и богатый опыт укрепление и развитие структуры в значительной степени обуславливает создание модели развития. Разнообразный и богатый опыт консультация с широким активом позволяет выполнять важные задания по разработке системы обучения кадров, соответствует насущным потребностям. Повседневная практика показывает, что начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке новых предложений. Повседневная практика показывает, что дальнейшее развитие различных форм деятельности в значительной степени обуславливает создание новых предложений.",
-				images: [
-					"https://i.ibb.co/k1w6Mv8/1.jpg",
-					"https://i.ibb.co/cC0ry4h/2.jpg"
-				]
-			},
-			{
-				id: 2,
-				label: "Наши мероприятия",
-				text: "Не следует, однако забывать, что укрепление и развитие структуры представляет собой интересный эксперимент проверки модели развития. С другой стороны реализация намеченных плановых заданий в значительной степени обуславливает создание систем массового участия.",
-				images: [
-					"https://i.ibb.co/1GfMN8r/3.jpg",
-					"https://i.ibb.co/bQm97p4/4.jpg"
-				]
-			}
-		]
-	},
+	aboutUsPage: [
+		{
+			id: 1,
+			label: "Наша миссия",
+			text: "Разнообразный и богатый опыт укрепление и развитие структуры в значительной степени обуславливает создание модели развития. Разнообразный и богатый опыт консультация с широким активом позволяет выполнять важные задания по разработке системы обучения кадров, соответствует насущным потребностям. Повседневная практика показывает, что начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке новых предложений. Повседневная практика показывает, что дальнейшее развитие различных форм деятельности в значительной степени обуславливает создание новых предложений.",
+			images: [
+				"https://i.ibb.co/k1w6Mv8/1.jpg",
+				"https://i.ibb.co/cC0ry4h/2.jpg"
+			]
+		},
+		{
+			id: 2,
+			label: "Наши мероприятия",
+			text: "Не следует, однако забывать, что укрепление и развитие структуры представляет собой интересный эксперимент проверки модели развития. С другой стороны реализация намеченных плановых заданий в значительной степени обуславливает создание систем массового участия.",
+			images: [
+				"https://i.ibb.co/1GfMN8r/3.jpg",
+				"https://i.ibb.co/bQm97p4/4.jpg"
+			]
+		}
+	],
 	blogPage: {
 		items: [
 			{
@@ -177,16 +165,6 @@ const initialState: iCommonSliceState = {
 				title: "Желанные, но маловероятные релизы",
 				text: "Небольшой список «а вот бы...»"
 			}
-		],
-		links: [
-			{
-				path: "/",
-				name: "Главная"
-			},
-			{
-				path: "/blog",
-				name: "Блог"
-			}
 		]
 	},
 	eventsPage: {
@@ -293,16 +271,6 @@ const initialState: iCommonSliceState = {
 				id: "6",
 				filterText: "Star Wars X-Wing"
 			}
-		],
-		links: [
-			{
-				path: "/",
-				name: "Главная"
-			},
-			{
-				path: "/events",
-				name: "Мероприятия"
-			}
 		]
 	},
 	commonData: {
@@ -310,15 +278,15 @@ const initialState: iCommonSliceState = {
 			links: [
 				{
 					title: "Мероприятия",
-					path: "/events"
+					path: "/board-games/events"
 				},
 				{
 					title: "О нас",
-					path: "/about-us"
+					path: "/board-games/about-us"
 				},
 				{
 					title: "Блог",
-					path: "/blogs"
+					path: "/board-games/blog"
 				}
 			],
 			images: [
@@ -351,31 +319,31 @@ const initialState: iCommonSliceState = {
 				id: 5,
 				img: "https://i.ibb.co/r5DqCkW/5.jpg",
 				name: "Весь каталог",
-				path: "/catalog"
+				path: "/board-games/catalog"
 			},
 			{
 				id: 2,
 				img: "https://i.ibb.co/y8tcKrT/2.jpg",
 				name: "Аксессуaры",
-				path: "/catalog/accessories"
+				path: "/board-games/catalog/accessories"
 			},
 			{
 				id: 3,
 				img: "https://i.ibb.co/fpbhfKn/3.jpg",
 				name: "Краски",
-				path: "/catalog/paints"
+				path: "/board-games/catalog/paints"
 			},
 			{
 				id: 4,
 				img: "https://i.ibb.co/JcXznXj/4.jpg",
 				name: "Товары для детей",
-				path: "/catalog/goods-for-children"
+				path: "/board-games/catalog/goods-for-children"
 			},
 			{
 				id: 1,
 				img: "https://i.ibb.co/VDcJ3Sx/1.jpg",
 				name: "Настольные игры",
-				path: "/catalog/board-games"
+				path: "/board-games/catalog/board"
 			}
 		],
 		socialNets: [
@@ -398,7 +366,7 @@ const initialState: iCommonSliceState = {
 	mainPage: {
 		slides: [
 			{
-				id: 1,
+				id: 5,
 				image: "https://i.ibb.co/mDR9fdq/1.jpg",
 				title: "Magic: the Gathering",
 				subTitle: "Самая популярная карточная игра"
@@ -410,7 +378,7 @@ const initialState: iCommonSliceState = {
 				subTitle: "Попробуй игры разных жанров"
 			},
 			{
-				id: 5,
+				id: 1,
 				image: "https://i.ibb.co/Bt5qnHm/3.jpg",
 				title: "Warhmmer games",
 				subTitle: "Настольная игра варгейм"

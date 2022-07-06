@@ -51,7 +51,7 @@ const HeaderTop: FC = () => {
 					})}>
 						<span></span>
 					</div>
-					<Link to="/" className={s.logo}>
+					<Link to="/board-games" className={s.logo}>
 						<img src={logo} alt="Logo" />
 					</Link>
 					<Search search={search} />
@@ -64,7 +64,7 @@ const HeaderTop: FC = () => {
 							onClick={handleModalActive}>
 							<IconsSVG id={humanIcon} />
 						</button>
-						<Link to={'/cart'} className={s.cartIcon}>
+						<Link to={'/board-games/cart'} className={s.cartIcon}>
 							<IconsSVG id={cart} />
 							<span className={cn(s.cartCount, {
 								[s.cartCount_active]: totalQuantity

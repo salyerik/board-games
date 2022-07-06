@@ -26,8 +26,8 @@ const BlogPage: FC = () => {
 		window.scroll(0, 0)
 		if (blogPage) {
 			setLinks([
-				...blogPage.links,
-				{ path: `/blog/${blog?.id.toString()}`, name: `${blog?.linkName}` }
+				{ path: '/board-games/blog', name: 'Блог' },
+				{ name: `${blog?.linkName}` }
 			])
 		}
 	}, [blog])

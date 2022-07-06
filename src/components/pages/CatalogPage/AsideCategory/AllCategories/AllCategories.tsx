@@ -39,7 +39,7 @@ const AllCategories: FC = () => {
 	return (
 		<section className={'asideCategoryWrapper'}>
 			<Link
-				to='/catalog'
+				to='/board-games/catalog'
 				className={cn('asideCategoryTitle', {
 					'asideCategoryTitle_active': categoriesFilter
 				})}

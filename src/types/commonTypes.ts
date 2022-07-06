@@ -1,4 +1,4 @@
-import { iAboutUsState } from "./aboutUsPageTypes"
+import { iAboutUsItem } from "./aboutUsPageTypes"
 import { iBlogsState } from "./blogTypes"
 import { iDate, iEventsPageState } from "./eventsTypes"
 import { iFooterState } from "./footerTypes"
@@ -10,9 +10,15 @@ export interface iSocialNet {
 	modalImg?: string
 }
 
+
 export interface iBreadLink {
 	name: string,
-	path: string
+	path?: string
+}
+
+export interface iBreadProps {
+	links?: iBreadLink[],
+	text?: string
 }
 
 export interface iLink {
@@ -83,7 +89,7 @@ export interface iItemInfoCardProps {
 }
 
 export interface iCommonSliceState {
-	aboutUsPage: iAboutUsState,
+	aboutUsPage: iAboutUsItem[],
 	blogPage: iBlogsState,
 	eventsPage: iEventsPageState,
 	commonData: iCommonData,

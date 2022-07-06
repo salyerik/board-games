@@ -15,7 +15,7 @@ const MoreInteresting: FC = () => {
 				{blogPage.items.filter(blog => blog.id <= 3).map(blog => (
 					<ItemInfoCard
 						key={blog.id}
-						link={`/blog/${blog.id}`}
+						link={`/board-games/blog/${blog.id}`}
 						img={blog.img}
 						text={blog.label}
 						title={blog.title}

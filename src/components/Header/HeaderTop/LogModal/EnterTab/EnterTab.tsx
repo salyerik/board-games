@@ -38,8 +38,9 @@ const EnterTab: FC = () => {
 			<div className={s.labelSocialNets}>Войти через аккаунт социальной сети</div>
 			<div className={s.socialNet}>
 				{socialNets.map(link => (
+					!!link.modalImg &&
 					<a key={link.path} href={link.path} target='_blank'>
-						<IconsSvg id={link.modalImg ? link.modalImg : link.img} />
+						<IconsSvg id={link.modalImg} />
 					</a>
 				))}
 			</div>

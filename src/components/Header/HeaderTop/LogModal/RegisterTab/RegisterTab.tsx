@@ -15,7 +15,7 @@ const RegisterTab = () => {
 			<label className={s.checkboxLabel}>
 				<input type="checkbox" className='checkboxInput' />
 				<span>
-					Я согласен с <Link to="policy">политикой конфиденциальности</Link>
+					Я согласен с <Link to="/board-games/policy">политикой конфиденциальности</Link>
 					и с обработкой персональных данных
 				</span>
 			</label>

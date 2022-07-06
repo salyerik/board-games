@@ -20,7 +20,7 @@ const Events: FC = () => {
 				{items.slice(0, quantityItems).map(event => (
 					<ItemInfoCard
 						key={event.id}
-						link={`/event/${event.id}`}
+						link={`/board-games/event/${event.id}`}
 						img={event.img}
 						text={event.label}
 						title={event.title}

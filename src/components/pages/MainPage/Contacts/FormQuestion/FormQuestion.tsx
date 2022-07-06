@@ -39,7 +39,7 @@ const FormQuestion: FC = () => {
 					<span>
 						Нажимая на кнопку "Заказать звонок", я даю согласие на обработку
 					</span>
-					<Link to="policy"> персональных данных.</Link>
+					<Link to="/board-games/policy"> персональных данных.</Link>
 				</div>
 			</Form>
 		</Formik>

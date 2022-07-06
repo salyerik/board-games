@@ -25,6 +25,10 @@ const FooterTop: FC = () => {
 		setModalActive(false)
 	}
 
+	function handleLinkClick() {
+		window.scrollTo(0, 0)
+	}
+
 	return (
 		<section className='container'>
 			{isModalActive &&
@@ -35,7 +39,7 @@ const FooterTop: FC = () => {
 			}
 			<div className={s.flex}>
 				<div className={s.left}>
-					<Link to='/' className={s.logo}>
+					<Link to='/board-games' className={s.logo}>
 						<img src={images.logo} alt="logo" />
 					</Link>
 					<span className={s.text}>г. Сан-Франциско<br />
@@ -43,10 +47,14 @@ const FooterTop: FC = () => {
 				</div>
 				<div className={s.middle}>
 					<div className={s.catalog}>
-						<Link to={'/catalog'} className={s.catalogTitle}>Каталог</Link>
+						<Link to={'/board-games/catalog'} className={s.catalogTitle}>Каталог</Link>
 						<ul className={s.catalogList}>
 							{catalogs.map(catalog => (
-								<li key={catalog.id} className={s.catalogLink}>
+								<li
+									onClick={handleLinkClick}
+									key={catalog.id}
+									className={s.catalogLink}
+								>
 									<Link to={catalog.path}>{catalog.name}</Link>
 								</li>
 							))}

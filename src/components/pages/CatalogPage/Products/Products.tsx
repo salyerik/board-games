@@ -7,10 +7,8 @@ import Preloader from '../../../UI/Preloader'
 import s from './Products.module.sass'
 
 const Products: FC = () => {
-	const { catalogItems } = useTypedSelector(({ products }) => products)
-	const isLoadingProducts = useTypedSelector(
-		({ filterCategory }) => filterCategory.isLoadingProducts
-	)
+	const { catalogItems } = useTypedSelector(state => state.products)
+	const { isLoadingProducts } = useTypedSelector(state => state.filterCategory)
 
 	if (isLoadingProducts) {
 		return <Preloader />

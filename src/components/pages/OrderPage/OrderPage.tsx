@@ -12,9 +12,8 @@ const OrderPage: FC = () => {
 	}, [])
 
 	const links = [
-		{ path: '/', name: 'Главная' },
-		{ path: '/cart', name: 'Корзина' },
-		{ path: '/order', name: 'Оформление заказа' },
+		{ path: '/board-games/cart', name: 'Корзина' },
+		{ name: 'Оформление заказа' },
 	]
 
 	return (

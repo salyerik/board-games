@@ -39,7 +39,7 @@ const Card: FC<iCardProduct> = (
 		<article className={s.card}>
 			{!isProductPage && discount &&
 				<div className={s.discount}>-{discount}%</div>}
-			<Link to={`/product/${id}`} className={cn(s.mainImg, {
+			<Link to={`/board-games/product/${id}`} className={cn(s.mainImg, {
 				[s.mainImg_active]: isProductPage
 			})}>
 				<img src={img.original} alt={name} />
@@ -58,7 +58,7 @@ const Card: FC<iCardProduct> = (
 				<span className={s.age}>{age}+</span>
 			</div>
 			{!isProductPage && (
-				<Link to={`/product/${id}`} className={s.name}>{name}</Link>
+				<Link to={`/board-games/product/${id}`} className={s.name}>{name}</Link>
 			)}
 			<div className={cn(s.price, { [s.price_active]: isProductPage })}>
 				{price.old && <span className={s.oldPrice}>{price.old}$</span>}
@@ -74,7 +74,7 @@ const Card: FC<iCardProduct> = (
 					<IconsSVG id='cardPeople' />
 				</span>
 			</button>
-			<Link onClick={addItemToCart} to={`/order`} className={cn(s.btnFast, {
+			<Link onClick={addItemToCart} to={`/board-games/order`} className={cn(s.btnFast, {
 				[s.btnFast_active]: isProductPage
 			})}>Купить в 1 клик</Link>
 			{isProductPage && <CardInProductPage />}

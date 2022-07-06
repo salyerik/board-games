@@ -1,5 +1,3 @@
-import { iBreadLink } from "./commonTypes"
-
 export interface iDate {
 	day: string,
 	time: string,
@@ -17,8 +15,7 @@ export interface iEvent {
 
 export interface iEventsPageState {
 	items: iEvent[],
-	filters: Array<{ id: string, filterText: string }>,
-	links: iBreadLink[]
+	filters: Array<{ id: string, filterText: string }>
 }
 
 export interface EventAsideProps {

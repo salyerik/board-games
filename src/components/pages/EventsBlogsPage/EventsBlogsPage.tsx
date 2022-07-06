@@ -37,11 +37,11 @@ const EventsBlogsPage: FC = () => {
 
 	return (
 		<section className='container'>
-			<BreadCrumps links={data.links} />
+			<BreadCrumps text={pathname.includes('blog') ? 'Блог' : 'Мероприятия'} />
 			<div className={s.topBlock}>
-				<h4 className={'title' + ' ' + s.pageTitle}>{
-					pathname.includes('blog') ? 'Блог' : 'Мероприятия'
-				}</h4>
+				<h4 className={'title' + ' ' + s.pageTitle}>
+					{pathname.includes('blog') ? 'Блог' : 'Мероприятия'}
+				</h4>
 				<div className='select'>
 					<select defaultValue={'0'} onChange={handleFilter}>
 						{data.filters.map(filter => (
@@ -60,7 +60,9 @@ const EventsBlogsPage: FC = () => {
 							<ItemInfoCard
 								key={item.id}
 								link={pathname
-									.includes('blog') ? `/blog/${item.id}` : `/event/${item.id}`}
+									.includes('blog') ?
+									`/board-games/blog/${item.id}` :
+									`/board-games/event/${item.id}`}
 								img={item.img}
 								text={item.label}
 								title={item.title}

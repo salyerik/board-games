@@ -11,6 +11,8 @@ const SubCategories: FC = () => {
 	const params = useParams()
 	const categories = useTypedSelector(state => state.filterCategory.categories)
 
+	console.log(params['*'])
+
 	return (
 		<section className={s.wrapper}>
 			{categories.map(item => (
@@ -19,7 +21,7 @@ const SubCategories: FC = () => {
 					:
 					<Link
 						key={item.path}
-						to={`/catalog/${item.path}`}
+						to={item.path}
 						className={cn('asideCategoryTitle', 'asideCategoryTitle_inner',
 							'linkUrl', {
 							'linkUrl_active': item.path === params['*']

@@ -8,10 +8,6 @@ import s from './CartPage.module.sass'
 
 const Cart: FC = () => {
 	const addedItems = useTypedSelector(({ cartPage }) => cartPage.addedItems)
-	const links = [
-		{ path: '/', name: 'Главная' },
-		{ path: '/cart', name: 'Корзина' },
-	]
 
 	if (addedItems.length === 0) {
 		return <div className='container'>
@@ -21,7 +17,7 @@ const Cart: FC = () => {
 
 	return (
 		<section className={'container' + ' ' + s.wrapper}>
-			<BreadCrumps links={links} />
+			<BreadCrumps text={'Корзина'} />
 			<h3 className='title'>Корзина</h3>
 			<div className={s.flex}>
 				<div className={s.list}>

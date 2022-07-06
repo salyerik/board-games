@@ -21,10 +21,6 @@ import IconsSVG from '../../UI/IconsSVG'
 const Catalog: FC = () => {
 	const dispatch = useAppDispatch()
 	const topRef = useRef<HTMLDivElement>(null)
-	const links = [
-		{ name: 'Главная', path: '/' },
-		{ name: 'Каталог', path: '/catalog' },
-	]
 	const {
 		isOnlyStocked, price, selectedAge, players,
 		category, subCategory, sortPrice, page, pageLimit
@@ -56,7 +52,7 @@ const Catalog: FC = () => {
 		<>
 			<Top />
 			<div className='container' ref={topRef}>
-				<BreadCrumps links={links} />
+				<BreadCrumps text='Каталог' />
 				<div className={s.flex} >
 					<h2 className={s.title}>Все категории</h2>
 					<div className='select'>

@@ -10,10 +10,10 @@ const AboutUsPage: FC = () => {
 
 	return (
 		<section className='container'>
-			<BreadCrumps links={aboutUsPage.links} />
+			<BreadCrumps text='О центре' />
 			<h4 className='title'>О центре</h4>
 			<div>
-				{aboutUsPage.items.map(item => (
+				{aboutUsPage.map(item => (
 					<div key={item.id} className={s.flex}>
 						<div className={s.content}>
 							<div className={s.label}>{item.label}</div>

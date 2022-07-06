@@ -16,7 +16,7 @@ const AsideCategory: FC = () => {
 
 	function handleResetBtn() {
 		dispatch(resetFilter())
-		navigate('/catalog')
+		navigate('/board-games/catalog')
 	}
 
 	return (

@@ -10,7 +10,7 @@ const ItemInfoCard: FC<iItemInfoCardProps> = ({
 	link, img, title, date, text, price, isActivePage
 }) => (
 	<Link
-		to={`${link}`}
+		to={link}
 		className={cn(s.itemInfoCard, {
 			[s.itemInfoCard_active]: !!isActivePage
 		})}
