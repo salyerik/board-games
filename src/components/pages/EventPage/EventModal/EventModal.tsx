@@ -12,11 +12,11 @@ interface iEventModalProps {
 const EventModal: FC<iEventModalProps> = ({ setModalActive }) => {
 	return (
 		<section onClick={(e) => e.stopPropagation()} className={s.wrapper}>
-			<div className={s.title}>Регистрация на мероприятие</div>
-			<InputLogin label='Ваше имя' type='text' />
-			<InputLogin label='Ваш телефон' type='text' />
+			<div className={s.title}>Registration for the event</div>
+			<InputLogin label='Your name' type='text' />
+			<InputLogin label='Your phone number' type='text' />
 			<div className={s.btn}>
-				<BtnLogin setModalActive={setModalActive} text='Оставить заявку' />
+				<BtnLogin setModalActive={setModalActive} text='Leave a request' />
 			</div>
 		</section>
 	)

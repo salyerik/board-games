@@ -9,33 +9,33 @@ const initialState: iProductsState = {
 	questions: [
 		{
 			id: 1,
-			title: 'Как выбрать настольную игру?',
-			text: 'В нашем магазине представлен огромный ассортимент игр на любой вкус, но конечно же есть бессмертная классика настольных игр. Если вы только начинаете свой игровой путь, то мы рекомендуем вам легендарную "Монополию", знаменитую игры для вечеринок под названием "Активити", самые распространенные в мире настольные стратегии "Каркассон" и "Колонизаторы", простую и веселую игру, от которой невозможно оторваться, "Дженгу"',
+			title: 'How to choose a board game?',
+			text: 'Our store offers a huge range of games for all tastes, but of course there are the timeless classics of board games. If you\'re just starting your gaming journey, we recommend the legendary "Monopoly", the famous party game called "Activiti", the world\'s most popular board strategies "Carcassonne" and "Colonizers", a simple and fun game that\'s impossible to tear yourself away from, "Jenga',
 		},
 		{
 			id: 2,
-			title: 'Какие игры можете посоветовать новичку в настолках? ',
-			text: 'В нашем магазине представлен огромный ассортимент игр на любой вкус, но конечно же есть бессмертная классика настольных игр. Если вы только начинаете свой игровой путь, то мы рекомендуем вам легендарную "Монополию", знаменитую игры для вечеринок под названием "Активити", самые распространенные в мире настольные стратегии "Каркассон" и "Колонизаторы", простую и веселую игру, от которой невозможно оторваться, "Дженгу"',
+			title: 'What games can you advise a newcomer to board games?',
+			text: 'Our store offers a huge range of games for all tastes, but of course there are the timeless classics of board games. If you\'re just starting your gaming journey, we recommend the legendary "Monopoly", the famous party game called "Activiti", the world\'s most popular board strategies "Carcassonne" and "Colonizers", a simple and fun game that\'s impossible to tear yourself away from, "Jenga',
 		},
 		{
 			id: 3,
-			title: 'Какие игры сейчас самые популярные?',
-			text: 'В нашем магазине представлен огромный ассортимент игр на любой вкус',
+			title: 'What are the most popular games right now?',
+			text: 'Our store offers a huge range of games for all tastes',
 		},
 		{
 			id: 4,
-			title: 'Можно ли ознакомиться с игрой вживую?',
-			text: 'Но конечно же есть бессмертная классика настольных игр. Если вы только начинаете свой игровой путь, то мы рекомендуем вам легендарную "Монополию", знаменитую игры для вечеринок под названием "Активити", самые распространенные в мире настольные стратегии "Каркассон" и "Колонизаторы", простую и веселую игру, от которой невозможно оторваться, "Дженгу"',
+			title: 'Is it possible to see the game live?',
+			text: 'But of course there are the timeless classics of board games. If you\'re just starting your gaming journey, we recommend the legendary "Monopoly", the famous party game called "Activiti", the world\'s most popular board strategies "Carcassonne" and "Colonizers", a simple and fun game that is impossible to tear yourself away from, "Jenga',
 		},
 		{
 			id: 5,
-			title: 'Есть ли игры со скидками?',
-			text: 'В нашем магазине представлен огромный ассортимент игр на любой вкус, то мы рекомендуем вам легендарную "Монополию", знаменитую игры для вечеринок под названием "Активити", самые распространенные в мире настольные стратегии "Каркассон" и "Колонизаторы", простую и веселую игру, от которой невозможно оторваться, "Дженгу"',
+			title: 'Are there any games with discounts?',
+			text: 'In our store there is a huge range of games for every taste, we recommend the legendary "Monopoly", the famous party game called "Activiti", the world\'s most popular board strategy "Carcassonne" and "Colonizers", simple and fun game, from which it is impossible to break away, "Jenga',
 		},
 		{
 			id: 6,
-			title: 'Как подобрать игру для ребенка?',
-			text: 'Игр на любой вкус, но конечно же есть бессмертная классика настольных игр. Если вы только начинаете свой игровой путь, то мы рекомендуем вам легендарную "Монополию", знаменитую игры для вечеринок под названием "Активити", самые распространенные в мире настольные стратегии "Каркассон" и "Колонизаторы", простую и веселую игру, от которой невозможно оторваться, "Дженгу"',
+			title: 'How do I choose a game for my child?',
+			text: 'Games for all tastes, but of course there are the timeless classics of board games. If you\'re just starting your gaming journey, we recommend the legendary "Monopoly", the famous party game called "Activiti", the world\'s most popular board strategies "Carcassonne" and "Colonizers", a simple and fun game that\'s impossible to break away from, "Jenga',
 		},
 	]
 }

@@ -29,7 +29,7 @@ const AgeFilter: FC = () => {
 					'asideCategoryTitle_active': isSpoilerActive.ageFilter
 				})}
 			>
-				<span>Возрасты</span>
+				<span>Ages</span>
 				<IconsSVG id='arrowSpoiler' />
 			</div>
 			{isSpoilerActive.ageFilter &&
@@ -42,7 +42,7 @@ const AgeFilter: FC = () => {
 								checked={selectedAge === item.value}
 							/>
 							<span>
-								{item.value !== '' && 'от'} {item.name} {item.value !== '' && 'лет'}
+								{item.value !== '' && 'from'} {item.name} {item.value !== '' && 'years'}
 							</span>
 						</label>
 					))}

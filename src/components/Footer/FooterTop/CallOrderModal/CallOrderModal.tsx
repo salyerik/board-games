@@ -6,11 +6,11 @@ import s from './CallOrderModal.module.sass'
 const CallOrderModal = () => {
 	return (
 		<div onClick={(e) => e.stopPropagation()} className={s.wrapper}>
-			<div className={s.title}>Заказать телефонный звонок</div>
-			<InputLogin label='Ваше имя' type='text' />
-			<InputLogin label='Ваш телефон' type='text' />
+			<div className={s.title}>Order a call</div>
+			<InputLogin label='Your name' type='text' />
+			<InputLogin label='Your phone number' type='text' />
 			<div className={s.btn}>
-				<BtnLogin text='Оставить заявку' />
+				<BtnLogin text='Leave a request' />
 			</div>
 		</div>
 	)

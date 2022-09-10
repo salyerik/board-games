@@ -27,7 +27,7 @@ const AsideCategory: FC = () => {
 			{/* <InStock /> */}
 			<PlayersQuantity />
 			<input
-				className={s.btn} type="button" value="Сбросить фильтр"
+				className={s.btn} type="button" value="Reset filter"
 				onClick={handleResetBtn}
 			/>
 		</section>

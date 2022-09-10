@@ -32,7 +32,7 @@ const TopSlider: FC = () => {
 									<h4 className={s.title}>{slide.title}</h4>
 								</div>
 								<Link to={`/board-games/blog/${slide.id}`} className={s.btn}>
-									Подробнее
+									More
 								</Link>
 							</div>
 							<img className={s.img} src={slide.image} alt="" />

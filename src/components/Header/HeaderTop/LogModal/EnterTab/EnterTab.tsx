@@ -20,22 +20,22 @@ const EnterTab: FC = () => {
 			{isWithPassword ?
 				<>
 					<InputLogin label='E-mail ' type='text' />
-					<InputLogin label='Пароль ' type='password' />
+					<InputLogin label='Password ' type='password' />
 					<div className={s.forgotPasswordBtn} onClick={handleEntryMode}>
-						Забыли пароль?
+            Forgot your password?
 					</div>
 					<div className={s.labelAnotherLog} onClick={handleEntryMode}>
-						Войти с помощью SMS подтверждения
+            Sign in via SMS confirmation
 					</div>
 				</> :
 				<>
-					<InputLogin label='Телефон' type='text' />
+					<InputLogin label='Phone' type='text' />
 					<div className={s.labelAnotherLog} onClick={handleEntryMode}>
-						Войти с помощью пароля
+            Sign in with your password
 					</div>
 				</>
 			}
-			<div className={s.labelSocialNets}>Войти через аккаунт социальной сети</div>
+			<div className={s.labelSocialNets}>Sign in with a social networking account</div>
 			<div className={s.socialNet}>
 				{socialNets.map(link => (
 					!!link.modalImg &&
@@ -44,7 +44,7 @@ const EnterTab: FC = () => {
 					</a>
 				))}
 			</div>
-			<BtnLogin text={isWithPassword ? 'Войти' : 'Получить код в SMS'} />
+			<BtnLogin text={isWithPassword ? 'Log in' : 'Get code by SMS'} />
 		</form>
 	)
 }

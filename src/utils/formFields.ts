@@ -3,9 +3,9 @@ import * as Yup from 'yup'
 export const mainPageInitialValues = { name: '', email: '', comment: '' }
 
 export const mainPageInputs = [
-	{ id: 'name', text: 'Ваше имя', type: 'text' },
-	{ id: 'email', text: 'Ваш E-mail', type: 'email' },
-	{ id: 'comment', text: 'Ваш комментарий', type: 'text' },
+	{ id: 'name', text: 'Your name', type: 'text' },
+	{ id: 'email', text: 'Your E-mail', type: 'email' },
+	{ id: 'comment', text: 'Your comment', type: 'text' },
 ]
 
 export const mainPageValidation = Yup.object({

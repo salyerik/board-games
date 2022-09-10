@@ -43,15 +43,15 @@ const CardInProductPage: FC = () => {
 				})}
 				onClick={handleDelivery}
 			>
-				<span>Доставка</span>
+				<span>Shipping</span>
 				<IconsSVG id='arrowSpoiler' />
 			</div>
 			{isDeliveryActive &&
 				<div className={s.text}>
-					<p>Самовывоз из магазина: сегодня</p>
-					<p>Самовывоз из 761 пункта: 1-3 дня</p>
-					<p>Курьерская доставка: 1-3 дня</p>
-					<p>Доставка почтой: от 3 дней</p>
+					<p>Pickup from the store: today</p>
+					<p>Pickup from 761 locations: 1-3 days</p>
+					<p>Courier delivery: 1-3 days</p>
+					<p>Mail delivery: from 3 days</p>
 				</div>
 			}
 			<div
@@ -60,21 +60,21 @@ const CardInProductPage: FC = () => {
 				})}
 				onClick={handlePayment}
 			>
-				<span>Оплата</span>
+				<span>Payment</span>
 				<IconsSVG id='arrowSpoiler' />
 			</div>
 			{isPaymentActive &&
 				<div className={s.text}>
-					<p>Вы принимаете условия Публичной оферты и даете
-						согласие на обработку персональных данных</p>
-					<p>Курьерская доставка: 1-3 дня</p>
-					<p>Доставка почтой: от 3 дней</p>
-					<p>Самовывоз из магазина: сегодня</p>
-					<p>Самовывоз из 761 пункта: 1-3 дня</p>
+					<p>You accept the terms of the Public offer and give
+						consent to the processing of personal data</p>
+					<p>Courier delivery: 1-3 days</p>
+					<p>Mail delivery: from 3 days</p>
+					<p>Pickup from the store: today</p>
+					<p>Pickup from 761 locations: 1-3 days</p>
 				</div>
 			}
 			<button className={s.btnBottom} onClick={handleModal}>
-				Задать вопрос
+        Ask a question
 			</button>
 		</article>
 	)

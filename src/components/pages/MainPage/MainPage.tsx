@@ -19,12 +19,12 @@ const Main: FC = () => {
 			<Catalog />
 			<SpecialOffers
 				items={mainPageItems.filter(item => item.specialOffers)}
-				title='Успей купить'
+				title='Hurry up and buy'
 				arrows={['leftStock', 'rightStock']}
 			/>
 			<SpecialOffers
 				items={mainPageItems.filter(item => item.stocks)}
-				title='Специальные предложения'
+				title='Special Offers'
 				arrows={['leftSpecial', 'rightSpecial']}
 			/>
 			<Events />

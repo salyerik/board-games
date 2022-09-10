@@ -9,24 +9,24 @@ const EventAside: FC<EventAsideProps> = (
 ) => {
 	return (
 		<aside className={s.aside}>
-			<div className={s.asideLabel}>Успей зарегистрироваться</div>
+			<div className={s.asideLabel}>Hurry up and register</div>
 			<div className={s.params}>
-				<span className={s.key}>Стоимость:</span>
+				<span className={s.key}>Cost:</span>
 				<span className={s.value}>{price}$</span>
 			</div>
 			<div className={s.params}>
-				<span className={s.key}>Осталось:</span>
-				<span className={s.value}>{placeLeft} мест</span>
+				<span className={s.key}>Remains:</span>
+				<span className={s.value}>{placeLeft} places</span>
 			</div>
 			<div className={s.params}>
-				<span className={s.key}>Дата:</span>
+				<span className={s.key}>Date:</span>
 				<span className={s.value}>{date.day}</span>
 			</div>
 			<div className={s.params}>
-				<span className={s.key}>Время:</span>
+				<span className={s.key}>Time:</span>
 				<span className={s.value}>{date.time}</span>
 			</div>
-			<button className={s.btn} onClick={handleModalActive}>Подать заявку</button>
+			<button className={s.btn} onClick={handleModalActive}>Submit a request</button>
 		</aside>
 	)
 }

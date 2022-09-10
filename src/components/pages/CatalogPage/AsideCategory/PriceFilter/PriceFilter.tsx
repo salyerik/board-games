@@ -57,18 +57,18 @@ const PriceFilter: FC = () => {
 					'asideCategoryTitle_active': isSpoilerActive.priceFilter
 				})}
 			>
-				<span>Цена</span>
+				<span>Price</span>
 				<IconsSVG id='arrowSpoiler' />
 			</div>
 			{isSpoilerActive.priceFilter && <>
 				<div className={s.pricesFlex}>
 					<label className={s.priceLabel}>
-						<span>От</span>
+						<span>From</span>
 						<input onChange={handleFromPrice} value={valueRange.from}
 							type="number" name='fromPrice' />
 					</label>
 					<label className={s.priceLabel}>
-						<span>До</span>
+						<span>To</span>
 						<input onChange={handleToPrice} value={valueRange.to}
 							type="number" name='toPrice' />
 					</label>
@@ -82,7 +82,7 @@ const PriceFilter: FC = () => {
 						checked={isOnlyStocked}
 						type="checkbox"
 					/>
-					<span>Только со скидкой</span>
+					<span>Only with a discount</span>
 				</label>
 			</>
 			}

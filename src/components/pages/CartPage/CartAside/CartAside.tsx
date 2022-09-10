@@ -14,21 +14,21 @@ const CartAside: FC = () => {
 	return (
 		<section className={s.wrapper}>
 			<div className={s.top}>
-				<span className={s.labelPrice}>Сумма:</span>
+				<span className={s.labelPrice}>Total:</span>
 				<span className={`${s.price} ${s.price_old}`}>{withoutDiscount}$</span>
 			</div>
 			<div className={s.top + ' ' + s.top_bottom}>
-				<span className={s.labelPrice}>Со скидкой:</span>
+				<span className={s.labelPrice}>Discounted:</span>
 				<span className={s.price}>{withDiscount}$</span>
 			</div>
-			<div className={s.label}>Промокод:</div>
+			<div className={s.label}>Promocode:</div>
 			<div className={s.form}>
 				<input type="text" className={s.input} />
 				<button className={s.promoBtn}>
 					<IconsSVG id='check' />
 				</button>
 			</div>
-			<Link to={'/board-games/order'} className={s.btnTop}>Оформить</Link>
+			<Link to={'/board-games/order'} className={s.btnTop}>Order</Link>
 		</section>
 	)
 }

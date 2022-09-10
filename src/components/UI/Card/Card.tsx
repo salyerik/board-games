@@ -68,7 +68,7 @@ const Card: FC<iCardProduct> = (
 				className={cn(s.btn, { [s.btn_active]: isProductPage })}
 				onClick={addItemToCart}
 			>
-				<span>В корзину</span>
+				<span>To cart</span>
 				<span className={s.quantity}>
 					{!!itemQuantity && <span>{itemQuantity}</span>}
 					<IconsSVG id='cardPeople' />
@@ -76,7 +76,7 @@ const Card: FC<iCardProduct> = (
 			</button>
 			<Link onClick={addItemToCart} to={`/board-games/order`} className={cn(s.btnFast, {
 				[s.btnFast_active]: isProductPage
-			})}>Купить в 1 клик</Link>
+			})}>Buy in 1 click</Link>
 			{isProductPage && <CardInProductPage />}
 		</article>
 	)

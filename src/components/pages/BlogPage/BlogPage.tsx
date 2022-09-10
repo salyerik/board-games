@@ -26,7 +26,7 @@ const BlogPage: FC = () => {
 		window.scroll(0, 0)
 		if (blogPage) {
 			setLinks([
-				{ path: '/board-games/blog', name: 'Блог' },
+				{ path: '/board-games/blog', name: 'Blog' },
 				{ name: `${blog?.linkName}` }
 			])
 		}
@@ -47,7 +47,7 @@ const BlogPage: FC = () => {
 			}
 			<div className={s.texts}>
 				<div className={s.textTitle}>
-					Имперский Военный Флот (The Imperial Navy)
+          Imperial Navy (The Imperial Navy)
 				</div>
 				{blogPage.texts.map(text => (
 					<div key={text.id} className={s.textContent}>
@@ -69,7 +69,7 @@ const BlogPage: FC = () => {
 					</div>
 				))}
 			</div>
-			<div className={s.itemTitle}>Узнайте больше</div>
+			<div className={s.itemTitle}>Read more</div>
 			<div className={s.bottomFlex}>
 				{blogPage.learnMore.map(item => (
 					<ItemInfoCard
@@ -81,7 +81,7 @@ const BlogPage: FC = () => {
 					/>
 				))}
 			</div>
-			<div className={s.itemTitle}>Рекомендуем для Вас</div>
+			<div className={s.itemTitle}>Recommended for you</div>
 			<div className={s.recommendations}>
 				{mainPageItems.slice(0, 4).map(item => (
 					<div key={item.id} className={s.recommendationItem}>

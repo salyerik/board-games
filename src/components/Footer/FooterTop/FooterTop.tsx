@@ -42,12 +42,12 @@ const FooterTop: FC = () => {
 					<Link to='/board-games' className={s.logo}>
 						<img src={images.logo} alt="logo" />
 					</Link>
-					<span className={s.text}>г. Сан-Франциско<br />
-						Малый Дровяной переулок №6</span>
+					<span className={s.text}>San Francisco<br />
+            Maly Drovyany Lane #6</span>
 				</div>
 				<div className={s.middle}>
 					<div className={s.catalog}>
-						<Link to={'/board-games/catalog'} className={s.catalogTitle}>Каталог</Link>
+						<Link to={'/board-games/catalog'} className={s.catalogTitle}>Catalog</Link>
 						<ul className={s.catalogList}>
 							{catalogs.map(catalog => (
 								<li
@@ -70,7 +70,7 @@ const FooterTop: FC = () => {
 				</div>
 				<div className={s.right}>
 					<button className={s.btn} onClick={() => setModalActive(true)}>
-						Заказать звонок
+						Order a call
 					</button>
 					<div className={s.contacts}>
 						<a className={s.contact} href={phoneNumber.path}>

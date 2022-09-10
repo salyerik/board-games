@@ -52,14 +52,14 @@ const Catalog: FC = () => {
 		<>
 			<Top />
 			<div className='container' ref={topRef}>
-				<BreadCrumps text='Каталог' />
+				<BreadCrumps text='Catalog' />
 				<div className={s.flex} >
-					<h2 className={s.title}>Все категории</h2>
+					<h2 className={s.title}>All categories</h2>
 					<div className='select'>
 						<select defaultValue={''} onChange={handleFilter}>
-							<option value={''} disabled>Сортировка</option>
-							<option value={'desc'}>По убыванию цены</option>
-							<option value={'asc'}>По возрастанию цены</option>
+							<option value={''} disabled>Sort</option>
+							<option value={'desc'}>By decreasing price</option>
+							<option value={'asc'}>Price ascending</option>
 						</select>
 						<IconsSVG id='arrowSpoiler' />
 					</div>

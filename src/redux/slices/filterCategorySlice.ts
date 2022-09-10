@@ -12,11 +12,11 @@ const initialState: iFilterCategoryState = {
 		step: 10,
 	},
 	ageItems: [
-		{ name: 'Без ограничений', value: '' },
-		{ name: '3-х', value: '3' },
-		{ name: '7-ми', value: '7' },
-		{ name: '13-ти', value: '13' },
-		{ name: '18-ти', value: '18' },
+		{ name: 'No restrictions', value: '' },
+		{ name: '3th', value: '3' },
+		{ name: '7th', value: '7' },
+		{ name: '13th', value: '13' },
+		{ name: '18th', value: '18' },
 	],
 	selectedAge: '',
 	players: {
@@ -34,27 +34,27 @@ const initialState: iFilterCategoryState = {
 	},
 	categories: [
 		{
-			name: 'Настольные игры', path: 'board', subCategories: [
-				{ name: 'Детективные', path: 'board/detective' },
-				{ name: 'Детские', path: 'board/childrens' },
-				{ name: 'Кооперативные', path: 'board/cooperative' },
-				{ name: 'Приключенческие', path: 'board/adventure' },
-				{ name: 'Стратегические', path: 'board/strategic' },
-				{ name: 'Хардкорные', path: 'board/hardcore' },
-				{ name: 'Экономические', path: 'board/economic' },
+			name: 'Board games', path: 'board', subCategories: [
+				{ name: 'Detective', path: 'board/detective' },
+				{ name: 'Childrens', path: 'board/childrens' },
+				{ name: 'Cooperative', path: 'board/cooperative' },
+				{ name: 'Adventure', path: 'board/adventure' },
+				{ name: 'Strategic', path: 'board/strategic' },
+				{ name: 'Hardcore', path: 'board/hardcore' },
+				{ name: 'Economic', path: 'board/economic' },
 			]
 		},
-		{ name: 'Аксессуaры для игр', path: 'accessories' },
+		{ name: 'Accessories', path: 'accessories' },
 		{
-			name: 'Краски', path: 'paints', subCategories: [
+			name: 'Paints', path: 'paints', subCategories: [
 				{ name: 'Citadel', path: 'paints/citadel' },
 				{ name: 'Bosny', path: 'paints/bosny' },
 				{ name: 'Vallejo', path: 'paints/vallejo' },
 				{ name: 'Zip Maket', path: 'paints/zip-maket' },
 			]
 		},
-		{ name: 'Товары для детей', path: 'goods-for-children' },
-		{ name: 'Аксессуары для моделизма', path: 'modeling-accessories' },
+		{ name: 'Goods for children', path: 'goods-for-children' },
+		{ name: 'Modeling accessories', path: 'modeling-accessories' },
 	],
 	category: '',
 	subCategory: '',

@@ -27,7 +27,7 @@ const EventPage: FC = () => {
 	useEffect(() => {
 		window.scroll(0, 0)
 		setLinks([
-			{ path: '/board-games/events', name: 'Мероприятия' },
+			{ path: '/board-games/events', name: 'Events' },
 			{ name: `${event?.title}` },
 		])
 	}, [event])

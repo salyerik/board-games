@@ -10,7 +10,7 @@ const MoreInteresting: FC = () => {
 
 	return (
 		<section className='container'>
-			<h4 className='title'>Больше интересной информации</h4>
+			<h4 className='title'>More interesting information</h4>
 			<div className={s.flex}>
 				{blogPage.items.filter(blog => blog.id <= 3).map(blog => (
 					<ItemInfoCard

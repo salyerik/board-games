@@ -13,7 +13,7 @@ const ItemPage: FC = () => {
 		<section className={'container' + ' ' + s.wrapper}>
 			<Item />
 			{!!mainPageItems.length && <>
-				<div className={s.subTitle}>Вы недавно смотрели</div>
+				<div className={s.subTitle}>You've recently watched</div>
 				<div className={s.items}>
 					{mainPageItems.slice(0, 4).map(item => (
 						<div key={item.id} className={s.item}>

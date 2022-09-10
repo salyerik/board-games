@@ -13,14 +13,14 @@ const OrderItem: FC<{ id: string, quantity: number }> = ({ id, quantity }) => {
 	}, [])
 
 	if (!item) {
-		return <h1>Загрузка...</h1>
+		return <h1>Loading...</h1>
 	}
 
 	return (
 		<section className={s.item}>
 			<h6 className={s.itemName}>{item.name}</h6>
 			<div className={s.itemParams}>
-				<span className={s.itemQuantity}>{quantity}шт</span>
+				<span className={s.itemQuantity}>{quantity}pcs</span>
 				<span className={s.itemPrice}>{item.price.new * quantity}$</span>
 			</div>
 		</section>

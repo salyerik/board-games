@@ -8,22 +8,22 @@ import s from './RegisterTab.module.sass'
 const RegisterTab = () => {
 	return (
 		<form action='#'>
-			<InputLogin label='Имя' type='text' />
-			<InputLogin label='Фамилия' type='text' />
-			<InputLogin label='Телефон' type='number' />
-			<InputLogin label='Пароль ' type='password' />
+			<InputLogin label='First Name' type='text' />
+			<InputLogin label='Last Name' type='text' />
+			<InputLogin label='Phone number' type='number' />
+			<InputLogin label='Password ' type='password' />
 			<label className={s.checkboxLabel}>
 				<input type="checkbox" className='checkboxInput' />
 				<span>
-					Я согласен с <Link to="/board-games/policy">политикой конфиденциальности</Link>
-					и с обработкой персональных данных
+          I agree with <Link to="/board-games/policy">privacy policy</Link>
+					and with the processing of personal data
 				</span>
 			</label>
 			<label className={s.checkboxLabelBottom}>
 				<input type="checkbox" className='checkboxInput' />
-				<span>Я хочу получать новости и узнавать об акциях первым</span>
+				<span>I want to be the first to receive news and promotions</span>
 			</label>
-			<BtnLogin text={'Зарегистрироваться'} />
+			<BtnLogin text={'Sign up'} />
 		</form>
 	)
 }

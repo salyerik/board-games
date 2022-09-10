@@ -18,9 +18,9 @@ const Products: FC = () => {
 		return (
 			<div className={s.notFoundItem}>
 				<div>
-					<span>Товары не найдены</span>
-					Попробуйте изменить<br />
-					фильтрацию или категорию
+					<span>No products found</span>
+					Try changing<br />
+					filtering or category
 				</div>
 			</div>
 		)

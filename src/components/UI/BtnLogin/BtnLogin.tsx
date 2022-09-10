@@ -10,14 +10,14 @@ interface iBtrLoginProps {
 const BtnLogin: FC<iBtrLoginProps> = ({ text, setModalActive }) => {
 	function handleClick() {
 		setModalActive?.(false)
-		if (text === 'Зарегистрироваться') {
-			alert('Регистрация временно не доступна')
-		} else if (text === 'Оставить заявку') {
-			alert('Ожидайте звонка')
-		} else if (text === 'Оставить вопрос') {
-			alert('Мы вам скоро ответим')
+		if (text === 'Sign up') {
+			alert('Registration is temporarily unavailable')
+		} else if (text === 'Leave a request') {
+			alert('Expect a call')
+		} else if (text === 'Leave a question') {
+			alert('We\'ll get back to you soon')
 		} else {
-			alert('Вход временно не доступен')
+			alert('Login is temporarily unavailable')
 		}
 	}
 	return (

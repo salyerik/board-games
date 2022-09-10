@@ -15,14 +15,14 @@ const LogModal: FC = () => {
 
 	return (
 		<section className={s.content} onClick={(e) => e.stopPropagation()}>
-			<div className={s.topLabel}>Войдите или зарегистрируйтесь</div>
+			<div className={s.topLabel}>Login or Register</div>
 			<div className={s.tabs}>
 				<span onClick={() => handleActiveTab(0)} className={cn(s.tab, {
 					[s.tab_active]: !activeTab
-				})}>Вход</span>
+				})}>Log in</span>
 				<span onClick={() => handleActiveTab(1)} className={cn(s.tab, {
 					[s.tab_active]: activeTab === 1
-				})}>Регистрация</span>
+				})}>Registration</span>
 			</div>
 			{activeTab ? <RegisterTab /> : <EnterTab />}
 		</section>

@@ -11,7 +11,7 @@ const AboutUs: FC = () => {
 		<section className="container">
 			<div className={s.flex}>
 				<div className={s.content}>
-					<h4 className='title'>Об игровом центре «Board Games»</h4>
+					<h4 className='title'>About the «Board Games»</h4>
 					<div className={s.text}>
 						{aboutUs.map((text, i) => <p key={i}>{text}</p>)}
 					</div>

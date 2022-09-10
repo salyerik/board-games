@@ -37,10 +37,10 @@ const EventsBlogsPage: FC = () => {
 
 	return (
 		<section className='container'>
-			<BreadCrumps text={pathname.includes('blog') ? 'Блог' : 'Мероприятия'} />
+			<BreadCrumps text={pathname.includes('blog') ? 'Blog' : 'Events'} />
 			<div className={s.topBlock}>
 				<h4 className={'title' + ' ' + s.pageTitle}>
-					{pathname.includes('blog') ? 'Блог' : 'Мероприятия'}
+					{pathname.includes('blog') ? 'Blog' : 'Events'}
 				</h4>
 				<div className='select'>
 					<select defaultValue={'0'} onChange={handleFilter}>

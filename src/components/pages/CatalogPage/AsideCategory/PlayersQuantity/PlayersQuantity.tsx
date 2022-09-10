@@ -57,18 +57,18 @@ const PlayersQuantity: FC = () => {
 					'asideCategoryTitle_active': isSpoilerActive.playersFilter
 				})}
 			>
-				<span>Количество игроков</span>
+				<span>Number of players</span>
 				<IconsSVG id='arrowSpoiler' />
 			</div>
 			{isSpoilerActive.playersFilter &&
 				<div className={s.wrapperRange}>
 					<div className={s.flexPlayers}>
 						<div className={s.flexPlayer}>
-							<span>От </span>
+							<span>From </span>
 							<div className={s.quantity}>{players.from}</div>
 						</div>
 						<div className={s.flexPlayer}>
-							<span>До </span>
+							<span>To </span>
 							<div className={s.quantity}>{players.to}</div>
 						</div>
 					</div>

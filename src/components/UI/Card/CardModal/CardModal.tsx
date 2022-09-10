@@ -8,12 +8,12 @@ import s from './CardModal.module.sass'
 const CardModal: FC = () => {
 	return (
 		<section onClick={(e) => e.stopPropagation()} className={s.wrapper}>
-			<div className={s.title}>Задать вопрос</div>
-			<InputLogin label='Ваше имя' type='text' />
-			<InputLogin label='Ваш телефон' type='text' />
-			<InputLogin label='Ваш вопрос' type='textarea' />
+			<div className={s.title}>Ask a question</div>
+			<InputLogin label='Your name' type='text' />
+			<InputLogin label='Your phone number' type='text' />
+			<InputLogin label='Your question' type='textarea' />
 			<div className={s.btn} >
-				<BtnLogin text='Оставить вопрос' />
+				<BtnLogin text='Leave a question' />
 			</div>
 		</section>
 	)

@@ -47,7 +47,7 @@ const AllCategories: FC = () => {
 			>
 				<span className={cn('linkUrl', {
 					'linkUrl_active': !params["*"]
-				})}>Все категории</span>
+				})}>All categories</span>
 				<IconsSVG id='arrowSpoiler' />
 			</Link>
 			{categoriesFilter && <SubCategories />}

@@ -5,10 +5,10 @@ const Top: FC = () => (
 	<section className={s.wrapper}>
 		<img src={'https://i.ibb.co/5RC6khb/bg1.jpg'} alt="bg1" />
 		<div className="container">
-			<h4 className={s.title}>Октябрьский турнир Warhammer 40000</h4>
+			<h4 className={s.title}>October tournament Warhammer 40000</h4>
 			<div className={s.text}>
-				У тебя есть команда и вы готовы принять
-				участие в турнире Warhammer 40000?
+        Do you have a team and are you ready to
+				Warhammer 40000 tournament?
 			</div>
 		</div>
 	</section>

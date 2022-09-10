@@ -12,14 +12,14 @@ const OrderPage: FC = () => {
 	}, [])
 
 	const links = [
-		{ path: '/board-games/cart', name: 'Корзина' },
-		{ name: 'Оформление заказа' },
+		{ path: '/board-games/cart', name: 'Cart' },
+		{ name: 'Ordering' },
 	]
 
 	return (
 		<section className='container'>
 			<BreadCrumps links={links} />
-			<h3 className='title'>Оформление заказа</h3>
+			<h3 className='title'>Ordering</h3>
 			<div className={s.wrapper}>
 				<div className={s.totalBlock}>
 					<div className={s.totalInfo}>

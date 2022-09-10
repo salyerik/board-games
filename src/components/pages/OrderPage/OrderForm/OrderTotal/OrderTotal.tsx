@@ -11,24 +11,24 @@ const OrderTotal: FC = () => {
 
 	return (
 		<section className={s.totalPriceContainer}>
-			<div className={s.totalLabel}>Итог</div>
+			<div className={s.totalLabel}>Total</div>
 			<div className={s.totalFlex}>
-				<span>Сумма заказа</span>
+				<span>Order amount</span>
 				<span className={s.dotted}></span>
 				<span>{withDiscount}$</span>
 			</div>
 			<div className={s.totalFlex}>
-				<span>Стоимость доставки</span>
+				<span>Shipping cost</span>
 				<span className={s.dotted}></span>
 				<span>50$</span>
 			</div>
 			<div className={s.totalFlex}>
-				<span>Размер скидки</span>
+				<span>Discount amount</span>
 				<span className={s.dotted}></span>
 				<span>{withoutDiscount - withDiscount}$</span>
 			</div>
 			<div className={s.totalFlex}>
-				<span>Сумма к оплате</span>
+				<span>Amount due</span>
 				<span className={s.dotted}></span>
 				<span className={s.priceMain}>{withDiscount + 50}$</span>
 			</div>

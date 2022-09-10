@@ -8,7 +8,7 @@ const BreadCrumps: FC<iBreadProps> = ({ links, text }) => (
 	<nav>
 		<ul className={s.list}>
 			<li className={s.link}>
-				<Link to='/board-games'>Главная</Link>
+				<Link to='/board-games'>Main</Link>
 				<span>&gt;</span>
 			</li>
 			{links && links.map(link => {

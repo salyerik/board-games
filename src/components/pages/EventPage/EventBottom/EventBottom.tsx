@@ -6,7 +6,7 @@ import s from './EventBottom.module.sass'
 
 const EventBottom: FC<{ events: iEvent[] }> = ({ events }) => (
 	<>
-		<h6 className={s.bottomTitle}>Может быть интересно</h6>
+		<h6 className={s.bottomTitle}>Might be interesting.</h6>
 		<div className={s.flex}>
 			{events.map(event => (
 				<ItemInfoCard

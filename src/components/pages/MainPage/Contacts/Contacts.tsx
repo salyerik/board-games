@@ -15,10 +15,10 @@ const Contacts: FC = () => {
 		<section className='container'>
 			<div className={s.flex}>
 				<div className={s.content}>
-					<h3 className='title'>Контакты</h3>
+					<h3 className='title'>Contacts</h3>
 					<div className={s.contact}>
 						<IconsSVG id='phone' />
-						<span className={s.label}>Телефон:</span>
+						<span className={s.label}>Phone number:</span>
 						<a href={phoneNumber.path} className={s.link}>
 							{phoneNumber.text}
 						</a>
@@ -32,19 +32,19 @@ const Contacts: FC = () => {
 					</div>
 					<div className={s.contact}>
 						<IconsSVG id='navigate' />
-						<span className={s.label}>Адрес:</span>
+						<span className={s.label}>Address:</span>
 						<div className={s.link}>
 							{`${address.state}, ${address.city}, ${address.street}`}
 						</div>
 					</div>
 					<div className={s.contact}>
 						<IconsSVG id='clock' />
-						<span className={s.label}>Режим работы клуба:</span>
+						<span className={s.label}>Club mode of operation:</span>
 						<div className={s.link}>
-							{`c ${workMode.from} до ${workMode.to}, ${workMode.days}`}
+							{`c ${workMode.from} to ${workMode.to}, ${workMode.days}`}
 						</div>
 					</div>
-					<div className={s.questionTitle}>Остались вопросы?</div>
+					<div className={s.questionTitle}>Any questions?</div>
 					<FormQuestion />
 				</div>
 				<div className={s.map}>

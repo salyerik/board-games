@@ -10,8 +10,8 @@ const AboutUsPage: FC = () => {
 
 	return (
 		<section className='container'>
-			<BreadCrumps text='О центре' />
-			<h4 className='title'>О центре</h4>
+			<BreadCrumps text='About the Center' />
+			<h4 className='title'>About the Center</h4>
 			<div>
 				{aboutUsPage.map(item => (
 					<div key={item.id} className={s.flex}>

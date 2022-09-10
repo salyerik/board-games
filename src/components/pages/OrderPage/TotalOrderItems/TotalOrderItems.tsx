@@ -13,9 +13,9 @@ const TotalOrderItems: FC = () => {
 	return (
 		<section className={s.totalItems}>
 			<div className={s.total}>
-				В корзине <span>{totalQuantity}</span>
-				{totalQuantity === 1 ? ' товар ' : ' товара '}
-				на сумму <span>{price.withDiscount}$</span>:
+        In cart <span>{totalQuantity}</span>
+				{totalQuantity === 1 ? ' item ' : ' items '}
+				amounting to <span>{price.withDiscount}$</span>:
 			</div>
 			{addedItems.map(item => {
 				const id = Object.keys(item).toString()

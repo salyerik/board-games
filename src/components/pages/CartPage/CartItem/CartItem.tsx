@@ -83,7 +83,7 @@ const CartItem: FC<{ id: string }> = ({ id }) => {
 				<div className={s.quantity}>
 					<button type='button' onClick={decrementItemHandle}
 						className={cn(s.btnQuantity, s.minus)}>-</button>
-					<span>{itemQuantity} шт</span>
+					<span>{itemQuantity} pcs.</span>
 					<button type='button' onClick={incrementItemHandle}
 						className={cn(s.btnQuantity, s.plus)}>+</button>
 				</div>

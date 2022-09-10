@@ -15,7 +15,7 @@ const Events: FC = () => {
 
 	return (
 		<section className='container'>
-			<h4 className='title'>Ближайшие мероприятия</h4>
+			<h4 className='title'>Upcoming events</h4>
 			<div className={s.flex}>
 				{items.slice(0, quantityItems).map(event => (
 					<ItemInfoCard
@@ -30,7 +30,7 @@ const Events: FC = () => {
 			</div>
 			{quantityItems < items.length &&
 				<button onClick={handleQuantityItems} className={s.btn}>
-					Показать еще
+					Show more
 				</button>
 			}
 		</section>

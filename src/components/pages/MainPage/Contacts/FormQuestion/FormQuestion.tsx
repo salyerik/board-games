@@ -11,7 +11,7 @@ import s from './FormQuestion.module.sass'
 
 const FormQuestion: FC = () => {
 	const onSubmit = (values: typeof mainPageInitialValues) => {
-		alert(`${values.name} ожидайте ответа на вашей почте ${values.email}`)
+		alert(`${values.name} expect a reply in your mail ${values.email}`)
 	}
 
 	return (
@@ -34,12 +34,12 @@ const FormQuestion: FC = () => {
 						<div className={s.error}><ErrorMessage name={input.id} /></div>
 					</div>
 				))}
-				<button className={s.btn} type="submit">Заказать звонок</button>
+				<button className={s.btn} type="submit">Order a call</button>
 				<div className={s.policy}>
 					<span>
-						Нажимая на кнопку "Заказать звонок", я даю согласие на обработку
+            Pressing the button "Order a call", I consent to the processing of
 					</span>
-					<Link to="/board-games/policy"> персональных данных.</Link>
+					<Link to="/board-games/policy"> personal data.</Link>
 				</div>
 			</Form>
 		</Formik>

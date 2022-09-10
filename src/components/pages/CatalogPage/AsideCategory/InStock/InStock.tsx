@@ -19,22 +19,22 @@ const InStock: FC = () => {
 					'asideCategoryTitle_active': isStockFilterActive
 				})}
 			>
-				<span>Наличие</span>
+				<span>Availability</span>
 				<IconsSVG id='arrowSpoiler' />
 			</div>
 			{isStockFilterActive && <>
 				<div className={s.checkboxes}>
 					<label>
 						<input type="checkbox" className='checkboxInput' />
-						<span>в наличии</span>
+						<span>in stock</span>
 					</label>
 					<label>
 						<input type="checkbox" className='checkboxInput' />
-						<span>под заказ</span>
+						<span>on order</span>
 					</label>
 					<label>
 						<input type="checkbox" className='checkboxInput' />
-						<span>нет в наличии</span>
+						<span>off</span>
 					</label>
 				</div>
 			</>}

@@ -8,7 +8,7 @@ import s from './ItemTabs.module.sass'
 
 const ItemTabs: FC<{ item: iCardProduct }> = ({ item }) => {
 	const tabTitle = [
-		'Описание', 'Характеристики', 'Правила', 'Вопрос-ответ'
+		'Description', 'Features', 'Rules', 'Q&A'
 	]
 	const [activeTab, setActiveTab] = useState(3)
 

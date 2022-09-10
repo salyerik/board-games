@@ -30,7 +30,7 @@ const Item: FC = () => {
 	useEffect(() => {
 		if (item) {
 			setLinks([
-				{ name: 'Каталог', path: '/board-games/catalog' },
+				{ name: 'Catalog', path: '/board-games/catalog' },
 				{ name: item.name }
 			])
 		}
@@ -41,7 +41,7 @@ const Item: FC = () => {
 	if (item === null) {
 		return (
 			<h3 className={s.title + ' ' + s.title_active}>
-				Товар к сожалению не найден
+				Sorry, the product was not found
 			</h3>
 		)
 	}
@@ -57,7 +57,7 @@ const Item: FC = () => {
 				</div>
 				<aside className={s.aside}>
 					<Card {...item} isProductPage />
-					<div className={s.label}>С этим товаром покупают</div>
+					<div className={s.label}>Buy with this product</div>
 					<div className={s.card}>
 						<Card {...item} />
 					</div>

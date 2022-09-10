@@ -14,7 +14,7 @@ const FooterBottom: FC = () => {
 					<div className={s.left}>
 						<span className={s.copy}>© 2022</span>
 						<Link to='/board-games/policy' className={s.policy}>
-							Политика конфиденциальности
+              Privacy Policy
 						</Link>
 					</div>
 					<div className={s.middle}>
@@ -22,10 +22,10 @@ const FooterBottom: FC = () => {
 					</div>
 					<div className={s.right}>
 						<span className={s.copy}>
-							Содержимое не является публичной офертой
+							The content does not constitute a public offer
 						</span>
 						<Link to='/board-games/policy' className={s.policy}>
-							Пользовательское соглашение
+              User Agreement
 						</Link>
 					</div>
 				</div>

@@ -50,7 +50,7 @@ const Search: FC<{ search: string }> = ({ search }) => {
 				<input
 					value={inputValue} onChange={handleInputChange}
 					className={s.searchInput} type="text" name="search"
-					placeholder='Найти игру' />
+					placeholder='Find a game' />
 				<span className={s.searchIcon}>
 					<IconsSVG id={search} />
 				</span>
@@ -69,7 +69,7 @@ const Search: FC<{ search: string }> = ({ search }) => {
 									{item.name}
 								</Link>
 								<div className={s.itemPrice}>
-									<span>Цена: </span>{item.price}$
+									<span>Price: </span>{item.price}$
 								</div>
 							</div>
 						</div>
