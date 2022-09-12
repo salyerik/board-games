@@ -374,13 +374,13 @@ const initialState: iCommonSliceState = {
 			{
 				id: 4,
 				image: "https://i.ibb.co/7VXCXJy/2.jpg",
-				title: "The Gathering Warhmmer",
+				title: "The Gathering Warhummer",
 				subTitle: "Try games of different genres"
 			},
 			{
 				id: 1,
 				image: "https://i.ibb.co/Bt5qnHm/3.jpg",
-				title: "Warhmmer games",
+				title: "Warhummer games",
 				subTitle: "Wargame board game"
 			}
 		],
