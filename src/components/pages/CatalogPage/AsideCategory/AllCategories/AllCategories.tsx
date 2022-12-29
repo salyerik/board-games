@@ -2,9 +2,7 @@ import { FC, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import cn from 'classnames'
 
-import {
-	setCategory, setSubCategory, toggleCategoriesSpoiler
-} from '../../../../../redux/slices/filterCategorySlice'
+import { setCategory, setSubCategory, toggleCategoriesSpoiler } from '../../../../../redux/slices/filterCategorySlice'
 import useTypedSelector from '../../../../../hooks/useTypedSelector'
 import useAppDispatch from '../../../../../hooks/useAppDispatch'
 import SubCategories from './SubCategories'
@@ -13,17 +11,16 @@ import IconsSVG from '../../../../UI/IconsSVG'
 
 const AllCategories: FC = () => {
 	const dispatch = useAppDispatch()
-	const { categoriesFilter } = useTypedSelector(({ filterCategory }) =>
-		filterCategory.isSpoilerActive)
+	const { categoriesFilter } = useTypedSelector(({ filterCategory }) => filterCategory.isSpoilerActive)
 	const params = useParams()
 
 	useEffect(() => {
-		if (!!params["*"]) {
+		if (!!params['*']) {
 			if (params['*'].includes('/')) {
-				dispatch(setCategory(params["*"].split('/')[0]))
-				dispatch(setSubCategory(params["*"].split('/')[1]))
+				dispatch(setCategory(params['*'].split('/')[0]))
+				dispatch(setSubCategory(params['*'].split('/')[1]))
 			} else {
-				dispatch(setCategory(params["*"]))
+				dispatch(setCategory(params['*']))
 				dispatch(setSubCategory(''))
 			}
 		} else {
@@ -41,13 +38,15 @@ const AllCategories: FC = () => {
 			<Link
 				to='/board-games/catalog'
 				className={cn('asideCategoryTitle', {
-					'asideCategoryTitle_active': categoriesFilter
+					asideCategoryTitle_active: categoriesFilter
 				})}
-				onClick={handleCatalog}
-			>
-				<span className={cn('linkUrl', {
-					'linkUrl_active': !params["*"]
-				})}>All categories</span>
+				onClick={handleCatalog}>
+				<span
+					className={cn('linkUrl', {
+						linkUrl_active: !params['*']
+					})}>
+					All categories
+				</span>
 				<IconsSVG id='arrowSpoiler' />
 			</Link>
 			{categoriesFilter && <SubCategories />}

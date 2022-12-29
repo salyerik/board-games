@@ -10,12 +10,13 @@ import PlayersQuantity from './PlayersQuantity'
 
 import s from './AsideCategory.module.sass'
 
-const AsideCategory: FC = () => {
+const AsideCategory: FC<{ resetSort: () => void }> = ({ resetSort }) => {
 	const dispatch = useAppDispatch()
 	const navigate = useNavigate()
 
 	function handleResetBtn() {
 		dispatch(resetFilter())
+		resetSort()
 		navigate('/board-games/catalog')
 	}
 
@@ -26,10 +27,7 @@ const AsideCategory: FC = () => {
 			<AgeFilter />
 			{/* <InStock /> */}
 			<PlayersQuantity />
-			<input
-				className={s.btn} type="button" value="Reset filter"
-				onClick={handleResetBtn}
-			/>
+			<input className={s.btn} type='button' value='Reset filter' onClick={handleResetBtn} />
 		</section>
 	)
 }

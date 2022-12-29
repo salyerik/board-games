@@ -1,9 +1,7 @@
 import { FC, useEffect, useState } from 'react'
 import cn from 'classnames'
 
-import {
-	setFromPlayers, setToPlayers, togglePlayesSpoiler
-} from '../../../../../redux/slices/filterCategorySlice'
+import { setFromPlayers, setToPlayers, togglePlayersSpoiler } from '../../../../../redux/slices/filterCategorySlice'
 import useAppDispatch from '../../../../../hooks/useAppDispatch'
 import useTypedSelector from '../../../../../hooks/useTypedSelector'
 import useDebounce from '../../../../../hooks/useDebounce'
@@ -14,14 +12,13 @@ import IconsSVG from '../../../../UI/IconsSVG'
 
 const PlayersQuantity: FC = () => {
 	const dispatch = useAppDispatch()
-	const { players, isSpoilerActive } = useTypedSelector(
-		({ filterCategory }) => filterCategory
-	)
+	const { players, isSpoilerActive } = useTypedSelector(({ filterCategory }) => filterCategory)
 	const handleVisibleStockFilter = () => {
-		dispatch(togglePlayesSpoiler())
+		dispatch(togglePlayersSpoiler())
 	}
 	const [playersRange, setPlayersRange] = useState({
-		from: players.from, to: players.to
+		from: players.from,
+		to: players.to
 	})
 	const fromPlayersDebounced = useDebounce<string>(playersRange.from)
 	const toPlayersDebounced = useDebounce<string>(playersRange.to)
@@ -54,13 +51,12 @@ const PlayersQuantity: FC = () => {
 			<div
 				onClick={handleVisibleStockFilter}
 				className={cn('asideCategoryTitle', {
-					'asideCategoryTitle_active': isSpoilerActive.playersFilter
-				})}
-			>
+					asideCategoryTitle_active: isSpoilerActive.playersFilter
+				})}>
 				<span>Number of players</span>
 				<IconsSVG id='arrowSpoiler' />
 			</div>
-			{isSpoilerActive.playersFilter &&
+			{isSpoilerActive.playersFilter && (
 				<div className={s.wrapperRange}>
 					<div className={s.flexPlayers}>
 						<div className={s.flexPlayer}>
@@ -78,7 +74,8 @@ const PlayersQuantity: FC = () => {
 						setFromRange={handleFromPlayers}
 						setToRange={handleToPlayers}
 					/>
-				</div>}
+				</div>
+			)}
 		</section>
 	)
 }

@@ -1,2 +1,1 @@
-export const DATA_BASE_URL =
-	'https://my-json-server.typicode.com/steterik/data-base-board-games/products/'
+export const API = 'http://localhost:3030/api/products'

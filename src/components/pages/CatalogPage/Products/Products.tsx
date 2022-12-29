@@ -19,7 +19,8 @@ const Products: FC = () => {
 			<div className={s.notFoundItem}>
 				<div>
 					<span>No products found</span>
-					Try changing<br />
+					Try changing
+					<br />
 					filtering or category
 				</div>
 			</div>
@@ -29,7 +30,7 @@ const Products: FC = () => {
 	return (
 		<section className={s.flex}>
 			{catalogItems.map(item => (
-				<div key={item.id} className={s.item}>
+				<div key={item._id} className={s.item}>
 					<Card {...item} />
 				</div>
 			))}

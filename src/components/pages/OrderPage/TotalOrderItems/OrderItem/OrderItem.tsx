@@ -5,11 +5,11 @@ import { iCardProduct } from '../../../../../types/commonTypes'
 
 import s from './OrderItem.module.sass'
 
-const OrderItem: FC<{ id: string, quantity: number }> = ({ id, quantity }) => {
+const OrderItem: FC<{ id: string; quantity: number }> = ({ id, quantity }) => {
 	const [item, setItem] = useState<iCardProduct>()
 
 	useEffect(() => {
-		getProduct(id).then(data => setItem(data))
+		getProduct(id).then(({ data }) => setItem(data))
 	}, [])
 
 	if (!item) {

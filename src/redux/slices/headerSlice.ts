@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { iHeaderState, iSearchedItem } from "../../types/headerTypes"
+import { iHeaderState, iSearchedItem } from '../../types/headerTypes'
 
 const initialState: iHeaderState = {
 	isMenuActive: false,
@@ -7,14 +7,14 @@ const initialState: iHeaderState = {
 		{ title: 'Catalog', path: '/board-games/catalog' },
 		{ title: 'Events', path: '/board-games/events' },
 		{ title: 'Blog', path: '/board-games/blog' },
-		{ title: 'About us', path: '/board-games/about-us' },
+		{ title: 'About us', path: '/board-games/about-us' }
 	],
 	images: {
-		logo: "https://i.ibb.co/sHwc8GH/logo.png",
-		humanIcon: "humanHeader",
-		cart: "cartHeader",
-		phone: "phoneHeader",
-		search: "searchHeader",
+		logo: 'https://i.ibb.co/sHwc8GH/logo.png',
+		humanIcon: 'humanHeader',
+		cart: 'cartHeader',
+		phone: 'phoneHeader',
+		search: 'searchHeader'
 	},
 	searchedItems: []
 }

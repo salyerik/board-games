@@ -25,17 +25,14 @@ const BlogPage: FC = () => {
 	useEffect(() => {
 		window.scroll(0, 0)
 		if (blogPage) {
-			setLinks([
-				{ path: '/board-games/blog', name: 'Blog' },
-				{ name: `${blog?.linkName}` }
-			])
+			setLinks([{ path: '/board-games/blog', name: 'Blog' }, { name: `${blog?.linkName}` }])
 		}
 	}, [blog])
 
 	return (
 		<section className={'container' + ' ' + s.wrapper}>
 			<BreadCrumps links={links} />
-			{blog &&
+			{blog && (
 				<div key={blog.id}>
 					<div className='title'>{blog.title}</div>
 					<div className={s.data}>{blog.date}</div>
@@ -44,11 +41,9 @@ const BlogPage: FC = () => {
 					</div>
 					<div className={s.text + ' ' + s.text_top}>{blog.text}</div>
 				</div>
-			}
+			)}
 			<div className={s.texts}>
-				<div className={s.textTitle}>
-          Imperial Navy (The Imperial Navy)
-				</div>
+				<div className={s.textTitle}>Imperial Navy (The Imperial Navy)</div>
 				{blogPage.texts.map(text => (
 					<div key={text.id} className={s.textContent}>
 						<div className={s.textLabel}>{text.label}</div>
@@ -84,7 +79,7 @@ const BlogPage: FC = () => {
 			<div className={s.itemTitle}>Recommended for you</div>
 			<div className={s.recommendations}>
 				{mainPageItems.slice(0, 4).map(item => (
-					<div key={item.id} className={s.recommendationItem}>
+					<div key={item._id} className={s.recommendationItem}>
 						<Card {...item} />
 					</div>
 				))}

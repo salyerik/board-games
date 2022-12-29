@@ -1,10 +1,8 @@
 import { FC, useEffect, useRef } from 'react'
 
-import { getProducts } from '../../../server/getProducts'
-import {
-	setSortPrice, setTotalItem, toggleLoadingProducts
-} from '../../../redux/slices/filterCategorySlice'
-import { setCatalogItems } from '../../../redux/slices/productsSlice'
+import { getFilteredProducts } from '../../../server/getProducts'
+import { setSortPrice, toggleLoadingProducts } from '../../../redux/slices/filterCategorySlice'
+import { setCatalogItems, setTotalCount } from '../../../redux/slices/productsSlice'
 import useAppDispatch from '../../../hooks/useAppDispatch'
 import useTypedSelector from '../../../hooks/useTypedSelector'
 
@@ -21,31 +19,40 @@ import IconsSVG from '../../UI/IconsSVG'
 const Catalog: FC = () => {
 	const dispatch = useAppDispatch()
 	const topRef = useRef<HTMLDivElement>(null)
-	const {
-		isOnlyStocked, price, selectedAge, players,
-		category, subCategory, sortPrice, page, pageLimit
-	} = useTypedSelector(state => state.filterCategory)
+	const selectRef = useRef<HTMLSelectElement>(null)
+	const { isOnlyStocked, price, selectedAge, players, category, subCategory, sortPrice, page, pageLimit } =
+		useTypedSelector(state => state.filterCategory)
 
 	useEffect(() => {
-		console.log(category)
 		dispatch(toggleLoadingProducts(true))
-		getProducts({
-			isOnlyStocked, price, selectedAge, players, category, subCategory,
-			sortPrice, page, pageLimit
-		}).then(res => {
-			dispatch(setTotalItem(+res.headers['x-total-count']))
-			dispatch(setCatalogItems(res.data))
-		}).then(() => {
-			dispatch(toggleLoadingProducts(false))
-		}).catch(e => {
-			console.log(e.message)
-			dispatch(toggleLoadingProducts(false))
+		getFilteredProducts({
+			isOnlyStocked,
+			price,
+			selectedAge,
+			players,
+			category,
+			subCategory,
+			sortPrice,
+			page,
+			pageLimit
 		})
-	}, [isOnlyStocked, price, selectedAge, players,
-		category, subCategory, sortPrice, page, pageLimit])
+			.then(res => {
+				dispatch(setTotalCount(+res.data.count))
+				dispatch(setCatalogItems(res.data.products))
+			})
+			.catch(e => {
+				console.log(e.message)
+			})
+			.finally(() => {
+				dispatch(toggleLoadingProducts(false))
+			})
+	}, [isOnlyStocked, price, selectedAge, players, category, subCategory, sortPrice, page, pageLimit])
 
-	function handleFilter(e: React.ChangeEvent<HTMLSelectElement>) {
+	function handleSort(e: React.ChangeEvent<HTMLSelectElement>) {
 		dispatch(setSortPrice(e.target.value))
+	}
+	function resetSort() {
+		if (selectRef.current) selectRef.current.selectedIndex = 0
 	}
 
 	return (
@@ -53,20 +60,20 @@ const Catalog: FC = () => {
 			<Top />
 			<div className='container' ref={topRef}>
 				<BreadCrumps text='Catalog' />
-				<div className={s.flex} >
+				<div className={s.flex}>
 					<h2 className={s.title}>All categories</h2>
 					<div className='select'>
-						<select defaultValue={''} onChange={handleFilter}>
-							<option value={''} disabled>Sort</option>
-							<option value={'desc'}>By decreasing price</option>
-							<option value={'asc'}>Price ascending</option>
+						<select defaultValue={''} onChange={handleSort} ref={selectRef}>
+							<option value={''}>Disable Sort</option>
+							<option value={'-1'}>By decreasing price</option>
+							<option value={'1'}>Price ascending</option>
 						</select>
 						<IconsSVG id='arrowSpoiler' />
 					</div>
 				</div>
 				<div className={s.content}>
 					<aside className={s.aside}>
-						<AsideCategory />
+						<AsideCategory resetSort={resetSort} />
 					</aside>
 					<div className={s.products}>
 						<Products />

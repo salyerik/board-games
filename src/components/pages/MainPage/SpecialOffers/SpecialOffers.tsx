@@ -1,13 +1,13 @@
-import { FC } from 'react';
+import { FC } from 'react'
 import { Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 
-import { iSpecialOffersProps } from '../../../../types/mainPageTypes';
+import { iSpecialOffersProps } from '../../../../types/mainPageTypes'
 import Card from '../../../UI/Card'
 
 import s from './SpecialOffers.module.sass'
-import IconsSVG from '../../../UI/IconsSVG';
+import IconsSVG from '../../../UI/IconsSVG'
 
 const SpecialOffers: FC<iSpecialOffersProps> = ({ title, items, arrows }) => {
 	const [left, right] = arrows
@@ -19,7 +19,7 @@ const SpecialOffers: FC<iSpecialOffersProps> = ({ title, items, arrows }) => {
 				<Swiper
 					modules={[Navigation]}
 					spaceBetween={15}
-					navigation={{ prevEl: `.${left}`, nextEl: `.${right}`, }}
+					navigation={{ prevEl: `.${left}`, nextEl: `.${right}` }}
 					breakpoints={{
 						320: { slidesPerView: 1 },
 						426: { slidesPerView: 2 },
@@ -28,7 +28,7 @@ const SpecialOffers: FC<iSpecialOffersProps> = ({ title, items, arrows }) => {
 					}}
 				>
 					{items.map(item => (
-						<SwiperSlide key={item.id} className={s.slide}>
+						<SwiperSlide key={item._id} className={s.slide}>
 							<Card {...item} />
 						</SwiperSlide>
 					))}

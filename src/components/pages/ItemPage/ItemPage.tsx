@@ -12,16 +12,18 @@ const ItemPage: FC = () => {
 	return (
 		<section className={'container' + ' ' + s.wrapper}>
 			<Item />
-			{!!mainPageItems.length && <>
-				<div className={s.subTitle}>You've recently watched</div>
-				<div className={s.items}>
-					{mainPageItems.slice(0, 4).map(item => (
-						<div key={item.id} className={s.item}>
-							<Card {...item} />
-						</div>
-					))}
-				</div>
-			</>}
+			{!!mainPageItems.length && (
+				<>
+					<div className={s.subTitle}>You've recently watched</div>
+					<div className={s.items}>
+						{mainPageItems.slice(0, 4).map(item => (
+							<div key={item._id} className={s.item}>
+								<Card {...item} />
+							</div>
+						))}
+					</div>
+				</>
+			)}
 		</section>
 	)
 }

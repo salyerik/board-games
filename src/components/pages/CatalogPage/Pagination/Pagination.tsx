@@ -10,18 +10,18 @@ import IconsSVG from '../../../UI/IconsSVG'
 
 const Pagination: FC<{ topHeight: number }> = ({ topHeight }) => {
 	const dispatch = useAppDispatch()
-	const { pageLimit, totalItem, page } = useTypedSelector(state =>
-		state.filterCategory)
+	const { pageLimit, page } = useTypedSelector(state => state.filterCategory)
+	const { count } = useTypedSelector(state => state.products)
 	const [totalPages, setTotalPages] = useState<number[]>([])
 
 	useEffect(() => {
 		countTotalPage()
 		dispatch(setPage(1))
-	}, [totalItem, pageLimit])
+	}, [count])
 
 	function countTotalPage() {
 		const arr = []
-		for (let index = 1; index <= Math.ceil(totalItem / pageLimit); index++) {
+		for (let index = 1; index <= Math.ceil(count / pageLimit); index++) {
 			arr.push(index)
 		}
 		setTotalPages(arr)
@@ -32,34 +32,30 @@ const Pagination: FC<{ topHeight: number }> = ({ topHeight }) => {
 		window.scrollTo(0, topHeight)
 	}
 
-	if (!totalItem) {
-		return <></>
+	if (!count) {
+		return <h1>No Pagination</h1>
 	}
 
 	return (
 		<section className={s.wrapper}>
-			<button
-				className={s.arrowLeft}
-				onClick={() => page > 1 && handleChangePage(page - 1)}
-			>
+			<button className={s.arrowLeft} onClick={() => page > 1 && handleChangePage(page - 1)}>
 				<IconsSVG id='arrowSpoiler' />
 			</button>
 			<div className={s.pagesNumber}>
 				{totalPages
-					.filter(p => (p < page + 4) && (p > page - 4))
+					.filter(p => p < page + 4 && p > page - 4)
 					.map(p => (
 						<button
-							key={p} onClick={() => handleChangePage(p)}
+							key={p}
+							onClick={() => handleChangePage(p)}
 							className={cn(s.pageNumber, {
 								[s.pageNumber_active]: p === page
-							})}
-						>{p}</button>
+							})}>
+							{p}
+						</button>
 					))}
 			</div>
-			<button
-				className={s.arrowRight}
-				onClick={() => page < totalPages.length && handleChangePage(page + 1)}
-			>
+			<button className={s.arrowRight} onClick={() => page < totalPages.length && handleChangePage(page + 1)}>
 				<IconsSVG id='arrowSpoiler' />
 			</button>
 		</section>

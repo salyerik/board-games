@@ -1,6 +1,8 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 
 import useTypedSelector from '../../../hooks/useTypedSelector'
+import useAppDispatch from '../../../hooks/useAppDispatch'
+import getProductsThunk from '../../../redux/asyncThunks/getProductsThunk'
 
 import TopSlider from './TopSlider'
 import Catalog from './Catalog'
@@ -12,6 +14,11 @@ import Contacts from './Contacts'
 
 const Main: FC = () => {
 	const { mainPageItems } = useTypedSelector(({ products }) => products)
+	const dispatch = useAppDispatch()
+
+	useEffect(() => {
+		dispatch(getProductsThunk())
+	}, [])
 
 	return (
 		<>

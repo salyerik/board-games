@@ -3,9 +3,7 @@ import cn from 'classnames'
 import { Link } from 'react-router-dom'
 
 import { getProduct } from '../../../../server/getProducts'
-import {
-	addCartItem, decrementCartItem, removeCartItem
-} from '../../../../redux/slices/cartPageSlice'
+import { addCartItem, decrementCartItem, removeCartItem } from '../../../../redux/slices/cartPageSlice'
 
 import { iCardProduct } from '../../../../types/commonTypes'
 import useTypedSelector from '../../../../hooks/useTypedSelector'
@@ -22,7 +20,7 @@ const CartItem: FC<{ id: string }> = ({ id }) => {
 	const addedItems = useTypedSelector(({ cartPage }) => cartPage.addedItems)
 
 	useEffect(() => {
-		getProduct(id).then(data => setItem(data))
+		getProduct(id).then(({ data }) => setItem(data))
 	}, [])
 
 	useEffect(() => {
@@ -34,32 +32,38 @@ const CartItem: FC<{ id: string }> = ({ id }) => {
 
 	function incrementItemHandle() {
 		if (item) {
-			dispatch(addCartItem({
-				id,
-				newPrice: item.price.new,
-				oldPrice: item.price.old || item.price.new
-			}))
+			dispatch(
+				addCartItem({
+					id,
+					newPrice: item.price.new,
+					oldPrice: item.price.old || item.price.new,
+				})
+			)
 		}
 	}
 
 	function decrementItemHandle() {
 		if (itemQuantity > 1 && item) {
-			dispatch(decrementCartItem({
-				id,
-				newPrice: item.price.new,
-				oldPrice: item.price.old || item.price.new
-			}))
+			dispatch(
+				decrementCartItem({
+					id,
+					newPrice: item.price.new,
+					oldPrice: item.price.old || item.price.new,
+				})
+			)
 		}
 	}
 
 	function removeItemHandle() {
 		if (item) {
-			dispatch(removeCartItem({
-				id,
-				newPrice: item.price.new * itemQuantity,
-				oldPrice: (item.price.old || item.price.new) * itemQuantity,
-				itemQuantity
-			}))
+			dispatch(
+				removeCartItem({
+					id,
+					newPrice: item.price.new * itemQuantity,
+					oldPrice: (item.price.old || item.price.new) * itemQuantity,
+					itemQuantity,
+				})
+			)
 		}
 	}
 
@@ -69,23 +73,25 @@ const CartItem: FC<{ id: string }> = ({ id }) => {
 
 	return (
 		<section className={s.item}>
-			<Link to={`/board-games/product/${item.id}`} className={s.img}>
+			<Link to={`/board-games/product/${item._id}`} className={s.img}>
 				<img src={item.img.compressed} alt={item.img.compressed} />
 			</Link>
-			<Link to={`/board-games/product/${item.id}`} className={s.name}>{item.name}</Link>
+			<Link to={`/board-games/product/${item._id}`} className={s.name}>
+				{item.name}
+			</Link>
 			<div className={s.params}>
 				<div className={s.price}>
-					{item.price.old &&
-						<span className={s.oldPrice}>{item.price.old * itemQuantity}$</span>
-					}
+					{item.price.old && <span className={s.oldPrice}>{item.price.old * itemQuantity}$</span>}
 					<span className={s.newPrice}>{item.price.new * itemQuantity}$</span>
 				</div>
 				<div className={s.quantity}>
-					<button type='button' onClick={decrementItemHandle}
-						className={cn(s.btnQuantity, s.minus)}>-</button>
+					<button type='button' onClick={decrementItemHandle} className={cn(s.btnQuantity, s.minus)}>
+						-
+					</button>
 					<span>{itemQuantity} pcs.</span>
-					<button type='button' onClick={incrementItemHandle}
-						className={cn(s.btnQuantity, s.plus)}>+</button>
+					<button type='button' onClick={incrementItemHandle} className={cn(s.btnQuantity, s.plus)}>
+						+
+					</button>
 				</div>
 				<button className={s.btnDelete} onClick={removeItemHandle}>
 					<IconsSVG id='trash' />
