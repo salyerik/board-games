@@ -1,6 +1,6 @@
 import { FC, useEffect, useRef } from 'react'
 
-import { getFilteredProducts } from '../../../server/getProducts'
+import { getFilteredProducts } from '../../../API/getProducts'
 import { setSortPrice, toggleLoadingProducts } from '../../../redux/slices/filterCategorySlice'
 import { setCatalogItems, setTotalCount } from '../../../redux/slices/productsSlice'
 import useAppDispatch from '../../../hooks/useAppDispatch'

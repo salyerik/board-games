@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import { findItem } from '../../../../server/getProducts'
+import { findItem } from '../../../../API/getProducts'
 import { setSearchedItems } from '../../../../redux/slices/headerSlice'
 import useTypedSelector from '../../../../hooks/useTypedSelector'
 import useAppDispatch from '../../../../hooks/useAppDispatch'

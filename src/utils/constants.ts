@@ -1,1 +1,1 @@
-export const API = 'http://localhost:3030/api/products'
+export const API = 'https://still-atoll-40996.herokuapp.com/api/products'

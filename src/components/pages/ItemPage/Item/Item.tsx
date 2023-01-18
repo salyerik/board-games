@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
-import { getProduct } from '../../../../server/getProducts'
+import { getProduct } from '../../../../API/getProducts'
 import { iBreadLink, iCardProduct } from '../../../../types/commonTypes'
 
 import ItemImages from './ItemImages'

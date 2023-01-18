@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from 'react'
 
-import { getProduct } from '../../../../../server/getProducts'
+import { getProduct } from '../../../../../API/getProducts'
 import { iCardProduct } from '../../../../../types/commonTypes'
 
 import s from './OrderItem.module.sass'

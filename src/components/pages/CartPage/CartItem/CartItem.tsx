@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from 'react'
 import cn from 'classnames'
 import { Link } from 'react-router-dom'
 
-import { getProduct } from '../../../../server/getProducts'
+import { getProduct } from '../../../../API/getProducts'
 import { addCartItem, decrementCartItem, removeCartItem } from '../../../../redux/slices/cartPageSlice'
 
 import { iCardProduct } from '../../../../types/commonTypes'
@@ -36,7 +36,7 @@ const CartItem: FC<{ id: string }> = ({ id }) => {
 				addCartItem({
 					id,
 					newPrice: item.price.new,
-					oldPrice: item.price.old || item.price.new,
+					oldPrice: item.price.old || item.price.new
 				})
 			)
 		}
@@ -48,7 +48,7 @@ const CartItem: FC<{ id: string }> = ({ id }) => {
 				decrementCartItem({
 					id,
 					newPrice: item.price.new,
-					oldPrice: item.price.old || item.price.new,
+					oldPrice: item.price.old || item.price.new
 				})
 			)
 		}
@@ -61,7 +61,7 @@ const CartItem: FC<{ id: string }> = ({ id }) => {
 					id,
 					newPrice: item.price.new * itemQuantity,
 					oldPrice: (item.price.old || item.price.new) * itemQuantity,
-					itemQuantity,
+					itemQuantity
 				})
 			)
 		}

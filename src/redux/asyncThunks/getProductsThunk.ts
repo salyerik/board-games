@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { AxiosError } from 'axios'
 
-import { getProducts } from '../../server/getProducts'
+import { getProducts } from '../../API/getProducts'
 import { setMainPageItems } from '../slices/productsSlice'
 
 const getProductsThunk = createAsyncThunk('products/getProductsThunk', async (_, { dispatch }) => {
