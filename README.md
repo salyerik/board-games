@@ -8,9 +8,17 @@
 	* Axios
 * SASS
 * Swiper-slider
+* BackEnd:
+	* Express.js
+	* MongoDB Atlas
+	* Mongoose
+
+[BackEnd Repository⬅️][link2]
+
 
 ##### Products can be filtered and I'm also proud of my range slider.
 ###### Almost all functionality works
 [Link to the page⬅️][link]
 
 [link]: https://steterik.github.io/board-games/
+[link2]: https://github.com/StetErik/board-games-backend
