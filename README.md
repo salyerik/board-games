@@ -20,5 +20,5 @@
 ###### Almost all functionality works
 [Link to the page⬅️][link]
 
-[link]: https://steterik.github.io/board-games/
-[link2]: https://github.com/StetErik/board-games-backend
+[link]: https://steterik.github.io/boardGames
+[link2]: https://github.com/StetErik/boardGamesBackend
