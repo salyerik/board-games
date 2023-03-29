@@ -3,7 +3,11 @@ import cn from 'classnames'
 import { Link } from 'react-router-dom'
 
 import { getProduct } from '../../../../API/getProducts'
-import { addCartItem, decrementCartItem, removeCartItem } from '../../../../redux/slices/cartPageSlice'
+import {
+	addCartItem,
+	decrementCartItem,
+	removeCartItem
+} from '../../../../redux/slices/cartPageSlice'
 
 import { iCardProduct } from '../../../../types/commonTypes'
 import useTypedSelector from '../../../../hooks/useTypedSelector'
@@ -73,23 +77,31 @@ const CartItem: FC<{ id: string }> = ({ id }) => {
 
 	return (
 		<section className={s.item}>
-			<Link to={`/board-games/product/${item._id}`} className={s.img}>
+			<Link to={`/boardGames/product/${item._id}`} className={s.img}>
 				<img src={item.img.compressed} alt={item.img.compressed} />
 			</Link>
-			<Link to={`/board-games/product/${item._id}`} className={s.name}>
+			<Link to={`/boardGames/product/${item._id}`} className={s.name}>
 				{item.name}
 			</Link>
 			<div className={s.params}>
 				<div className={s.price}>
-					{item.price.old && <span className={s.oldPrice}>{item.price.old * itemQuantity}$</span>}
+					{item.price.old && (
+						<span className={s.oldPrice}>{item.price.old * itemQuantity}$</span>
+					)}
 					<span className={s.newPrice}>{item.price.new * itemQuantity}$</span>
 				</div>
 				<div className={s.quantity}>
-					<button type='button' onClick={decrementItemHandle} className={cn(s.btnQuantity, s.minus)}>
+					<button
+						type='button'
+						onClick={decrementItemHandle}
+						className={cn(s.btnQuantity, s.minus)}>
 						-
 					</button>
 					<span>{itemQuantity} pcs.</span>
-					<button type='button' onClick={incrementItemHandle} className={cn(s.btnQuantity, s.plus)}>
+					<button
+						type='button'
+						onClick={incrementItemHandle}
+						className={cn(s.btnQuantity, s.plus)}>
 						+
 					</button>
 				</div>

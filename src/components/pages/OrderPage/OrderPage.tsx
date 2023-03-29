@@ -12,8 +12,8 @@ const OrderPage: FC = () => {
 	}, [])
 
 	const links = [
-		{ path: '/board-games/cart', name: 'Cart' },
-		{ name: 'Ordering' },
+		{ path: '/boardGames/cart', name: 'Cart' },
+		{ name: 'Ordering' }
 	]
 
 	return (

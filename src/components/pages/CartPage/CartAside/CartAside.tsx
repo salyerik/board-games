@@ -7,9 +7,9 @@ import s from './CartAside.module.sass'
 import IconsSVG from '../../../UI/IconsSVG'
 
 const CartAside: FC = () => {
-	const {
-		withDiscount, withoutDiscount
-	} = useTypedSelector(({ cartPage }) => cartPage.price)
+	const { withDiscount, withoutDiscount } = useTypedSelector(
+		({ cartPage }) => cartPage.price
+	)
 
 	return (
 		<section className={s.wrapper}>
@@ -23,12 +23,14 @@ const CartAside: FC = () => {
 			</div>
 			<div className={s.label}>Promocode:</div>
 			<div className={s.form}>
-				<input type="text" className={s.input} />
+				<input type='text' className={s.input} />
 				<button className={s.promoBtn}>
 					<IconsSVG id='check' />
 				</button>
 			</div>
-			<Link to={'/board-games/order'} className={s.btnTop}>Order</Link>
+			<Link to={'/boardGames/order'} className={s.btnTop}>
+				Order
+			</Link>
 		</section>
 	)
 }

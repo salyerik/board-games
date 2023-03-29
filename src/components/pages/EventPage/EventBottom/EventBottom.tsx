@@ -11,7 +11,7 @@ const EventBottom: FC<{ events: iEvent[] }> = ({ events }) => (
 			{events.map(event => (
 				<ItemInfoCard
 					key={event.id}
-					link={`/board-games/event/${event.id}`}
+					link={`/boardGames/event/${event.id}`}
 					img={event.img}
 					text={event.label}
 					title={event.title}

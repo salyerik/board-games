@@ -10,7 +10,9 @@ const Catalog: FC = () => {
 
 	return (
 		<section className='container'>
-			<Link to='/board-games/catalog' className='title'>Catalog</Link>
+			<Link to='/boardGames/catalog' className='title'>
+				Catalog
+			</Link>
 			<div className={s.grid}>
 				{catalogs.map(catalog => (
 					<Link to={catalog.path} key={catalog.id} className={s.item}>

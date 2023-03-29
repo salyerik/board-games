@@ -12,15 +12,17 @@ const MoreInteresting: FC = () => {
 		<section className='container'>
 			<h4 className='title'>More interesting information</h4>
 			<div className={s.flex}>
-				{blogPage.items.filter(blog => blog.id <= 3).map(blog => (
-					<ItemInfoCard
-						key={blog.id}
-						link={`/board-games/blog/${blog.id}`}
-						img={blog.img}
-						text={blog.label}
-						title={blog.title}
-					/>
-				))}
+				{blogPage.items
+					.filter(blog => blog.id <= 3)
+					.map(blog => (
+						<ItemInfoCard
+							key={blog.id}
+							link={`/boardGames/blog/${blog.id}`}
+							img={blog.img}
+							text={blog.label}
+							title={blog.title}
+						/>
+					))}
 			</div>
 		</section>
 	)

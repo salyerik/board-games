@@ -18,7 +18,9 @@ const HeaderTop: FC = () => {
 	const { logo, humanIcon, cart, phone, search } = useTypedSelector(
 		({ header }) => header.images
 	)
-	const totalQuantity = useTypedSelector(({ cartPage }) => cartPage.totalQuantity)
+	const totalQuantity = useTypedSelector(
+		({ cartPage }) => cartPage.totalQuantity
+	)
 	const { phoneNumber } = useTypedSelector(state => state.common.commonData)
 
 	useEffect(() => {
@@ -39,20 +41,23 @@ const HeaderTop: FC = () => {
 
 	return (
 		<section className={s.headerTop}>
-			{isModalActive &&
+			{isModalActive && (
 				<div className={s.modalWrapper} onClick={handleModalActive}>
 					<div className='closeBtn'>&times;</div>
 					<LogModal />
-				</div>}
-			<div className="container">
+				</div>
+			)}
+			<div className='container'>
 				<div className={s.topFlex}>
-					<div onClick={handleMenu} className={cn(s.menuBurger, {
-						[s.menuBurger__active]: isMenuActive
-					})}>
+					<div
+						onClick={handleMenu}
+						className={cn(s.menuBurger, {
+							[s.menuBurger__active]: isMenuActive
+						})}>
 						<span></span>
 					</div>
-					<Link to="/board-games" className={s.logo}>
-						<img src={logo} alt="Logo" />
+					<Link to='/boardGames' className={s.logo}>
+						<img src={logo} alt='Logo' />
 					</Link>
 					<Search search={search} />
 					<a href={phoneNumber.path} className={s.number}>
@@ -60,15 +65,18 @@ const HeaderTop: FC = () => {
 						<span>{phoneNumber.text}</span>
 					</a>
 					<div className={s.icons}>
-						<button className={s.loginIcon} type='button'
+						<button
+							className={s.loginIcon}
+							type='button'
 							onClick={handleModalActive}>
 							<IconsSVG id={humanIcon} />
 						</button>
-						<Link to={'/board-games/cart'} className={s.cartIcon}>
+						<Link to={'/boardGames/cart'} className={s.cartIcon}>
 							<IconsSVG id={cart} />
-							<span className={cn(s.cartCount, {
-								[s.cartCount_active]: totalQuantity
-							})}>
+							<span
+								className={cn(s.cartCount, {
+									[s.cartCount_active]: totalQuantity
+								})}>
 								{totalQuantity}
 							</span>
 						</Link>

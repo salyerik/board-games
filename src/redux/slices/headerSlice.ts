@@ -4,10 +4,10 @@ import { iHeaderState, iSearchedItem } from '../../types/headerTypes'
 const initialState: iHeaderState = {
 	isMenuActive: false,
 	links: [
-		{ title: 'Catalog', path: '/board-games/catalog' },
-		{ title: 'Events', path: '/board-games/events' },
-		{ title: 'Blog', path: '/board-games/blog' },
-		{ title: 'About us', path: '/board-games/about-us' }
+		{ title: 'Catalog', path: '/boardGames/catalog' },
+		{ title: 'Events', path: '/boardGames/events' },
+		{ title: 'Blog', path: '/boardGames/blog' },
+		{ title: 'About us', path: '/boardGames/about-us' }
 	],
 	images: {
 		logo: 'https://i.ibb.co/sHwc8GH/logo.png',

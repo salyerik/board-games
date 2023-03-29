@@ -64,11 +64,17 @@ const Search: FC<{ search: string }> = ({ search }) => {
 				<div className={s.items}>
 					{searchedItems.map(item => (
 						<div key={item.id} className={s.itemWrapper}>
-							<Link onClick={handleLinkClick} to={`/board-games/product/${item.id}`} className={s.img}>
+							<Link
+								onClick={handleLinkClick}
+								to={`/boardGames/product/${item.id}`}
+								className={s.img}>
 								<img src={item.img} alt='item.name' />
 							</Link>
 							<div className={s.content}>
-								<Link onClick={handleLinkClick} to={`/board-games/product/${item.id}`} className={s.itemTitle}>
+								<Link
+									onClick={handleLinkClick}
+									to={`/boardGames/product/${item.id}`}
+									className={s.itemTitle}>
 									{item.name}
 								</Link>
 								<div className={s.itemPrice}>

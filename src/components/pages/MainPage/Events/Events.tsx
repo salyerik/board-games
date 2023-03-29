@@ -20,7 +20,7 @@ const Events: FC = () => {
 				{items.slice(0, quantityItems).map(event => (
 					<ItemInfoCard
 						key={event.id}
-						link={`/board-games/event/${event.id}`}
+						link={`/boardGames/event/${event.id}`}
 						img={event.img}
 						text={event.label}
 						title={event.title}
@@ -28,11 +28,11 @@ const Events: FC = () => {
 					/>
 				))}
 			</div>
-			{quantityItems < items.length &&
+			{quantityItems < items.length && (
 				<button onClick={handleQuantityItems} className={s.btn}>
 					Show more
 				</button>
-			}
+			)}
 		</section>
 	)
 }

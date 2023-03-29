@@ -19,10 +19,9 @@ const TopSlider: FC = () => {
 				spaceBetween={8}
 				centeredSlides
 				loop
-				navigation={{ prevEl: '.prevSlide', nextEl: '.nextSlide', }}
+				navigation={{ prevEl: '.prevSlide', nextEl: '.nextSlide' }}
 				breakpoints={{ 320: { slidesPerView: 1 }, 768: { slidesPerView: 1.5 } }}
-				autoplay={{ delay: 2500 }}
-			>
+				autoplay={{ delay: 2500 }}>
 				{slides.map(slide => (
 					<SwiperSlide key={slide.id}>
 						<div className={s.slide}>
@@ -31,11 +30,11 @@ const TopSlider: FC = () => {
 									<span className={s.subTitle}>{slide.subTitle}</span>
 									<h4 className={s.title}>{slide.title}</h4>
 								</div>
-								<Link to={`/board-games/blog/${slide.id}`} className={s.btn}>
+								<Link to={`/boardGames/blog/${slide.id}`} className={s.btn}>
 									More
 								</Link>
 							</div>
-							<img className={s.img} src={slide.image} alt="" />
+							<img className={s.img} src={slide.image} alt='' />
 						</div>
 					</SwiperSlide>
 				))}

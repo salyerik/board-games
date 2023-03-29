@@ -17,7 +17,7 @@ const AsideCategory: FC<{ resetSort: () => void }> = ({ resetSort }) => {
 	function handleResetBtn() {
 		dispatch(resetFilter())
 		resetSort()
-		navigate('/board-games/catalog')
+		navigate('/boardGames/catalog')
 	}
 
 	return (
@@ -27,7 +27,12 @@ const AsideCategory: FC<{ resetSort: () => void }> = ({ resetSort }) => {
 			<AgeFilter />
 			{/* <InStock /> */}
 			<PlayersQuantity />
-			<input className={s.btn} type='button' value='Reset filter' onClick={handleResetBtn} />
+			<input
+				className={s.btn}
+				type='button'
+				value='Reset filter'
+				onClick={handleResetBtn}
+			/>
 		</section>
 	)
 }

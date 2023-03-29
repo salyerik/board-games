@@ -25,7 +25,10 @@ const BlogPage: FC = () => {
 	useEffect(() => {
 		window.scroll(0, 0)
 		if (blogPage) {
-			setLinks([{ path: '/board-games/blog', name: 'Blog' }, { name: `${blog?.linkName}` }])
+			setLinks([
+				{ path: '/boardGames/blog', name: 'Blog' },
+				{ name: `${blog?.linkName}` }
+			])
 		}
 	}, [blog])
 
@@ -69,7 +72,7 @@ const BlogPage: FC = () => {
 				{blogPage.learnMore.map(item => (
 					<ItemInfoCard
 						key={item.id}
-						link={`/board-games/blog/${item.id}`}
+						link={`/boardGames/blog/${item.id}`}
 						img={item.img}
 						title={item.title}
 						text={item.text}

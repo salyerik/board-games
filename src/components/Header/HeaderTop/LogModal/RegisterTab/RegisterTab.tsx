@@ -13,14 +13,14 @@ const RegisterTab = () => {
 			<InputLogin label='Phone number' type='number' />
 			<InputLogin label='Password ' type='password' />
 			<label className={s.checkboxLabel}>
-				<input type="checkbox" className='checkboxInput' />
+				<input type='checkbox' className='checkboxInput' />
 				<span>
-          I agree with <Link to="/board-games/policy">privacy policy</Link>
+					I agree with <Link to='/boardGames/policy'>privacy policy</Link>
 					and with the processing of personal data
 				</span>
 			</label>
 			<label className={s.checkboxLabelBottom}>
-				<input type="checkbox" className='checkboxInput' />
+				<input type='checkbox' className='checkboxInput' />
 				<span>I want to be the first to receive news and promotions</span>
 			</label>
 			<BtnLogin text={'Sign up'} />

@@ -9,23 +9,25 @@ const FooterBottom: FC = () => {
 
 	return (
 		<section className={s.footerBottom}>
-			<div className="container">
+			<div className='container'>
 				<div className={s.flex}>
 					<div className={s.left}>
 						<span className={s.copy}>© 2022</span>
-						<Link to='/board-games/policy' className={s.policy}>
-              Privacy Policy
+						<Link to='/boardGames/policy' className={s.policy}>
+							Privacy Policy
 						</Link>
 					</div>
 					<div className={s.middle}>
-						{images.map(img => (<img key={img} src={img} alt={img} />))}
+						{images.map(img => (
+							<img key={img} src={img} alt={img} />
+						))}
 					</div>
 					<div className={s.right}>
 						<span className={s.copy}>
 							The content does not constitute a public offer
 						</span>
-						<Link to='/board-games/policy' className={s.policy}>
-              User Agreement
+						<Link to='/boardGames/policy' className={s.policy}>
+							User Agreement
 						</Link>
 					</div>
 				</div>

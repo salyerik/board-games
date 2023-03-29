@@ -29,14 +29,21 @@ const Item: FC = () => {
 
 	useEffect(() => {
 		if (item) {
-			setLinks([{ name: 'Catalog', path: '/board-games/catalog' }, { name: item.name }])
+			setLinks([
+				{ name: 'Catalog', path: '/boardGames/catalog' },
+				{ name: item.name }
+			])
 		}
 	}, [item])
 
 	if (item === undefined) return <Preloader />
 
 	if (item === null) {
-		return <h3 className={s.title + ' ' + s.title_active}>Sorry, the product was not found</h3>
+		return (
+			<h3 className={s.title + ' ' + s.title_active}>
+				Sorry, the product was not found
+			</h3>
+		)
 	}
 
 	return (

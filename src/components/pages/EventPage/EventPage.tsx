@@ -27,8 +27,8 @@ const EventPage: FC = () => {
 	useEffect(() => {
 		window.scroll(0, 0)
 		setLinks([
-			{ path: '/board-games/events', name: 'Events' },
-			{ name: `${event?.title}` },
+			{ path: '/boardGames/events', name: 'Events' },
+			{ name: `${event?.title}` }
 		])
 	}, [event])
 
@@ -46,7 +46,7 @@ const EventPage: FC = () => {
 
 	return (
 		<section className='container'>
-			{event &&
+			{event && (
 				<>
 					<BreadCrumps links={links} />
 					<h4 className='title'>{event.title}</h4>
@@ -65,13 +65,13 @@ const EventPage: FC = () => {
 					</div>
 					<EventBottom events={items.slice(0, 2)} />
 				</>
-			}
-			{isModalActive &&
+			)}
+			{isModalActive && (
 				<div onClick={handleModalActive} className={s.modal}>
 					<div className='closeBtn'>&times;</div>
 					<EventModal setModalActive={setModalActive} />
 				</div>
-			}
+			)}
 		</section>
 	)
 }

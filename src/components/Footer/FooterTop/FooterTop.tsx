@@ -11,7 +11,9 @@ const FooterTop: FC = () => {
 	const [isModalActive, setModalActive] = useState<boolean>(false)
 	const images = useTypedSelector(({ header }) => header.images)
 	const { catalogs } = useTypedSelector(state => state.common.commonData)
-	const { footer, mail, phoneNumber } = useTypedSelector(state => state.common.commonData)
+	const { footer, mail, phoneNumber } = useTypedSelector(
+		state => state.common.commonData
+	)
 
 	useEffect(() => {
 		if (isModalActive) {
@@ -31,30 +33,34 @@ const FooterTop: FC = () => {
 
 	return (
 		<section className='container'>
-			{isModalActive &&
+			{isModalActive && (
 				<div className={s.modal} onClick={handleModalActive}>
 					<span className='closeBtn'>&times;</span>
 					<CallOrderModal />
 				</div>
-			}
+			)}
 			<div className={s.flex}>
 				<div className={s.left}>
-					<Link to='/board-games' className={s.logo}>
-						<img src={images.logo} alt="logo" />
+					<Link to='/boardGames' className={s.logo}>
+						<img src={images.logo} alt='logo' />
 					</Link>
-					<span className={s.text}>San Francisco<br />
-            Maly Drovyany Lane #6</span>
+					<span className={s.text}>
+						San Francisco
+						<br />
+						Maly Drovyany Lane #6
+					</span>
 				</div>
 				<div className={s.middle}>
 					<div className={s.catalog}>
-						<Link to={'/board-games/catalog'} className={s.catalogTitle}>Catalog</Link>
+						<Link to={'/boardGames/catalog'} className={s.catalogTitle}>
+							Catalog
+						</Link>
 						<ul className={s.catalogList}>
 							{catalogs.map(catalog => (
 								<li
 									onClick={handleLinkClick}
 									key={catalog.id}
-									className={s.catalogLink}
-								>
+									className={s.catalogLink}>
 									<Link to={catalog.path}>{catalog.name}</Link>
 								</li>
 							))}
@@ -80,7 +86,9 @@ const FooterTop: FC = () => {
 							{mail.text}
 						</a>
 					</div>
-					<div className={s.socials}><SocialNets /></div>
+					<div className={s.socials}>
+						<SocialNets />
+					</div>
 				</div>
 			</div>
 		</section>

@@ -2,7 +2,11 @@ import { FC, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import cn from 'classnames'
 
-import { setCategory, setSubCategory, toggleCategoriesSpoiler } from '../../../../../redux/slices/filterCategorySlice'
+import {
+	setCategory,
+	setSubCategory,
+	toggleCategoriesSpoiler
+} from '../../../../../redux/slices/filterCategorySlice'
 import useTypedSelector from '../../../../../hooks/useTypedSelector'
 import useAppDispatch from '../../../../../hooks/useAppDispatch'
 import SubCategories from './SubCategories'
@@ -11,7 +15,9 @@ import IconsSVG from '../../../../UI/IconsSVG'
 
 const AllCategories: FC = () => {
 	const dispatch = useAppDispatch()
-	const { categoriesFilter } = useTypedSelector(({ filterCategory }) => filterCategory.isSpoilerActive)
+	const { categoriesFilter } = useTypedSelector(
+		({ filterCategory }) => filterCategory.isSpoilerActive
+	)
 	const params = useParams()
 
 	useEffect(() => {
@@ -36,7 +42,7 @@ const AllCategories: FC = () => {
 	return (
 		<section className={'asideCategoryWrapper'}>
 			<Link
-				to='/board-games/catalog'
+				to='/boardGames/catalog'
 				className={cn('asideCategoryTitle', {
 					asideCategoryTitle_active: categoriesFilter
 				})}

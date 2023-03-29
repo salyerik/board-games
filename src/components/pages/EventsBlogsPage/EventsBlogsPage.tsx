@@ -59,10 +59,11 @@ const EventsBlogsPage: FC = () => {
 						return (
 							<ItemInfoCard
 								key={item.id}
-								link={pathname
-									.includes('blog') ?
-									`/board-games/blog/${item.id}` :
-									`/board-games/event/${item.id}`}
+								link={
+									pathname.includes('blog')
+										? `/boardGames/blog/${item.id}`
+										: `/boardGames/event/${item.id}`
+								}
 								img={item.img}
 								text={item.label}
 								title={item.title}
