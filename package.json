@@ -2,7 +2,7 @@
 	"name": "11_game-shop",
 	"version": "0.1.0",
 	"private": true,
-	"homepage": "https://steterik.github.io/board-games",
+	"homepage": "https://steterik.github.io/boardGames/",
 	"dependencies": {
 		"@reduxjs/toolkit": "^1.8.2",
 		"@testing-library/jest-dom": "^5.16.4",
@@ -29,8 +29,6 @@
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"eject": "react-scripts eject",
-		"server": "json-server --watch --port 3001 db.json",
-		"predeploy": "npm run build",
 		"deploy": "gh-pages -d build"
 	},
 	"eslintConfig": {
@@ -52,7 +50,7 @@
 		]
 	},
 	"devDependencies": {
-		"gh-pages": "^4.0.0",
+		"gh-pages": "^5.0.0",
 		"sass": "^1.52.1"
 	}
 }
