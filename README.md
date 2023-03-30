@@ -13,12 +13,10 @@
 	* MongoDB Atlas
 	* Mongoose
 
-[BackEnd Repository⬅️][link2]
-
-
 ##### Products can be filtered and I'm also proud of my range slider.
 ###### Almost all functionality works
-[Link to the page⬅️][link]
+
+[BackEnd Repository⬅️][link2]
 
 [link]: https://steterik.github.io/boardGames
-[link2]: https://github.com/StetErik/boardGamesBackend
+[link2]: https://github.com/StetErik/boardGamesServer
