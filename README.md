@@ -18,5 +18,5 @@
 
 [BackEnd Repository⬅️][link2]
 
-[link]: https://steterik.github.io/boardGames
-[link2]: https://github.com/StetErik/boardGamesServer
+[link]: https://steterik.github.io/board-games
+[link2]: https://github.com/StetErik/board-games-api
