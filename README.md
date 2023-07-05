@@ -1,5 +1,5 @@
 # This is an online store
-[Link to the page ⬅️][link]
+[Link to the page ⬅️][link]  
 [BackEnd Repository ⬅️][link2]
 ## Stack:
 * React
@@ -17,7 +17,7 @@
 ##### Products can be filtered and I'm also proud of my range slider.
 ###### Almost all functionality works
 
-[BackEnd Repository ⬅️][link2]
+[BackEnd Repository ⬅️][link2]  
 [Link to the page ⬅️][link]
 
 [link]: https://steterik.github.io/board-games
