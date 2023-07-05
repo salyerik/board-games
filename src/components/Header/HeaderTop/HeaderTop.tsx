@@ -1,42 +1,42 @@
-import { FC, useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import cn from 'classnames'
+import { FC, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import cn from 'classnames';
 
-import { toggleActiveMenu } from '../../../redux/slices/headerSlice'
-import useAppDispatch from '../../../hooks/useAppDispatch'
-import useTypedSelector from '../../../hooks/useTypedSelector'
-import LogModal from './LogModal'
-import Search from './Search'
+import { toggleActiveMenu } from '../../../store/slices/header-slice';
+import useAppDispatch from '../../../hooks/useAppDispatch';
+import useTypedSelector from '../../../hooks/useTypedSelector';
+import LogModal from './LogModal';
+import Search from './Search';
 
-import s from './HeaderTop.module.sass'
-import IconsSVG from '../../UI/IconsSVG'
+import s from './HeaderTop.module.sass';
+import IconsSVG from '../../UI/IconsSVG';
 
 const HeaderTop: FC = () => {
-	const dispatch = useAppDispatch()
-	const [isModalActive, setModalActive] = useState<boolean>(false)
-	const isMenuActive = useTypedSelector(({ header }) => header.isMenuActive)
+	const dispatch = useAppDispatch();
+	const [isModalActive, setModalActive] = useState<boolean>(false);
+	const isMenuActive = useTypedSelector(({ header }) => header.isMenuActive);
 	const { logo, humanIcon, cart, phone, search } = useTypedSelector(
-		({ header }) => header.images
-	)
+		({ header }) => header.images,
+	);
 	const totalQuantity = useTypedSelector(
-		({ cartPage }) => cartPage.totalQuantity
-	)
-	const { phoneNumber } = useTypedSelector(state => state.common.commonData)
+		({ cartPage }) => cartPage.totalQuantity,
+	);
+	const { phoneNumber } = useTypedSelector(state => state.common.commonData);
 
 	useEffect(() => {
 		if (!isModalActive && !isMenuActive) {
-			document.body.classList.remove('lock')
+			document.body.classList.remove('lock');
 		} else if (isModalActive || isMenuActive) {
-			document.body.classList.add('lock')
+			document.body.classList.add('lock');
 		}
-	}, [isModalActive, isMenuActive])
+	}, [isModalActive, isMenuActive]);
 
 	function handleMenu() {
-		dispatch(toggleActiveMenu())
+		dispatch(toggleActiveMenu());
 	}
 
 	function handleModalActive() {
-		setModalActive(!isModalActive)
+		setModalActive(!isModalActive);
 	}
 
 	return (
@@ -52,11 +52,11 @@ const HeaderTop: FC = () => {
 					<div
 						onClick={handleMenu}
 						className={cn(s.menuBurger, {
-							[s.menuBurger__active]: isMenuActive
+							[s.menuBurger__active]: isMenuActive,
 						})}>
 						<span></span>
 					</div>
-					<Link to='/boardGames' className={s.logo}>
+					<Link to='/board-games' className={s.logo}>
 						<img src={logo} alt='Logo' />
 					</Link>
 					<Search search={search} />
@@ -71,11 +71,11 @@ const HeaderTop: FC = () => {
 							onClick={handleModalActive}>
 							<IconsSVG id={humanIcon} />
 						</button>
-						<Link to={'/boardGames/cart'} className={s.cartIcon}>
+						<Link to={'/board-games/cart'} className={s.cartIcon}>
 							<IconsSVG id={cart} />
 							<span
 								className={cn(s.cartCount, {
-									[s.cartCount_active]: totalQuantity
+									[s.cartCount_active]: totalQuantity,
 								})}>
 								{totalQuantity}
 							</span>
@@ -84,7 +84,7 @@ const HeaderTop: FC = () => {
 				</div>
 			</div>
 		</section>
-	)
-}
+	);
+};
 
-export default HeaderTop
+export default HeaderTop;

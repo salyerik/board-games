@@ -1,15 +1,15 @@
-import { FC } from 'react'
+import { FC } from 'react';
 
-import useTypedSelector from '../../../../hooks/useTypedSelector'
-import FormQuestion from './FormQuestion'
+import useTypedSelector from '../../../../hooks/useTypedSelector';
+import FormQuestion from './FormQuestion';
 
-import s from './Contacts.module.sass'
-import IconsSVG from '../../../UI/IconsSVG'
+import s from './Contacts.module.sass';
+import IconsSVG from '../../../UI/IconsSVG';
 
 const Contacts: FC = () => {
-	const {
-		phoneNumber, mail, address, workMode
-	} = useTypedSelector(state => state.common.commonData)
+	const { phoneNumber, mail, address, workMode } = useTypedSelector(
+		state => state.common.commonData,
+	);
 
 	return (
 		<section className='container'>
@@ -48,11 +48,14 @@ const Contacts: FC = () => {
 					<FormQuestion />
 				</div>
 				<div className={s.map}>
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d396.4694817637885!2d-121.89935286088799!3d37.348288366107155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fcc825610fdbb%3A0xc5f906285d05f508!2sSunflowers%20Montessori%20Preschool!5e0!3m2!1sru!2skg!4v1656586993667!5m2!1sru!2skg" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+					<iframe
+						src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d396.4694817637885!2d-121.89935286088799!3d37.348288366107155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fcc825610fdbb%3A0xc5f906285d05f508!2sSunflowers%20Montessori%20Preschool!5e0!3m2!1sru!2skg!4v1656586993667!5m2!1sru!2skg'
+						loading='lazy'
+						referrerPolicy='no-referrer-when-downgrade'></iframe>
 				</div>
 			</div>
 		</section>
-	)
-}
+	);
+};
 
-export default Contacts
+export default Contacts;

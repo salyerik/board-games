@@ -1,12 +1,12 @@
-import { FC } from 'react'
+import { FC } from 'react';
 
-import useTypedSelector from '../../../hooks/useTypedSelector'
-import BreadCrumps from '../../UI/BreadCrumps'
+import useTypedSelector from '../../../hooks/useTypedSelector';
+import BreadCrumps from '../../UI/BreadCrumps';
 
-import s from './AboutUsPage.module.sass'
+import s from './AboutUsPage.module.sass';
 
 const AboutUsPage: FC = () => {
-	const { aboutUsPage } = useTypedSelector(state => state.common)
+	const { aboutUsPage } = useTypedSelector(state => state.common);
 
 	return (
 		<section className='container'>
@@ -31,7 +31,7 @@ const AboutUsPage: FC = () => {
 				))}
 			</div>
 		</section>
-	)
-}
+	);
+};
 
-export default AboutUsPage
+export default AboutUsPage;

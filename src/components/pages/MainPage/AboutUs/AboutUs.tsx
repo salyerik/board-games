@@ -1,27 +1,29 @@
-import { FC } from 'react'
+import { FC } from 'react';
 
-import useTypedSelector from '../../../../hooks/useTypedSelector'
+import useTypedSelector from '../../../../hooks/useTypedSelector';
 
-import s from './AboutUs.module.sass'
+import s from './AboutUs.module.sass';
 
 const AboutUs: FC = () => {
-	const { aboutUs, images } = useTypedSelector(state => state.common.mainPage)
+	const { aboutUs, images } = useTypedSelector(state => state.common.mainPage);
 
 	return (
-		<section className="container">
+		<section className='container'>
 			<div className={s.flex}>
 				<div className={s.content}>
 					<h4 className='title'>About the «Board Games»</h4>
 					<div className={s.text}>
-						{aboutUs.map((text, i) => <p key={i}>{text}</p>)}
+						{aboutUs.map((text, i) => (
+							<p key={i}>{text}</p>
+						))}
 					</div>
 				</div>
 				<div className={s.img}>
-					<img src={images[0]} alt="aboutUsImg" />
+					<img src={images[0]} alt='aboutUsImg' />
 				</div>
 			</div>
 		</section>
-	)
-}
+	);
+};
 
-export default AboutUs
+export default AboutUs;

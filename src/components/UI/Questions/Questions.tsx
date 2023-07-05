@@ -1,10 +1,10 @@
-import { FC } from 'react'
+import { FC } from 'react';
 
-import useTypedSelector from '../../../hooks/useTypedSelector'
-import Question from './Question/Question'
+import useTypedSelector from '../../../hooks/useTypedSelector';
+import Question from './Question/Question';
 
 const Questions: FC = () => {
-	const questions = useTypedSelector(state => state.products.questions)
+	const questions = useTypedSelector(state => state.products.questions);
 
 	return (
 		<article>
@@ -17,7 +17,7 @@ const Questions: FC = () => {
 				/>
 			))}
 		</article>
-	)
-}
+	);
+};
 
-export default Questions
+export default Questions;

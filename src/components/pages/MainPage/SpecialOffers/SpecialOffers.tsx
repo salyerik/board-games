@@ -1,16 +1,16 @@
-import { FC } from 'react'
-import { Navigation } from 'swiper'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import 'swiper/css'
+import { FC } from 'react';
+import { Navigation } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 
-import { iSpecialOffersProps } from '../../../../types/mainPageTypes'
-import Card from '../../../UI/Card'
+import { ISpecialOffersProps } from '../../../../types/main-type';
+import Card from '../../../UI/Card';
 
-import s from './SpecialOffers.module.sass'
-import IconsSVG from '../../../UI/IconsSVG'
+import s from './SpecialOffers.module.sass';
+import IconsSVG from '../../../UI/IconsSVG';
 
-const SpecialOffers: FC<iSpecialOffersProps> = ({ title, items, arrows }) => {
-	const [left, right] = arrows
+const SpecialOffers: FC<ISpecialOffersProps> = ({ title, items, arrows }) => {
+	const [left, right] = arrows;
 
 	return (
 		<section className={s.wrapper}>
@@ -25,8 +25,7 @@ const SpecialOffers: FC<iSpecialOffersProps> = ({ title, items, arrows }) => {
 						426: { slidesPerView: 2 },
 						768: { slidesPerView: 3 },
 						1024: { slidesPerView: 4, spaceBetween: 30, centeredSlides: false },
-					}}
-				>
+					}}>
 					{items.map(item => (
 						<SwiperSlide key={item._id} className={s.slide}>
 							<Card {...item} />
@@ -41,7 +40,7 @@ const SpecialOffers: FC<iSpecialOffersProps> = ({ title, items, arrows }) => {
 				</span>
 			</div>
 		</section>
-	)
-}
+	);
+};
 
-export default SpecialOffers
+export default SpecialOffers;

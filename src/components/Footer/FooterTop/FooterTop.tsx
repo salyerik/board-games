@@ -1,34 +1,34 @@
-import { FC, useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { FC, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
-import useTypedSelector from '../../../hooks/useTypedSelector'
-import CallOrderModal from './CallOrderModal'
-import SocialNets from '../../UI/SocialNets'
+import useTypedSelector from '../../../hooks/useTypedSelector';
+import CallOrderModal from './CallOrderModal';
+import SocialNets from '../../UI/SocialNets';
 
-import s from './FooterTop.module.sass'
+import s from './FooterTop.module.sass';
 
 const FooterTop: FC = () => {
-	const [isModalActive, setModalActive] = useState<boolean>(false)
-	const images = useTypedSelector(({ header }) => header.images)
-	const { catalogs } = useTypedSelector(state => state.common.commonData)
+	const [isModalActive, setModalActive] = useState<boolean>(false);
+	const images = useTypedSelector(({ header }) => header.images);
+	const { catalogs } = useTypedSelector(state => state.common.commonData);
 	const { footer, mail, phoneNumber } = useTypedSelector(
-		state => state.common.commonData
-	)
+		state => state.common.commonData,
+	);
 
 	useEffect(() => {
 		if (isModalActive) {
-			document.body.classList.add('lock')
+			document.body.classList.add('lock');
 		} else {
-			document.body.classList.remove('lock')
+			document.body.classList.remove('lock');
 		}
-	}, [isModalActive])
+	}, [isModalActive]);
 
 	function handleModalActive() {
-		setModalActive(false)
+		setModalActive(false);
 	}
 
 	function handleLinkClick() {
-		window.scrollTo(0, 0)
+		window.scrollTo(0, 0);
 	}
 
 	return (
@@ -41,7 +41,7 @@ const FooterTop: FC = () => {
 			)}
 			<div className={s.flex}>
 				<div className={s.left}>
-					<Link to='/boardGames' className={s.logo}>
+					<Link to='/board-games' className={s.logo}>
 						<img src={images.logo} alt='logo' />
 					</Link>
 					<span className={s.text}>
@@ -52,7 +52,7 @@ const FooterTop: FC = () => {
 				</div>
 				<div className={s.middle}>
 					<div className={s.catalog}>
-						<Link to={'/boardGames/catalog'} className={s.catalogTitle}>
+						<Link to={'/board-games/catalog'} className={s.catalogTitle}>
 							Catalog
 						</Link>
 						<ul className={s.catalogList}>
@@ -92,7 +92,7 @@ const FooterTop: FC = () => {
 				</div>
 			</div>
 		</section>
-	)
-}
+	);
+};
 
-export default FooterTop
+export default FooterTop;

@@ -1,23 +1,23 @@
-import { FC } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { FC } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import { resetFilter } from '../../../../redux/slices/filterCategorySlice'
-import useAppDispatch from '../../../../hooks/useAppDispatch'
-import AgeFilter from './AgeFilter'
-import AllCategories from './AllCategories'
-import PriceFilter from './PriceFilter'
-import PlayersQuantity from './PlayersQuantity'
+import { resetFilter } from '../../../../store/slices/filter-slice';
+import useAppDispatch from '../../../../hooks/useAppDispatch';
+import AgeFilter from './AgeFilter';
+import AllCategories from './AllCategories';
+import PriceFilter from './PriceFilter';
+import PlayersQuantity from './PlayersQuantity';
 
-import s from './AsideCategory.module.sass'
+import s from './AsideCategory.module.sass';
 
 const AsideCategory: FC<{ resetSort: () => void }> = ({ resetSort }) => {
-	const dispatch = useAppDispatch()
-	const navigate = useNavigate()
+	const dispatch = useAppDispatch();
+	const navigate = useNavigate();
 
 	function handleResetBtn() {
-		dispatch(resetFilter())
-		resetSort()
-		navigate('/boardGames/catalog')
+		dispatch(resetFilter());
+		resetSort();
+		navigate('/board-games/catalog');
 	}
 
 	return (
@@ -34,7 +34,7 @@ const AsideCategory: FC<{ resetSort: () => void }> = ({ resetSort }) => {
 				onClick={handleResetBtn}
 			/>
 		</section>
-	)
-}
+	);
+};
 
-export default AsideCategory
+export default AsideCategory;

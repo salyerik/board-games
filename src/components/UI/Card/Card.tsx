@@ -1,17 +1,17 @@
-import { Link } from 'react-router-dom'
-import { FC, useEffect, useState } from 'react'
-import cn from 'classnames'
+import { Link } from 'react-router-dom';
+import { FC, useEffect, useState } from 'react';
+import cn from 'classnames';
 
-import { addCartItem } from '../../../redux/slices/cartPageSlice'
-import useAppDispatch from '../../../hooks/useAppDispatch'
-import useTypedSelector from '../../../hooks/useTypedSelector'
-import { iCardProduct } from '../../../types/commonTypes'
-import CardInProductPage from './CardInProductPage'
+import { addCartItem } from '../../../store/slices/cart-slice';
+import useAppDispatch from '../../../hooks/useAppDispatch';
+import useTypedSelector from '../../../hooks/useTypedSelector';
+import { ICardProduct } from '../../../types/common-type';
+import CardInProductPage from './CardInProductPage';
 
-import s from './Card.module.sass'
-import IconsSVG from '../IconsSVG'
+import s from './Card.module.sass';
+import IconsSVG from '../IconsSVG';
 
-const Card: FC<iCardProduct> = ({
+const Card: FC<ICardProduct> = ({
 	_id,
 	img,
 	discount,
@@ -20,29 +20,29 @@ const Card: FC<iCardProduct> = ({
 	age,
 	name,
 	price,
-	isProductPage
+	isProductPage,
 }) => {
-	const dispatch = useAppDispatch()
-	const [itemQuantity, setItemQuantity] = useState(0)
-	const addedItems = useTypedSelector(({ cartPage }) => cartPage.addedItems)
+	const dispatch = useAppDispatch();
+	const [itemQuantity, setItemQuantity] = useState(0);
+	const addedItems = useTypedSelector(({ cartPage }) => cartPage.addedItems);
 
 	useEffect(() => {
 		if (addedItems.length) {
-			const item = addedItems.find(item => item[_id])
+			const item = addedItems.find(item => item[_id]);
 			if (item) {
-				setItemQuantity(item[_id])
+				setItemQuantity(item[_id]);
 			}
 		}
-	}, [addedItems])
+	}, [addedItems]);
 
 	function addItemToCart() {
 		dispatch(
 			addCartItem({
 				id: _id,
 				newPrice: price.new,
-				oldPrice: price.old || price.new
-			})
-		)
+				oldPrice: price.old || price.new,
+			}),
+		);
 	}
 
 	return (
@@ -51,9 +51,9 @@ const Card: FC<iCardProduct> = ({
 				<div className={s.discount}>-{discount}%</div>
 			)}
 			<Link
-				to={`/boardGames/product/${_id}`}
+				to={`/board-games/product/${_id}`}
 				className={cn(s.mainImg, {
-					[s.mainImg_active]: isProductPage
+					[s.mainImg_active]: isProductPage,
 				})}>
 				<img src={img.original} alt={name} />
 			</Link>
@@ -71,7 +71,7 @@ const Card: FC<iCardProduct> = ({
 				<span className={s.age}>{age}+</span>
 			</div>
 			{!isProductPage && (
-				<Link to={`/boardGames/product/${_id}`} className={s.name}>
+				<Link to={`/board-games/product/${_id}`} className={s.name}>
 					{name}
 				</Link>
 			)}
@@ -90,15 +90,15 @@ const Card: FC<iCardProduct> = ({
 			</button>
 			<Link
 				onClick={addItemToCart}
-				to={`/boardGames/order`}
+				to={`/board-games/order`}
 				className={cn(s.btnFast, {
-					[s.btnFast_active]: isProductPage
+					[s.btnFast_active]: isProductPage,
 				})}>
 				Buy in 1 click
 			</Link>
 			{isProductPage && <CardInProductPage />}
 		</article>
-	)
-}
+	);
+};
 
-export default Card
+export default Card;

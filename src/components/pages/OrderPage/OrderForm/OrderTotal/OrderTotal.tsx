@@ -1,13 +1,13 @@
-import { FC } from 'react'
+import { FC } from 'react';
 
-import useTypedSelector from '../../../../../hooks/useTypedSelector'
+import useTypedSelector from '../../../../../hooks/useTypedSelector';
 
-import s from './OrderTotal.module.sass'
+import s from './OrderTotal.module.sass';
 
 const OrderTotal: FC = () => {
 	const { withDiscount, withoutDiscount } = useTypedSelector(
-		({ cartPage }) => cartPage.price
-	)
+		({ cartPage }) => cartPage.price,
+	);
 
 	return (
 		<section className={s.totalPriceContainer}>
@@ -33,7 +33,7 @@ const OrderTotal: FC = () => {
 				<span className={s.priceMain}>{withDiscount + 50}$</span>
 			</div>
 		</section>
-	)
-}
+	);
+};
 
-export default OrderTotal
+export default OrderTotal;

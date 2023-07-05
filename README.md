@@ -1,5 +1,6 @@
-# This is an online store of board games
-[Link to the page⬅️][link]
+# This is an online store
+[Link to the page ⬅️][link]
+[BackEnd Repository ⬅️][link2]
 ## Stack:
 * React
 * Redux-toolkit
@@ -16,7 +17,8 @@
 ##### Products can be filtered and I'm also proud of my range slider.
 ###### Almost all functionality works
 
-[BackEnd Repository⬅️][link2]
+[BackEnd Repository ⬅️][link2]
+[Link to the page ⬅️][link]
 
 [link]: https://steterik.github.io/board-games
-[link2]: https://github.com/StetErik/board-games-api
+[link2]: https://github.com/steterik/board-games-api

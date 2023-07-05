@@ -1,20 +1,20 @@
-import { FC } from 'react'
-import { Link } from 'react-router-dom'
-import { ErrorMessage, Field, Form, Formik } from 'formik'
-import cn from 'classnames'
+import { FC } from 'react';
+import { Link } from 'react-router-dom';
+import { ErrorMessage, Field, Form, Formik } from 'formik';
+import cn from 'classnames';
 
 import {
 	mainPageInitialValues,
 	mainPageInputs,
-	mainPageValidation
-} from '../../../../../utils/formFields'
+	mainPageValidation,
+} from '../../../../../utils/form-fields';
 
-import s from './FormQuestion.module.sass'
+import s from './FormQuestion.module.sass';
 
 const FormQuestion: FC = () => {
 	const onSubmit = (values: typeof mainPageInitialValues) => {
-		alert(`${values.name} expect a reply in your mail ${values.email}`)
-	}
+		alert(`${values.name} expect a reply in your mail ${values.email}`);
+	};
 
 	return (
 		<Formik
@@ -30,7 +30,7 @@ const FormQuestion: FC = () => {
 						<Field
 							placeholder={input.text}
 							className={cn(s.field, {
-								[s.field__textarea]: input.id === 'comment'
+								[s.field__textarea]: input.id === 'comment',
 							})}
 							type={input.type}
 							name={input.id}
@@ -48,11 +48,11 @@ const FormQuestion: FC = () => {
 					<span>
 						Pressing the button "Order a call", I consent to the processing of
 					</span>
-					<Link to='/boardGames/policy'> personal data.</Link>
+					<Link to='/board-games/policy'> personal data.</Link>
 				</div>
 			</Form>
 		</Formik>
-	)
-}
+	);
+};
 
-export default FormQuestion
+export default FormQuestion;

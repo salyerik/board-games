@@ -1,32 +1,32 @@
-import cn from 'classnames'
-import { FC, useEffect, useState } from 'react'
+import cn from 'classnames';
+import { FC, useEffect, useState } from 'react';
 
-import CardModal from './../CardModal'
+import CardModal from './../CardModal';
 
-import s from './CardInProductPage.module.sass'
-import IconsSVG from '../../IconsSVG'
+import s from './CardInProductPage.module.sass';
+import IconsSVG from '../../IconsSVG';
 
 const CardInProductPage: FC = () => {
-	const [isModalActive, setModalActive] = useState(false)
-	const [isDeliveryActive, setDelivery] = useState(false)
-	const [isPaymentActive, setPayment] = useState(false)
+	const [isModalActive, setModalActive] = useState(false);
+	const [isDeliveryActive, setDelivery] = useState(false);
+	const [isPaymentActive, setPayment] = useState(false);
 
 	useEffect(() => {
 		if (isModalActive) {
-			document.body.classList.add('lock')
+			document.body.classList.add('lock');
 		} else {
-			document.body.classList.remove('lock')
+			document.body.classList.remove('lock');
 		}
-	}, [isModalActive])
+	}, [isModalActive]);
 
 	function handleModal() {
-		setModalActive(!isModalActive)
+		setModalActive(!isModalActive);
 	}
 	function handleDelivery() {
-		setDelivery(!isDeliveryActive)
+		setDelivery(!isDeliveryActive);
 	}
 	function handlePayment() {
-		setPayment(!isPaymentActive)
+		setPayment(!isPaymentActive);
 	}
 
 	return (
@@ -39,45 +39,45 @@ const CardInProductPage: FC = () => {
 			)}
 			<div
 				className={cn(s.label, 'asideCategoryTitle', {
-					'asideCategoryTitle_active': isDeliveryActive
+					asideCategoryTitle_active: isDeliveryActive,
 				})}
-				onClick={handleDelivery}
-			>
+				onClick={handleDelivery}>
 				<span>Shipping</span>
 				<IconsSVG id='arrowSpoiler' />
 			</div>
-			{isDeliveryActive &&
+			{isDeliveryActive && (
 				<div className={s.text}>
 					<p>Pickup from the store: today</p>
 					<p>Pickup from 761 locations: 1-3 days</p>
 					<p>Courier delivery: 1-3 days</p>
 					<p>Mail delivery: from 3 days</p>
 				</div>
-			}
+			)}
 			<div
 				className={cn(s.label, 'asideCategoryTitle', {
-					'asideCategoryTitle_active': isPaymentActive
+					asideCategoryTitle_active: isPaymentActive,
 				})}
-				onClick={handlePayment}
-			>
+				onClick={handlePayment}>
 				<span>Payment</span>
 				<IconsSVG id='arrowSpoiler' />
 			</div>
-			{isPaymentActive &&
+			{isPaymentActive && (
 				<div className={s.text}>
-					<p>You accept the terms of the Public offer and give
-						consent to the processing of personal data</p>
+					<p>
+						You accept the terms of the Public offer and give consent to the
+						processing of personal data
+					</p>
 					<p>Courier delivery: 1-3 days</p>
 					<p>Mail delivery: from 3 days</p>
 					<p>Pickup from the store: today</p>
 					<p>Pickup from 761 locations: 1-3 days</p>
 				</div>
-			}
+			)}
 			<button className={s.btnBottom} onClick={handleModal}>
-        Ask a question
+				Ask a question
 			</button>
 		</article>
-	)
-}
+	);
+};
 
-export default CardInProductPage
+export default CardInProductPage;

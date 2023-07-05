@@ -1,24 +1,24 @@
-import { FC, useEffect } from 'react'
+import { FC, useEffect } from 'react';
 
-import useTypedSelector from '../../../hooks/useTypedSelector'
-import useAppDispatch from '../../../hooks/useAppDispatch'
-import getProductsThunk from '../../../redux/asyncThunks/getProductsThunk'
+import useTypedSelector from '../../../hooks/useTypedSelector';
+import useAppDispatch from '../../../hooks/useAppDispatch';
+import getProductsThunk from '../../../store/async-thunks/get-products-thunk';
 
-import TopSlider from './TopSlider'
-import Catalog from './Catalog'
-import SpecialOffers from './SpecialOffers'
-import Events from './Events'
-import MoreInteresting from './MoreInteresting'
-import AboutUs from './AboutUs'
-import Contacts from './Contacts'
+import TopSlider from './TopSlider';
+import Catalog from './Catalog';
+import SpecialOffers from './SpecialOffers';
+import Events from './Events';
+import MoreInteresting from './MoreInteresting';
+import AboutUs from './AboutUs';
+import Contacts from './Contacts';
 
 const Main: FC = () => {
-	const { mainPageItems } = useTypedSelector(({ products }) => products)
-	const dispatch = useAppDispatch()
+	const { mainPageItems } = useTypedSelector(({ products }) => products);
+	const dispatch = useAppDispatch();
 
 	useEffect(() => {
-		dispatch(getProductsThunk())
-	}, [])
+		dispatch(getProductsThunk());
+	}, []);
 
 	return (
 		<>
@@ -39,7 +39,7 @@ const Main: FC = () => {
 			<AboutUs />
 			<Contacts />
 		</>
-	)
-}
+	);
+};
 
-export default Main
+export default Main;

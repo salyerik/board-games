@@ -1,12 +1,12 @@
-import * as Yup from 'yup'
+import * as Yup from 'yup';
 
-export const mainPageInitialValues = { name: '', email: '', comment: '' }
+export const mainPageInitialValues = { name: '', email: '', comment: '' };
 
 export const mainPageInputs = [
 	{ id: 'name', text: 'Your name', type: 'text' },
 	{ id: 'email', text: 'Your E-mail', type: 'email' },
 	{ id: 'comment', text: 'Your comment', type: 'text' },
-]
+];
 
 export const mainPageValidation = Yup.object({
 	name: Yup.string()
@@ -19,4 +19,4 @@ export const mainPageValidation = Yup.object({
 	comment: Yup.string()
 		.min(20, 'Min is 20 symbols')
 		.required('Comment is required'),
-})
+});

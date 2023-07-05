@@ -16,9 +16,5 @@
 		"noEmit": true,
 		"jsx": "react-jsx"
 	},
-	"include": [
-		"src",
-		"src/declareModule.d.tsnents/.d.ts",
-		"src/declareModule.d.tsnents/.d.ts"
-	]
+	"include": ["src", "src/declareModule.d.tsnents/.d.ts"]
 }

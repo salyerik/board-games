@@ -1,9 +1,9 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
-import BtnLogin from '../../../../UI/BtnLogin'
-import InputLogin from '../../../../UI/InputLogin'
+import BtnLogin from '../../../../UI/BtnLogin';
+import InputLogin from '../../../../UI/InputLogin';
 
-import s from './RegisterTab.module.sass'
+import s from './RegisterTab.module.sass';
 
 const RegisterTab = () => {
 	return (
@@ -15,7 +15,7 @@ const RegisterTab = () => {
 			<label className={s.checkboxLabel}>
 				<input type='checkbox' className='checkboxInput' />
 				<span>
-					I agree with <Link to='/boardGames/policy'>privacy policy</Link>
+					I agree with <Link to='/board-games/policy'>privacy policy</Link>
 					and with the processing of personal data
 				</span>
 			</label>
@@ -25,7 +25,7 @@ const RegisterTab = () => {
 			</label>
 			<BtnLogin text={'Sign up'} />
 		</form>
-	)
-}
+	);
+};
 
-export default RegisterTab
+export default RegisterTab;

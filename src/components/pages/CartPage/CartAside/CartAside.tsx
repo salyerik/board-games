@@ -1,15 +1,15 @@
-import { FC } from 'react'
-import { Link } from 'react-router-dom'
+import { FC } from 'react';
+import { Link } from 'react-router-dom';
 
-import useTypedSelector from '../../../../hooks/useTypedSelector'
+import useTypedSelector from '../../../../hooks/useTypedSelector';
 
-import s from './CartAside.module.sass'
-import IconsSVG from '../../../UI/IconsSVG'
+import s from './CartAside.module.sass';
+import IconsSVG from '../../../UI/IconsSVG';
 
 const CartAside: FC = () => {
 	const { withDiscount, withoutDiscount } = useTypedSelector(
-		({ cartPage }) => cartPage.price
-	)
+		({ cartPage }) => cartPage.price,
+	);
 
 	return (
 		<section className={s.wrapper}>
@@ -28,11 +28,11 @@ const CartAside: FC = () => {
 					<IconsSVG id='check' />
 				</button>
 			</div>
-			<Link to={'/boardGames/order'} className={s.btnTop}>
+			<Link to={'/board-games/order'} className={s.btnTop}>
 				Order
 			</Link>
 		</section>
-	)
-}
+	);
+};
 
-export default CartAside
+export default CartAside;

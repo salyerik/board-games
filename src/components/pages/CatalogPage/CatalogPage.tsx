@@ -1,30 +1,45 @@
-import { FC, useEffect, useRef } from 'react'
+import { FC, useEffect, useRef } from 'react';
 
-import { getFilteredProducts } from '../../../API/getProducts'
-import { setSortPrice, toggleLoadingProducts } from '../../../redux/slices/filterCategorySlice'
-import { setCatalogItems, setTotalCount } from '../../../redux/slices/productsSlice'
-import useAppDispatch from '../../../hooks/useAppDispatch'
-import useTypedSelector from '../../../hooks/useTypedSelector'
+import { getFilteredProducts } from '../../../http/get-products';
+import {
+	setSortPrice,
+	toggleLoadingProducts,
+} from '../../../store/slices/filter-slice';
+import {
+	setCatalogItems,
+	setTotalCount,
+} from '../../../store/slices/products-slice';
+import useAppDispatch from '../../../hooks/useAppDispatch';
+import useTypedSelector from '../../../hooks/useTypedSelector';
 
-import AsideCategory from './AsideCategory'
-import Products from './Products'
-import Top from './Top'
-import Pagination from './Pagination'
-import BreadCrumps from '../../UI/BreadCrumps'
-import Questions from '../../UI/Questions'
+import AsideCategory from './AsideCategory';
+import Products from './Products';
+import Top from './Top';
+import Pagination from './Pagination';
+import BreadCrumps from '../../UI/BreadCrumps';
+import Questions from '../../UI/Questions';
 
-import s from './CatalogPage.module.sass'
-import IconsSVG from '../../UI/IconsSVG'
+import s from './CatalogPage.module.sass';
+import IconsSVG from '../../UI/IconsSVG';
 
 const Catalog: FC = () => {
-	const dispatch = useAppDispatch()
-	const topRef = useRef<HTMLDivElement>(null)
-	const selectRef = useRef<HTMLSelectElement>(null)
-	const { isOnlyStocked, price, selectedAge, players, category, subCategory, sortPrice, page, pageLimit } =
-		useTypedSelector(state => state.filterCategory)
+	const dispatch = useAppDispatch();
+	const topRef = useRef<HTMLDivElement>(null);
+	const selectRef = useRef<HTMLSelectElement>(null);
+	const {
+		isOnlyStocked,
+		price,
+		selectedAge,
+		players,
+		category,
+		subCategory,
+		sortPrice,
+		page,
+		pageLimit,
+	} = useTypedSelector(state => state.filterCategory);
 
 	useEffect(() => {
-		dispatch(toggleLoadingProducts(true))
+		dispatch(toggleLoadingProducts(true));
 		getFilteredProducts({
 			isOnlyStocked,
 			price,
@@ -34,25 +49,35 @@ const Catalog: FC = () => {
 			subCategory,
 			sortPrice,
 			page,
-			pageLimit
+			pageLimit,
 		})
 			.then(res => {
-				dispatch(setTotalCount(+res.data.count))
-				dispatch(setCatalogItems(res.data.products))
+				dispatch(setTotalCount(+res.data.count));
+				dispatch(setCatalogItems(res.data.products));
 			})
 			.catch(e => {
-				console.log(e.message)
+				console.log(e.message);
 			})
 			.finally(() => {
-				dispatch(toggleLoadingProducts(false))
-			})
-	}, [isOnlyStocked, price, selectedAge, players, category, subCategory, sortPrice, page, pageLimit])
+				dispatch(toggleLoadingProducts(false));
+			});
+	}, [
+		isOnlyStocked,
+		price,
+		selectedAge,
+		players,
+		category,
+		subCategory,
+		sortPrice,
+		page,
+		pageLimit,
+	]);
 
 	function handleSort(e: React.ChangeEvent<HTMLSelectElement>) {
-		dispatch(setSortPrice(e.target.value))
+		dispatch(setSortPrice(e.target.value));
 	}
 	function resetSort() {
-		if (selectRef.current) selectRef.current.selectedIndex = 0
+		if (selectRef.current) selectRef.current.selectedIndex = 0;
 	}
 
 	return (
@@ -79,13 +104,15 @@ const Catalog: FC = () => {
 						<Products />
 					</div>
 				</div>
-				<Pagination topHeight={topRef.current ? topRef.current.offsetTop - 30 : 0} />
+				<Pagination
+					topHeight={topRef.current ? topRef.current.offsetTop - 30 : 0}
+				/>
 				<div className={s.questionsWrapper}>
 					<Questions />
 				</div>
 			</div>
 		</>
-	)
-}
+	);
+};
 
-export default Catalog
+export default Catalog;

@@ -1,9 +1,9 @@
-import { FC } from 'react'
+import { FC } from 'react';
 
-import FooterTop from "./FooterTop"
-import FooterBottom from "./FooterBottom"
+import FooterTop from './FooterTop';
+import FooterBottom from './FooterBottom';
 
-import s from './Footer.module.sass'
+import s from './Footer.module.sass';
 
 const Footer: FC = () => {
 	return (
@@ -11,7 +11,7 @@ const Footer: FC = () => {
 			<FooterTop />
 			<FooterBottom />
 		</div>
-	)
-}
+	);
+};
 
-export default Footer
+export default Footer;

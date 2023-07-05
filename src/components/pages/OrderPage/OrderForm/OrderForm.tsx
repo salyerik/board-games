@@ -1,9 +1,9 @@
-import { FC } from 'react'
+import { FC } from 'react';
 
-import OrderTotal from './OrderTotal'
+import OrderTotal from './OrderTotal';
 
-import s from './OrderForm.module.sass'
-import IconsSVG from '../../../UI/IconsSVG'
+import s from './OrderForm.module.sass';
+import IconsSVG from '../../../UI/IconsSVG';
 
 const OrderForm: FC = () => {
 	return (
@@ -12,23 +12,23 @@ const OrderForm: FC = () => {
 				<div className={s.formTitle}>Shipping address</div>
 				<label className={s.label}>
 					<span>Country *</span>
-					<input type="text" placeholder='Country' />
+					<input type='text' placeholder='Country' />
 				</label>
 				<label className={s.label}>
 					<span>City *</span>
-					<input type="text" placeholder='City' />
+					<input type='text' placeholder='City' />
 				</label>
 				<label className={s.label}>
 					<span>Street *</span>
-					<input type="text" placeholder='Street' />
+					<input type='text' placeholder='Street' />
 				</label>
 				<label className={s.label}>
 					<span>House *</span>
-					<input type="text" placeholder='House' />
+					<input type='text' placeholder='House' />
 				</label>
 				<label className={s.label}>
 					<span>Apartment *</span>
-					<input type="text" placeholder='Apartment' />
+					<input type='text' placeholder='Apartment' />
 				</label>
 				<div className={s.warningLabel}>* Required fields</div>
 			</div>
@@ -41,7 +41,11 @@ const OrderForm: FC = () => {
 							<span>Self-delivery from the store</span>
 							<span>Free, today</span>
 						</div>
-						<input type="radio" name='shippingMethod' className='checkboxInput' />
+						<input
+							type='radio'
+							name='shippingMethod'
+							className='checkboxInput'
+						/>
 					</label>
 					<label className={s.methodLabel}>
 						<IconsSVG id='order2' />
@@ -49,7 +53,11 @@ const OrderForm: FC = () => {
 							<span>Self-delivery from 761 locations</span>
 							<span>From 150$, 1 day</span>
 						</div>
-						<input type="radio" name='shippingMethod' className='checkboxInput' />
+						<input
+							type='radio'
+							name='shippingMethod'
+							className='checkboxInput'
+						/>
 					</label>
 					<label className={s.methodLabel}>
 						<IconsSVG id='order3' />
@@ -57,7 +65,11 @@ const OrderForm: FC = () => {
 							<span>Courier delivery</span>
 							<span>From 180$, 1-3 days</span>
 						</div>
-						<input type="radio" name='shippingMethod' className='checkboxInput' />
+						<input
+							type='radio'
+							name='shippingMethod'
+							className='checkboxInput'
+						/>
 					</label>
 					<label className={s.methodLabel}>
 						<IconsSVG id='order4' />
@@ -65,7 +77,11 @@ const OrderForm: FC = () => {
 							<span>Mail delivery</span>
 							<span>From 180$, to 3 days</span>
 						</div>
-						<input type="radio" name='shippingMethod' className='checkboxInput' />
+						<input
+							type='radio'
+							name='shippingMethod'
+							className='checkboxInput'
+						/>
 					</label>
 				</div>
 			</div>
@@ -78,7 +94,11 @@ const OrderForm: FC = () => {
 							<span>Payment by card</span>
 							<span>Card, Apple pay, Google pay</span>
 						</div>
-						<input type="radio" name='paymentMethod' className='checkboxInput' />
+						<input
+							type='radio'
+							name='paymentMethod'
+							className='checkboxInput'
+						/>
 					</label>
 					<label className={s.methodLabel}>
 						<IconsSVG id='order6' />
@@ -86,7 +106,11 @@ const OrderForm: FC = () => {
 							<span>Payment in cash</span>
 							<span>to the courier upon receipt</span>
 						</div>
-						<input type="radio" name='paymentMethod' className='checkboxInput' />
+						<input
+							type='radio'
+							name='paymentMethod'
+							className='checkboxInput'
+						/>
 					</label>
 				</div>
 			</div>
@@ -94,19 +118,19 @@ const OrderForm: FC = () => {
 				<div className={s.formTitle}>Contact information</div>
 				<label className={s.label}>
 					<span>Last Name *</span>
-					<input type="text" placeholder='Last Name' />
+					<input type='text' placeholder='Last Name' />
 				</label>
 				<label className={s.label}>
 					<span>Name *</span>
-					<input type="text" placeholder='Name' />
+					<input type='text' placeholder='Name' />
 				</label>
 				<label className={s.label}>
 					<span>E-mail *</span>
-					<input type="email" placeholder='E-mail' />
+					<input type='email' placeholder='E-mail' />
 				</label>
 				<label className={s.label}>
 					<span>Phone number *</span>
-					<input type="number" placeholder='Phone number' />
+					<input type='number' placeholder='Phone number' />
 				</label>
 				<div className={s.warningLabel}>* Required fields</div>
 			</div>
@@ -116,15 +140,19 @@ const OrderForm: FC = () => {
 					<span>Create an account</span>
 				</label>
 				<div className={s.policyText}>
-					<span>By clicking the "Next" button, you accept the following terms and conditions </span>
-					<a href="#">Public offer</a><span> and you give </span>
-					<a href="#">consent to personal data processing</a>.
+					<span>
+						By clicking the "Next" button, you accept the following terms and
+						conditions{' '}
+					</span>
+					<a href='#'>Public offer</a>
+					<span> and you give </span>
+					<a href='#'>consent to personal data processing</a>.
 				</div>
 				<label className={s.checkboxLabel}>
 					<input className={'checkboxInput'} type='checkbox' />
 					<span>
 						<span>From the provisions of. </span>
-						<a href="#">Public offer</a>
+						<a href='#'>Public offer</a>
 						<span> I am aware of and agree to</span>
 					</span>
 				</label>
@@ -132,18 +160,18 @@ const OrderForm: FC = () => {
 					<input className={'checkboxInput'} type='checkbox' />
 					<span>
 						<span>I give </span>
-						<a href="#">consent to personal data processing</a>
+						<a href='#'>consent to personal data processing</a>
 					</span>
 				</label>
 				<div className={s.alreadyLogged}>
 					<span>Already registered? </span>
-					<a href="#">Log in</a>
+					<a href='#'>Log in</a>
 				</div>
 			</div>
 			<OrderTotal />
 			<button className={s.btn}>Pay</button>
 		</form>
-	)
-}
+	);
+};
 
-export default OrderForm
+export default OrderForm;

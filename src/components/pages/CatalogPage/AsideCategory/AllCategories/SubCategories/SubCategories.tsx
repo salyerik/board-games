@@ -1,15 +1,15 @@
-import { FC } from 'react'
-import { Link, useParams } from 'react-router-dom'
-import cn from 'classnames'
+import { FC } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import cn from 'classnames';
 
-import useTypedSelector from '../../../../../../hooks/useTypedSelector'
-import ItemSubCategories from './ItemSubCategories'
+import useTypedSelector from '../../../../../../hooks/useTypedSelector';
+import ItemSubCategories from './ItemSubCategories';
 
-import s from './SubCategories.module.sass'
+import s from './SubCategories.module.sass';
 
 const SubCategories: FC = () => {
-	const params = useParams()
-	const categories = useTypedSelector(state => state.filterCategory.categories)
+	const params = useParams();
+	const categories = useTypedSelector(state => state.filterCategory.categories);
 
 	return (
 		<section className={s.wrapper}>
@@ -20,15 +20,20 @@ const SubCategories: FC = () => {
 					<Link
 						key={item.path}
 						to={item.path}
-						className={cn('asideCategoryTitle', 'asideCategoryTitle_inner', 'linkUrl', {
-							linkUrl_active: item.path === params['*']
-						})}>
+						className={cn(
+							'asideCategoryTitle',
+							'asideCategoryTitle_inner',
+							'linkUrl',
+							{
+								linkUrl_active: item.path === params['*'],
+							},
+						)}>
 						{item.name}
 					</Link>
-				)
+				),
 			)}
 		</section>
-	)
-}
+	);
+};
 
-export default SubCategories
+export default SubCategories;

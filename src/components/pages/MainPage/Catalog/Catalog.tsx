@@ -1,16 +1,16 @@
-import { FC } from 'react'
-import { Link } from 'react-router-dom'
+import { FC } from 'react';
+import { Link } from 'react-router-dom';
 
-import useTypedSelector from '../../../../hooks/useTypedSelector'
+import useTypedSelector from '../../../../hooks/useTypedSelector';
 
-import s from './Catalog.module.sass'
+import s from './Catalog.module.sass';
 
 const Catalog: FC = () => {
-	const { catalogs } = useTypedSelector(state => state.common.commonData)
+	const { catalogs } = useTypedSelector(state => state.common.commonData);
 
 	return (
 		<section className='container'>
-			<Link to='/boardGames/catalog' className='title'>
+			<Link to='/board-games/catalog' className='title'>
 				Catalog
 			</Link>
 			<div className={s.grid}>
@@ -22,7 +22,7 @@ const Catalog: FC = () => {
 				))}
 			</div>
 		</section>
-	)
-}
+	);
+};
 
-export default Catalog
+export default Catalog;

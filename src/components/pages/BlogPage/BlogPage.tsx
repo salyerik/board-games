@@ -1,36 +1,36 @@
-import { useParams } from 'react-router-dom'
-import { FC, useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
+import { FC, useEffect, useState } from 'react';
 
-import useTypedSelector from '../../../hooks/useTypedSelector'
-import { iBlog } from '../../../types/blogTypes'
-import { iBreadLink } from '../../../types/commonTypes'
+import useTypedSelector from '../../../hooks/useTypedSelector';
+import { IBlog } from '../../../types/blog-type';
+import { IBreadLink } from '../../../types/common-type';
 
-import BreadCrumps from '../../UI/BreadCrumps'
-import Card from '../../UI/Card'
-import ItemInfoCard from '../../UI/ItemInfoCard'
+import BreadCrumps from '../../UI/BreadCrumps';
+import Card from '../../UI/Card';
+import ItemInfoCard from '../../UI/ItemInfoCard';
 
-import s from './BlogPage.module.sass'
+import s from './BlogPage.module.sass';
 
 const BlogPage: FC = () => {
-	const { blogId } = useParams()
-	const [links, setLinks] = useState<iBreadLink[]>([])
-	const [blog, setBlog] = useState<iBlog>()
-	const { mainPageItems } = useTypedSelector(({ products }) => products)
-	const { blogPage } = useTypedSelector(state => state.common)
+	const { blogId } = useParams();
+	const [links, setLinks] = useState<IBreadLink[]>([]);
+	const [blog, setBlog] = useState<IBlog>();
+	const { mainPageItems } = useTypedSelector(({ products }) => products);
+	const { blogPage } = useTypedSelector(state => state.common);
 
 	useEffect(() => {
-		setBlog(blogPage.items.find(blog => blog.id === (!!blogId && +blogId)))
-	}, [blogPage, blogId])
+		setBlog(blogPage.items.find(blog => blog.id === (!!blogId && +blogId)));
+	}, [blogPage, blogId]);
 
 	useEffect(() => {
-		window.scroll(0, 0)
+		window.scroll(0, 0);
 		if (blogPage) {
 			setLinks([
-				{ path: '/boardGames/blog', name: 'Blog' },
-				{ name: `${blog?.linkName}` }
-			])
+				{ path: '/board-games/blog', name: 'Blog' },
+				{ name: `${blog?.linkName}` },
+			]);
 		}
-	}, [blog])
+	}, [blog]);
 
 	return (
 		<section className={'container' + ' ' + s.wrapper}>
@@ -72,7 +72,7 @@ const BlogPage: FC = () => {
 				{blogPage.learnMore.map(item => (
 					<ItemInfoCard
 						key={item.id}
-						link={`/boardGames/blog/${item.id}`}
+						link={`/board-games/blog/${item.id}`}
 						img={item.img}
 						title={item.title}
 						text={item.text}
@@ -88,7 +88,7 @@ const BlogPage: FC = () => {
 				))}
 			</div>
 		</section>
-	)
-}
+	);
+};
 
-export default BlogPage
+export default BlogPage;

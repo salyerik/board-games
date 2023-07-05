@@ -1,38 +1,38 @@
-import { FC, useEffect, useState } from 'react'
-import cn from 'classnames'
-import { Link } from 'react-router-dom'
+import { FC, useEffect, useState } from 'react';
+import cn from 'classnames';
+import { Link } from 'react-router-dom';
 
-import { getProduct } from '../../../../API/getProducts'
+import { getProduct } from '../../../../http/get-products';
 import {
 	addCartItem,
 	decrementCartItem,
-	removeCartItem
-} from '../../../../redux/slices/cartPageSlice'
+	removeCartItem,
+} from '../../../../store/slices/cart-slice';
 
-import { iCardProduct } from '../../../../types/commonTypes'
-import useTypedSelector from '../../../../hooks/useTypedSelector'
-import useAppDispatch from '../../../../hooks/useAppDispatch'
+import { ICardProduct } from '../../../../types/common-type';
+import useTypedSelector from '../../../../hooks/useTypedSelector';
+import useAppDispatch from '../../../../hooks/useAppDispatch';
 
-import s from './CartItem.module.sass'
-import IconsSVG from '../../../UI/IconsSVG'
-import Preloader from '../../../UI/Preloader'
+import s from './CartItem.module.sass';
+import IconsSVG from '../../../UI/IconsSVG';
+import Preloader from '../../../UI/Preloader';
 
 const CartItem: FC<{ id: string }> = ({ id }) => {
-	const dispatch = useAppDispatch()
-	const [item, setItem] = useState<iCardProduct>()
-	const [itemQuantity, setItemQuantity] = useState(1)
-	const addedItems = useTypedSelector(({ cartPage }) => cartPage.addedItems)
+	const dispatch = useAppDispatch();
+	const [item, setItem] = useState<ICardProduct>();
+	const [itemQuantity, setItemQuantity] = useState(1);
+	const addedItems = useTypedSelector(({ cartPage }) => cartPage.addedItems);
 
 	useEffect(() => {
-		getProduct(id).then(({ data }) => setItem(data))
-	}, [])
+		getProduct(id).then(({ data }) => setItem(data));
+	}, []);
 
 	useEffect(() => {
-		const item = addedItems.find(item => item[id])
+		const item = addedItems.find(item => item[id]);
 		if (item) {
-			setItemQuantity(item[id])
+			setItemQuantity(item[id]);
 		}
-	}, [addedItems])
+	}, [addedItems]);
 
 	function incrementItemHandle() {
 		if (item) {
@@ -40,9 +40,9 @@ const CartItem: FC<{ id: string }> = ({ id }) => {
 				addCartItem({
 					id,
 					newPrice: item.price.new,
-					oldPrice: item.price.old || item.price.new
-				})
-			)
+					oldPrice: item.price.old || item.price.new,
+				}),
+			);
 		}
 	}
 
@@ -52,9 +52,9 @@ const CartItem: FC<{ id: string }> = ({ id }) => {
 				decrementCartItem({
 					id,
 					newPrice: item.price.new,
-					oldPrice: item.price.old || item.price.new
-				})
-			)
+					oldPrice: item.price.old || item.price.new,
+				}),
+			);
 		}
 	}
 
@@ -65,22 +65,22 @@ const CartItem: FC<{ id: string }> = ({ id }) => {
 					id,
 					newPrice: item.price.new * itemQuantity,
 					oldPrice: (item.price.old || item.price.new) * itemQuantity,
-					itemQuantity
-				})
-			)
+					itemQuantity,
+				}),
+			);
 		}
 	}
 
 	if (!item) {
-		return <Preloader />
+		return <Preloader />;
 	}
 
 	return (
 		<section className={s.item}>
-			<Link to={`/boardGames/product/${item._id}`} className={s.img}>
+			<Link to={`/board-games/product/${item._id}`} className={s.img}>
 				<img src={item.img.compressed} alt={item.img.compressed} />
 			</Link>
-			<Link to={`/boardGames/product/${item._id}`} className={s.name}>
+			<Link to={`/board-games/product/${item._id}`} className={s.name}>
 				{item.name}
 			</Link>
 			<div className={s.params}>
@@ -110,7 +110,7 @@ const CartItem: FC<{ id: string }> = ({ id }) => {
 				</button>
 			</div>
 		</section>
-	)
-}
+	);
+};
 
-export default CartItem
+export default CartItem;

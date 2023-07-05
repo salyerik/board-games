@@ -1,14 +1,14 @@
-import { FC } from 'react'
-import { Link } from 'react-router-dom'
+import { FC } from 'react';
+import { Link } from 'react-router-dom';
 
-import { iBreadProps } from '../../../types/commonTypes'
-import s from './BreadCrumps.module.sass'
+import { IBreadProps } from '../../../types/common-type';
+import s from './BreadCrumps.module.sass';
 
-const BreadCrumps: FC<iBreadProps> = ({ links, text }) => (
+const BreadCrumps: FC<IBreadProps> = ({ links, text }) => (
 	<nav>
 		<ul className={s.list}>
 			<li className={s.link}>
-				<Link to='/boardGames'>Main</Link>
+				<Link to='/board-games'>Main</Link>
 				<span>&gt;</span>
 			</li>
 			{links &&
@@ -19,13 +19,13 @@ const BreadCrumps: FC<iBreadProps> = ({ links, text }) => (
 								<Link to={link.path}>{link.name}</Link>
 								<span>&gt;</span>
 							</li>
-						)
+						);
 					} else {
 						return (
 							<li className={s.link} key={link.name}>
 								<span>{link.name}</span>
 							</li>
-						)
+						);
 					}
 				})}
 			{text && (
@@ -35,6 +35,6 @@ const BreadCrumps: FC<iBreadProps> = ({ links, text }) => (
 			)}
 		</ul>
 	</nav>
-)
+);
 
-export default BreadCrumps
+export default BreadCrumps;

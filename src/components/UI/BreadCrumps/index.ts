@@ -1,1 +1,1 @@
-export { default } from './BreadCrumps'
+export { default } from './BreadCrumps';

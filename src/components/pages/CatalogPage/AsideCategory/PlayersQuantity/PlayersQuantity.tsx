@@ -1,49 +1,55 @@
-import { FC, useEffect, useState } from 'react'
-import cn from 'classnames'
+import { FC, useEffect, useState } from 'react';
+import cn from 'classnames';
 
-import { setFromPlayers, setToPlayers, togglePlayersSpoiler } from '../../../../../redux/slices/filterCategorySlice'
-import useAppDispatch from '../../../../../hooks/useAppDispatch'
-import useTypedSelector from '../../../../../hooks/useTypedSelector'
-import useDebounce from '../../../../../hooks/useDebounce'
-import RangeSlider from '../../../../UI/RangeSlider'
+import {
+	setFromPlayers,
+	setToPlayers,
+	togglePlayersSpoiler,
+} from '../../../../../store/slices/filter-slice';
+import useAppDispatch from '../../../../../hooks/useAppDispatch';
+import useTypedSelector from '../../../../../hooks/useTypedSelector';
+import useDebounce from '../../../../../hooks/useDebounce';
+import RangeSlider from '../../../../UI/RangeSlider';
 
-import s from './PlayersQuantity.module.sass'
-import IconsSVG from '../../../../UI/IconsSVG'
+import s from './PlayersQuantity.module.sass';
+import IconsSVG from '../../../../UI/IconsSVG';
 
 const PlayersQuantity: FC = () => {
-	const dispatch = useAppDispatch()
-	const { players, isSpoilerActive } = useTypedSelector(({ filterCategory }) => filterCategory)
+	const dispatch = useAppDispatch();
+	const { players, isSpoilerActive } = useTypedSelector(
+		({ filterCategory }) => filterCategory,
+	);
 	const handleVisibleStockFilter = () => {
-		dispatch(togglePlayersSpoiler())
-	}
+		dispatch(togglePlayersSpoiler());
+	};
 	const [playersRange, setPlayersRange] = useState({
 		from: players.from,
-		to: players.to
-	})
-	const fromPlayersDebounced = useDebounce<string>(playersRange.from)
-	const toPlayersDebounced = useDebounce<string>(playersRange.to)
+		to: players.to,
+	});
+	const fromPlayersDebounced = useDebounce<string>(playersRange.from);
+	const toPlayersDebounced = useDebounce<string>(playersRange.to);
 
 	useEffect(() => {
-		setPlayersRange({ from: players.from, to: players.to })
-	}, [players])
+		setPlayersRange({ from: players.from, to: players.to });
+	}, [players]);
 
 	useEffect(() => {
-		dispatch(setFromPlayers(fromPlayersDebounced))
-		dispatch(setToPlayers(toPlayersDebounced))
-	}, [fromPlayersDebounced, toPlayersDebounced])
+		dispatch(setFromPlayers(fromPlayersDebounced));
+		dispatch(setToPlayers(toPlayersDebounced));
+	}, [fromPlayersDebounced, toPlayersDebounced]);
 
 	function handleFromPlayers(e: React.ChangeEvent<HTMLInputElement>) {
 		setPlayersRange({
 			...playersRange,
-			from: e.target.value
-		})
+			from: e.target.value,
+		});
 	}
 
 	function handleToPlayers(e: React.ChangeEvent<HTMLInputElement>) {
 		setPlayersRange({
 			...playersRange,
-			to: e.target.value
-		})
+			to: e.target.value,
+		});
 	}
 
 	return (
@@ -51,7 +57,7 @@ const PlayersQuantity: FC = () => {
 			<div
 				onClick={handleVisibleStockFilter}
 				className={cn('asideCategoryTitle', {
-					asideCategoryTitle_active: isSpoilerActive.playersFilter
+					asideCategoryTitle_active: isSpoilerActive.playersFilter,
 				})}>
 				<span>Number of players</span>
 				<IconsSVG id='arrowSpoiler' />
@@ -77,7 +83,7 @@ const PlayersQuantity: FC = () => {
 				</div>
 			)}
 		</section>
-	)
-}
+	);
+};
 
-export default PlayersQuantity
+export default PlayersQuantity;

@@ -1,12 +1,12 @@
-import { FC } from 'react'
+import { FC } from 'react';
 
-import useTypedSelector from '../../../../hooks/useTypedSelector'
-import ItemInfoCard from '../../../UI/ItemInfoCard'
+import useTypedSelector from '../../../../hooks/useTypedSelector';
+import ItemInfoCard from '../../../UI/ItemInfoCard';
 
-import s from './MoreInteresting.module.sass'
+import s from './MoreInteresting.module.sass';
 
 const MoreInteresting: FC = () => {
-	const { blogPage } = useTypedSelector(state => state.common)
+	const { blogPage } = useTypedSelector(state => state.common);
 
 	return (
 		<section className='container'>
@@ -17,7 +17,7 @@ const MoreInteresting: FC = () => {
 					.map(blog => (
 						<ItemInfoCard
 							key={blog.id}
-							link={`/boardGames/blog/${blog.id}`}
+							link={`/board-games/blog/${blog.id}`}
 							img={blog.img}
 							text={blog.label}
 							title={blog.title}
@@ -25,7 +25,7 @@ const MoreInteresting: FC = () => {
 					))}
 			</div>
 		</section>
-	)
-}
+	);
+};
 
-export default MoreInteresting
+export default MoreInteresting;

@@ -1,17 +1,17 @@
-import { FC } from 'react'
+import { FC } from 'react';
 
-import useTypedSelector from '../../../../hooks/useTypedSelector'
-import Card from '../../../UI/Card'
-import Preloader from '../../../UI/Preloader'
+import useTypedSelector from '../../../../hooks/useTypedSelector';
+import Card from '../../../UI/Card';
+import Preloader from '../../../UI/Preloader';
 
-import s from './Products.module.sass'
+import s from './Products.module.sass';
 
 const Products: FC = () => {
-	const { catalogItems } = useTypedSelector(state => state.products)
-	const { isLoadingProducts } = useTypedSelector(state => state.filterCategory)
+	const { catalogItems } = useTypedSelector(state => state.products);
+	const { isLoadingProducts } = useTypedSelector(state => state.filterCategory);
 
 	if (isLoadingProducts) {
-		return <Preloader />
+		return <Preloader />;
 	}
 
 	if (!catalogItems.length) {
@@ -24,7 +24,7 @@ const Products: FC = () => {
 					filtering or category
 				</div>
 			</div>
-		)
+		);
 	}
 
 	return (
@@ -35,7 +35,7 @@ const Products: FC = () => {
 				</div>
 			))}
 		</section>
-	)
-}
+	);
+};
 
-export default Products
+export default Products;

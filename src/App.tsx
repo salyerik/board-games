@@ -1,20 +1,20 @@
-import { Suspense, useEffect } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Suspense, useEffect } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import { getCartLocalStrg } from './redux/slices/cartPageSlice'
-import useAppDispatch from './hooks/useAppDispatch'
+import { getCartLocalStrg } from './store/slices/cart-slice';
+import useAppDispatch from './hooks/useAppDispatch';
 
-import Header from './components/Header'
-import Footer from './components/Footer'
-import routes from './components/pages/routes'
-import Preloader from './components/UI/Preloader'
+import Header from './components/Header';
+import Footer from './components/Footer';
+import routes from './components/pages/routes';
+import Preloader from './components/UI/Preloader';
 
 function App() {
-	const dispatch = useAppDispatch()
+	const dispatch = useAppDispatch();
 
 	useEffect(() => {
-		dispatch(getCartLocalStrg())
-	}, [])
+		dispatch(getCartLocalStrg());
+	}, []);
 
 	return (
 		<BrowserRouter>
@@ -24,7 +24,11 @@ function App() {
 					<Suspense fallback={<Preloader />}>
 						<Routes>
 							{routes.map(route => (
-								<Route key={route.path} path={route.path} element={<route.element />} />
+								<Route
+									key={route.path}
+									path={route.path}
+									element={<route.element />}
+								/>
 							))}
 						</Routes>
 					</Suspense>
@@ -32,7 +36,7 @@ function App() {
 				<Footer />
 			</div>
 		</BrowserRouter>
-	)
+	);
 }
 
-export default App
+export default App;

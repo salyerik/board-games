@@ -1,47 +1,47 @@
-import { FC, useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { FC, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
-import useTypedSelector from '../../../hooks/useTypedSelector'
-import { iEvent } from '../../../types/eventsTypes'
+import useTypedSelector from '../../../hooks/useTypedSelector';
+import { IEvent } from '../../../types/events-type';
 
-import EventAside from './EventAside'
-import EventContent from './EventContent'
-import EventBottom from './EventBottom'
-import EventModal from './EventModal'
-import BreadCrumps from '../../UI/BreadCrumps'
+import EventAside from './EventAside';
+import EventContent from './EventContent';
+import EventBottom from './EventBottom';
+import EventModal from './EventModal';
+import BreadCrumps from '../../UI/BreadCrumps';
 
-import s from './EventPage.module.sass'
-import { iBreadLink } from '../../../types/commonTypes'
+import s from './EventPage.module.sass';
+import { IBreadLink } from '../../../types/common-type';
 
 const EventPage: FC = () => {
-	const { eventId } = useParams()
-	const [isModalActive, setModalActive] = useState(false)
-	const [links, setLinks] = useState<Array<iBreadLink>>([])
-	const [event, setEvent] = useState<iEvent>()
-	const { items } = useTypedSelector(state => state.common.eventsPage)
+	const { eventId } = useParams();
+	const [isModalActive, setModalActive] = useState(false);
+	const [links, setLinks] = useState<Array<IBreadLink>>([]);
+	const [event, setEvent] = useState<IEvent>();
+	const { items } = useTypedSelector(state => state.common.eventsPage);
 
 	useEffect(() => {
-		setEvent(items?.find(event => event.id === (!!eventId && +eventId)))
-	}, [items, eventId])
+		setEvent(items?.find(event => event.id === (!!eventId && +eventId)));
+	}, [items, eventId]);
 
 	useEffect(() => {
-		window.scroll(0, 0)
+		window.scroll(0, 0);
 		setLinks([
-			{ path: '/boardGames/events', name: 'Events' },
-			{ name: `${event?.title}` }
-		])
-	}, [event])
+			{ path: '/board-games/events', name: 'Events' },
+			{ name: `${event?.title}` },
+		]);
+	}, [event]);
 
 	useEffect(() => {
 		if (isModalActive) {
-			document.body.classList.add('lock')
+			document.body.classList.add('lock');
 		} else if (!isModalActive) {
-			document.body.classList.remove('lock')
+			document.body.classList.remove('lock');
 		}
-	}, [isModalActive])
+	}, [isModalActive]);
 
 	function handleModalActive() {
-		setModalActive(!isModalActive)
+		setModalActive(!isModalActive);
 	}
 
 	return (
@@ -73,7 +73,7 @@ const EventPage: FC = () => {
 				</div>
 			)}
 		</section>
-	)
-}
+	);
+};
 
-export default EventPage
+export default EventPage;

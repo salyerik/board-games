@@ -1,19 +1,19 @@
-import { FC, useEffect, useState } from 'react'
+import { FC, useEffect, useState } from 'react';
 
-import { getProduct } from '../../../../../API/getProducts'
-import { iCardProduct } from '../../../../../types/commonTypes'
+import { getProduct } from '../../../../../http/get-products';
+import { ICardProduct } from '../../../../../types/common-type';
 
-import s from './OrderItem.module.sass'
+import s from './OrderItem.module.sass';
 
 const OrderItem: FC<{ id: string; quantity: number }> = ({ id, quantity }) => {
-	const [item, setItem] = useState<iCardProduct>()
+	const [item, setItem] = useState<ICardProduct>();
 
 	useEffect(() => {
-		getProduct(id).then(({ data }) => setItem(data))
-	}, [])
+		getProduct(id).then(({ data }) => setItem(data));
+	}, []);
 
 	if (!item) {
-		return <h1>Loading...</h1>
+		return <h1>Loading...</h1>;
 	}
 
 	return (
@@ -24,7 +24,7 @@ const OrderItem: FC<{ id: string; quantity: number }> = ({ id, quantity }) => {
 				<span className={s.itemPrice}>{item.price.new * quantity}$</span>
 			</div>
 		</section>
-	)
-}
+	);
+};
 
-export default OrderItem
+export default OrderItem;

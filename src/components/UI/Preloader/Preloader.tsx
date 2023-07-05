@@ -1,6 +1,6 @@
-import { FC } from 'react'
+import { FC } from 'react';
 
-import s from './Preloader.module.sass'
+import s from './Preloader.module.sass';
 
 const Preloader: FC = () => {
 	return (
@@ -16,7 +16,7 @@ const Preloader: FC = () => {
 				<div></div>
 			</div>
 		</div>
-	)
-}
+	);
+};
 
-export default Preloader
+export default Preloader;

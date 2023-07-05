@@ -1,13 +1,13 @@
-import { FC } from 'react'
+import { FC } from 'react';
 
-import useTypedSelector from '../../../hooks/useTypedSelector'
-import Item from './Item/Item'
-import Card from '../../UI/Card'
+import useTypedSelector from '../../../hooks/useTypedSelector';
+import Item from './Item/Item';
+import Card from '../../UI/Card';
 
-import s from './ItemPage.module.sass'
+import s from './ItemPage.module.sass';
 
 const ItemPage: FC = () => {
-	const { mainPageItems } = useTypedSelector(state => state.products)
+	const { mainPageItems } = useTypedSelector(state => state.products);
 
 	return (
 		<section className={'container' + ' ' + s.wrapper}>
@@ -25,7 +25,7 @@ const ItemPage: FC = () => {
 				</>
 			)}
 		</section>
-	)
-}
+	);
+};
 
-export default ItemPage
+export default ItemPage;

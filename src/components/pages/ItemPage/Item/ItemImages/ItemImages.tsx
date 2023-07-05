@@ -1,23 +1,23 @@
-import { FC, useEffect, useState } from 'react'
-import cn from 'classnames'
+import { FC, useEffect, useState } from 'react';
+import cn from 'classnames';
 
-import { iCardImages } from '../../../../../types/commonTypes'
+import { ICardImages } from '../../../../../types/common-type';
 
-import s from './ItemImages.module.sass'
+import s from './ItemImages.module.sass';
 
-const ItemImages: FC<{ img: iCardImages }> = ({ img }) => {
-	const [isModuleActive, setModule] = useState(false)
+const ItemImages: FC<{ img: ICardImages }> = ({ img }) => {
+	const [isModuleActive, setModule] = useState(false);
 
 	useEffect(() => {
 		if (isModuleActive) {
-			document.body.classList.add('lock')
+			document.body.classList.add('lock');
 		} else {
-			document.body.classList.remove('lock')
+			document.body.classList.remove('lock');
 		}
-	}, [isModuleActive])
+	}, [isModuleActive]);
 
 	function handleImgClick() {
-		setModule(!isModuleActive)
+		setModule(!isModuleActive);
 	}
 
 	return (
@@ -33,14 +33,16 @@ const ItemImages: FC<{ img: iCardImages }> = ({ img }) => {
 					<img src={img.compressed} alt={img.compressed} />
 				</div>
 			</div>
-			<div onClick={handleImgClick} className={cn(s.right, {
-				[s.right_active]: isModuleActive
-			})}>
+			<div
+				onClick={handleImgClick}
+				className={cn(s.right, {
+					[s.right_active]: isModuleActive,
+				})}>
 				<span className='closeBtn'>&times;</span>
 				<img src={img.original} alt={img.original} />
 			</div>
 		</section>
-	)
-}
+	);
+};
 
-export default ItemImages
+export default ItemImages;

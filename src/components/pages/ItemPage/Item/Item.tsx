@@ -1,49 +1,49 @@
-import { FC, useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { FC, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
-import { getProduct } from '../../../../API/getProducts'
-import { iBreadLink, iCardProduct } from '../../../../types/commonTypes'
+import { getProduct } from '../../../../http/get-products';
+import { IBreadLink, ICardProduct } from '../../../../types/common-type';
 
-import ItemImages from './ItemImages'
-import ItemTabs from './ItemTabs'
-import Card from '../../../UI/Card'
-import BreadCrumps from '../../../UI/BreadCrumps'
-import Preloader from '../../../UI/Preloader'
+import ItemImages from './ItemImages';
+import ItemTabs from './ItemTabs';
+import Card from '../../../UI/Card';
+import BreadCrumps from '../../../UI/BreadCrumps';
+import Preloader from '../../../UI/Preloader';
 
-import s from './Item.module.sass'
+import s from './Item.module.sass';
 
 const Item: FC = () => {
-	const { productId } = useParams()
-	const [item, setItem] = useState<iCardProduct | null | undefined>(undefined)
-	const [links, setLinks] = useState<iBreadLink[]>([])
+	const { productId } = useParams();
+	const [item, setItem] = useState<ICardProduct | null | undefined>(undefined);
+	const [links, setLinks] = useState<IBreadLink[]>([]);
 
 	useEffect(() => {
 		if (productId) {
-			setItem(undefined)
+			setItem(undefined);
 			getProduct(productId)
 				.then(({ data }) => setItem(data))
-				.catch(() => setItem(null))
-			window.scrollTo(0, 0)
+				.catch(() => setItem(null));
+			window.scrollTo(0, 0);
 		}
-	}, [productId])
+	}, [productId]);
 
 	useEffect(() => {
 		if (item) {
 			setLinks([
-				{ name: 'Catalog', path: '/boardGames/catalog' },
-				{ name: item.name }
-			])
+				{ name: 'Catalog', path: '/board-games/catalog' },
+				{ name: item.name },
+			]);
 		}
-	}, [item])
+	}, [item]);
 
-	if (item === undefined) return <Preloader />
+	if (item === undefined) return <Preloader />;
 
 	if (item === null) {
 		return (
 			<h3 className={s.title + ' ' + s.title_active}>
 				Sorry, the product was not found
 			</h3>
-		)
+		);
 	}
 
 	return (
@@ -64,7 +64,7 @@ const Item: FC = () => {
 				</aside>
 			</div>
 		</>
-	)
-}
+	);
+};
 
-export default Item
+export default Item;

@@ -1,12 +1,12 @@
-import { FC } from 'react'
+import { FC } from 'react';
 
-import useTypedSelector from '../../../hooks/useTypedSelector'
+import useTypedSelector from '../../../hooks/useTypedSelector';
 
-import s from './SocialNets.module.sass'
-import IconsSVG from '../IconsSVG'
+import s from './SocialNets.module.sass';
+import IconsSVG from '../IconsSVG';
 
 const SocialNets: FC = () => {
-	const { socialNets } = useTypedSelector(state => state.common.commonData)
+	const { socialNets } = useTypedSelector(state => state.common.commonData);
 
 	return (
 		<li className={s.socials}>
@@ -16,7 +16,7 @@ const SocialNets: FC = () => {
 				</a>
 			))}
 		</li>
-	)
-}
+	);
+};
 
-export default SocialNets
+export default SocialNets;

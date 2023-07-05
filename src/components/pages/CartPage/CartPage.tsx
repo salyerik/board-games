@@ -1,18 +1,20 @@
-import { FC } from 'react'
-import useTypedSelector from '../../../hooks/useTypedSelector'
-import BreadCrumps from '../../UI/BreadCrumps'
-import CartAside from './CartAside'
-import CartItem from './CartItem'
+import { FC } from 'react';
+import useTypedSelector from '../../../hooks/useTypedSelector';
+import BreadCrumps from '../../UI/BreadCrumps';
+import CartAside from './CartAside';
+import CartItem from './CartItem';
 
-import s from './CartPage.module.sass'
+import s from './CartPage.module.sass';
 
 const Cart: FC = () => {
-	const addedItems = useTypedSelector(({ cartPage }) => cartPage.addedItems)
+	const addedItems = useTypedSelector(({ cartPage }) => cartPage.addedItems);
 
 	if (addedItems.length === 0) {
-		return <div className='container'>
-			<div className='title'>The cart is empty</div>
-		</div>
+		return (
+			<div className='container'>
+				<div className='title'>The cart is empty</div>
+			</div>
+		);
 	}
 
 	return (
@@ -33,7 +35,7 @@ const Cart: FC = () => {
 				</aside>
 			</div>
 		</section>
-	)
-}
+	);
+};
 
-export default Cart
+export default Cart;
