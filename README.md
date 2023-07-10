@@ -20,5 +20,5 @@
 [BackEnd Repository ⬅️][link2]  
 [Link to the page ⬅️][link]
 
-[link]: https://steterik.github.io/board-games
-[link2]: https://github.com/steterik/board-games-api
+[link]: https://salyerik.github.io/board-games
+[link2]: https://github.com/salyerik/board-games-api

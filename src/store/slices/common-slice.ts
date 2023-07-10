@@ -313,8 +313,8 @@ const initialState: ICommonSliceState = {
 			path: 'tel:+996700200596',
 		},
 		mail: {
-			text: 'steterik@gmail.com',
-			path: 'mailto:steterik@gmail.com',
+			text: 'salyerikcode@gmail.com',
+			path: 'mailto:salyerikcode@gmail.com',
 		},
 		address: {
 			country: 'USA',

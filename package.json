@@ -2,7 +2,7 @@
 	"name": "board-games",
 	"version": "0.1.0",
 	"private": true,
-	"homepage": "https://steterik.github.io/board-games/",
+	"homepage": "https://salyerik.github.io/board-games/",
 	"dependencies": {
 		"@reduxjs/toolkit": "^1.8.2",
 		"@testing-library/jest-dom": "^5.16.4",
