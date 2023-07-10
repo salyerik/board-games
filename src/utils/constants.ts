@@ -1,1 +1,1 @@
-export const API = 'https://embarrassed-pear-greyhound.cyclic.app/api/products';
+export const API = 'https://board-games-api-xgpc.onrender.com/api/products';
