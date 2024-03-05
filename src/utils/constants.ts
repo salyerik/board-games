@@ -8,4 +8,4 @@ const isLocalhost = Boolean(
 
 export const API = isLocalhost
 	? 'http://localhost:3030/api/products'
-	: 'https://board-games-api.up.railway.app/api/products';
+	: 'https://board-games-api-om1l.onrender.com/api/products';
